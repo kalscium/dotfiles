@@ -222,7 +222,7 @@
     cryptsetup # for encryption
     polkit
     os-prober
-    bluez # for blutooth
+    # bluez # for blutooth (not working :C)
 
     # [ Power saving ]
     powertop
@@ -271,12 +271,14 @@
       full-clean = "sudo nix-collect-garbage -d";
       axolotl = "dotnet /Gata/Programs/Axolotl/Axolotl.dll /Gata/Ethan/Axolotl";
       configure = "sudo rm /etc/nixos/old_configuration.nix; sudo cp /etc/nixos/configuration.nix /etc/nixos/old_configuration.nix; sudo hx /etc/nixos/configuration.nix; sudo nixos-rebuild switch";
+      configs = "cd /Gata/Ethan/Home/Github/personal-configs";
       claer = "clear";
       potato-farm = "/Gata/Programs/potato-farm";
       thoughts = "/Gata/Programs/thoughts";
       diary-cli = "/Gata/Ethan/Home/Github/diary-cli/target/release/diary-cli";
       gres = "/Gata/Programs/gres";
       onefig = "/Gata/Programs/onefig";
+      nf = "/Gata/Programs/onefig";
       fix-ntfs = "sudo ntfsfix -d";
     };
   };

@@ -1,4 +1,8 @@
 conff toml helix: "/home/greenchild/.config/helix/config.toml";
+conff toml helix: "/root/.config/helix/config.toml";
+
+conff toml helix-languages: "/home/greenchild/.config/helix/languages.toml";
+conff toml helix-languages: "/root/.config/helix/languages.toml";
 
 helix: {
     theme = "onedark";
@@ -11,3 +15,28 @@ helix: {
         }
     }
 }
+
+helix-languages.language: [
+    {
+        name = "rust";
+        auto-format = false;
+    }
+
+    {
+        name = "toml";
+    }
+
+    {
+        name = "onefig";
+        scope = "source.nf";
+        file-types: ["nf"];
+        comment-token = "//";
+        roots: [];
+        indent: { tab-width = 4, unit= "    " };
+    }
+]
+
+# helix-languages.language.config: {
+#     cahcePriming.enable = true;
+#     diagnostics.experimental.enable = true;
+# }
