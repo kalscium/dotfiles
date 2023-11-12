@@ -2,7 +2,8 @@
 import "helix.nf";
 import "vscodium.nf";
 import "zsh.nf";
-import "plasma-kde.nf";
+import "plasma-conf.nf";
+# import "plasma-full.nf"; // wayyy to large
 
 conff nix nixos: "/etc/nixos/configuration.nix";
 nixos$ sudo nixos-rebuild switch --upgrade
@@ -131,18 +132,6 @@ nixos: {
 
     // Packages installed on my system
     environment.systemPackages: pkgs >> [
-        ## [ Overrides ]
-        // use an older version of vscodium cause the new one doesn't work
-        # </
-        #     (pkgs.vscodium.overrideAttrs (oldAttrs: rec {
-        #         src = fetchurl {
-        #             url = "https://github.com/VSCodium/vscodium/releases/download/${version}/VSCodium-linux-x64-${version}.tar.gz";
-        #             sha256 = "a606e540f8dfe5a049513138adb01f03d6005cbb9b1b6a871688462ea51aa573";
-        #         };
-        #         version = "1.81.1.23222";
-        #     }))
-        # \>
-
         ## [ Programming Langs and Libs ]
         pipx
         libclang
@@ -257,7 +246,7 @@ nixos: {
             clean: "nix-store --gc";
             full-clean: "sudo nix-collect-garbage -d";
             axolotl: "dotnet /Gata/Programs/Axolotl/Axolotl.dll /Gata/Ethan/Axolotl";
-            configure: "sudo rm /etc/nixos/old_configuration.nix; sudo cp /etc/nixos/configuration.nix /etc/nixos/old_configuration.nix; sudo hx /etc/nixos/configuration.nix; sudo nixos-rebuild switch";
+            configure: "cd /Gata/Ethan/Home/Github/personal-configs; hx system.nf; /Gata/Programs/onefig compile system.nf system.cnf; sudo /Gata/Programs/onefig r system.cnf; git add --all; git commit -m 'onefig: modified system configs'; git push origin;";
             configs: "cd /Gata/Ethan/Home/Github/personal-configs";
             claer: "clear";
             potato-farm: "/Gata/Programs/potato-farm";
