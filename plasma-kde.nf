@@ -6,3 +6,4 @@ include "/home/greenchild/.config/plasmarc" as "/home/greenchild/.config/plasmar
 include "/home/greenchild/.config/plasmashellrc" as "/home/greenchild/.config/plasmashellrc";
 include "/home/greenchild/.config/plasmawindowed-appletsrc" as "/home/greenchild/.config/plasmawindowed-appletsrc";
 include "/home/greenchild/.config/plasmawindowedrc" as "/home/greenchild/.config/plasmawindowedrc";
+include "/home/greenchild/.local/share/plasma" as "/home/greenchild/.local/share/plasma";
