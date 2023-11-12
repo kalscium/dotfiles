@@ -246,7 +246,7 @@ nixos: {
             clean: "nix-store --gc";
             full-clean: "sudo nix-collect-garbage -d";
             axolotl: "dotnet /Gata/Programs/Axolotl/Axolotl.dll /Gata/Ethan/Axolotl";
-            configure: "cd /Gata/Ethan/Home/Github/personal-configs; hx system.nf; /Gata/Programs/onefig compile system.nf system.cnf; sudo /Gata/Programs/onefig r system.cnf; git add --all; git commit -m 'onefig: modified system configs'; git push origin;";
+            configure: "cd /Gata/Ethan/Home/Github/personal-configs; hx system.nf; /Gata/Programs/onefig compile system.nf system.cnf && sudo /Gata/Programs/onefig r system.cnf && git add --all && git commit -m 'onefig: modified system configs' && git push origin;";
             configs: "cd /Gata/Ethan/Home/Github/personal-configs";
             claer: "clear";
             potato-farm: "/Gata/Programs/potato-farm";
