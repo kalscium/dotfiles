@@ -145,10 +145,8 @@ nixos: {
         git
         bacon
         github-desktop
-        cargo-ui
         vscodium
         jetbrains.clion
-        cargo-expand
 
         ## [ Browsers ]
         microsoft-edge
@@ -158,7 +156,7 @@ nixos: {
         ## [ Text Editors ]
         helix
         kate
-        neovim
+        # neovim // why neovim when helix?
 
         ## [ TUI ]
         xplr // file explorer
@@ -169,7 +167,7 @@ nixos: {
         mdcat // terminal markdown displayer
         taplo // toml reader
         wget
-        # curl
+        curl
         neofetch
         wineWowPackages.minimal
         pandoc
@@ -195,7 +193,6 @@ nixos: {
         mediainfo // for kdenlive
         x264 // for kdenlive
         texlive.combined.scheme-small // for pandoc
-        hunspell, hunspellDicts.uk_UA, hunspellDicts.th_TH // for libreoffice spell check
 
         ## [ Critical stuff ]
         gnupg
