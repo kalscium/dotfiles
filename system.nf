@@ -46,7 +46,7 @@ nixos: {
     }
 
     // Mount Swap Memory
-    swapDevices: [ { device = "/dev/diskk/by-uuid/eb93cf17-60cf-477e-81b0-d1f19c25594d" } ];
+    swapDevices: [ { device = "/dev/disk/by-uuid/eb93cf17-60cf-477e-81b0-d1f19c25594d" } ];
 
     // Networking
     networking: {
