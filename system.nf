@@ -8,6 +8,10 @@ import "plasma-conf.nf";
 conff nix nixos: "/etc/nixos/configuration.nix";
 nixos$ sudo nixos-rebuild switch --upgrade
 
+// Install other non-nix packages
+nixos$ pipx uninstall-all
+nixos$ pipx install pros-cli
+
 nixos: {
     imports: [ // Include the results of the hardware scan.
         </
@@ -250,7 +254,6 @@ nixos: {
             thoughts: "/Gata/Programs/thoughts";
             diary-cli: "/Gata/Ethan/Home/Github/diary-cli/target/release/diary-cli";
             gres: "/Gata/Programs/gres";
-            onefig: "/Gata/Programs/onefig";
             nf: "/Gata/Programs/onefig";
             fix-ntfs: "sudo ntfsfix -d";
         };
