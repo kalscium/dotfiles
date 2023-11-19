@@ -8,10 +8,6 @@ import "plasma-conf.nf";
 conff nix nixos: "/etc/nixos/configuration.nix";
 nixos$ sudo nixos-rebuild switch --upgrade
 
-// Install other non-nix packages
-nixos$ pipx uninstall-all
-nixos$ pipx install pros-cli
-
 nixos: {
     imports: [ // Include the results of the hardware scan.
         </
@@ -23,7 +19,7 @@ nixos: {
     boot.loader: {
         grub: {
             enable = true;
-            devices: [ "nodev" ];
+            device = "nodev";
             efiSupport = true;
             useOSProber = true;
         }
@@ -34,11 +30,11 @@ nixos: {
         }
     }
 
-    boot.supportedFilesystems: [ "ext4", "ntfs" ]
+    boot.supportedFilesystems: [ "ext4", "ntfs" ];
 
     // Unlock Gata
     boot.initrd.luks.devices.Gata: {
-        device = "/dev/nvme0n1p3";
+        device = "/dev/disk/by-uuid/8e7b30e8-3737-4f38-b0c2-bdd10f5e2699";
         preLVM = false; // set to true if the device is a physical partition and not a logical volume
     }
 
@@ -50,7 +46,7 @@ nixos: {
     }
 
     // Mount Swap Memory
-    swapDevices: [ { device = "/dev/nvme0n1p6" } ];
+    swapDevices: [ { device = "/dev/diskk/by-uuid/eb93cf17-60cf-477e-81b0-d1f19c25594d" } ];
 
     // Networking
     networking: {
@@ -199,6 +195,7 @@ nixos: {
         texlive.combined.scheme-small // for pandoc
 
         ## [ Critical stuff ]
+        gnumake // for building packages
         gnupg
         zsh
         ntfs3g // support for ntfs mounting
@@ -247,7 +244,7 @@ nixos: {
             clean: "nix-store --gc";
             full-clean: "sudo nix-collect-garbage -d";
             axolotl: "dotnet /Gata/Programs/Axolotl/Axolotl.dll /Gata/Ethan/Axolotl";
-            configure: "cd /Gata/Ethan/Home/Github/personal-configs; hx system.nf; /Gata/Programs/onefig compile system.nf system.cnf && sudo /Gata/Programs/onefig r system.cnf && git add --all && git commit -m 'onefig: modified system configs' && git push origin;";
+            configure: "cd /Gata/Ethan/Home/Github/personal-configs; hx system.nf; onefig compile system.nf system.cnf && sudo onefig r system.cnf && git add --all && git commit -m 'onefig: modified system configs' && git push origin;";
             configs: "cd /Gata/Ethan/Home/Github/personal-configs";
             claer: "clear";
             potato-farm: "/Gata/Programs/potato-farm";
