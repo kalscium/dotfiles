@@ -40,9 +40,15 @@ nixos: {
 
     // Mount Gata
     fileSystems."/Gata": {
-        device = "/dev/mapper/Gata";
+        device = "/dev/disk/by-uuid/69ed7221-2318-4f35-84d8-03c36574739b";
         fsType = "ext4";
-        options: [ "nosuid", "nodev", "nofail", "x-gvfs-show" ];
+        # options: [ "nosuid", "nodev", "nofail", "x-gvfs-show" ];
+    }
+
+    // Mount Boot
+    fileSystems."/boot": {
+        device = "/dev/disk/by-uuid/6582-848B";
+        fsType = "vfat";
     }
 
     // Mount Swap Memory
@@ -251,7 +257,6 @@ nixos: {
             thoughts: "/Gata/Programs/thoughts";
             diary-cli: "/Gata/Ethan/Home/Github/diary-cli/target/release/diary-cli";
             gres: "/Gata/Programs/gres";
-            nf: "/Gata/Programs/onefig";
             fix-ntfs: "sudo ntfsfix -d";
         };
     };
@@ -267,6 +272,6 @@ nixos: {
     environment.variables: {
         LIBCLANG_PATH: "/nix/store/2l475hynw6hmxn81m3m4ka231z22kvk2-clang-11.1.0-lib/lib/libclang.so";
         OPENSSL_DIR: "/nix/store/y2hmc1ypa5yw54jsizxbn9gjag0d468k-openssl-3.0.10";
-        PATH: "$HOME/.local/bin:$HOME/.cargo/bin:$PATH";
+        PATH: "/home/greenchild/.local/bin:$HOME/.cargo/bin:$PATH";
     }
 }
