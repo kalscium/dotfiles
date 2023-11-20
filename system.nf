@@ -51,14 +51,8 @@ nixos: {
         fsType = "vfat";
     }
 
-    // Unlock Swap Memory
-    boot.initrd.luks.devices.Swap: {
-        device = "/dev/disk/by-uuid/1ed3c3db-f1d8-4c89-a5f3-a8ba679654dd";
-        keyFile = "/Gata/keys/swap.bin";
-    }
-
     // Mount Swap Memory
-    swapDevices: [ { device = "/dev/disk/by-uuid/1a18d0e4-3bd1-4031-a3c9-6815d60845d3" } ];
+    swapDevices: [ { device = "/dev/disk/by-uuid/2134c6f9-dce6-4c0b-bb7a-d47793652c58" } ];
 
     // Networking
     networking: {
