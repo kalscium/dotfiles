@@ -42,7 +42,7 @@ nixos: {
     fileSystems."/Gata": {
         device = "/dev/disk/by-uuid/69ed7221-2318-4f35-84d8-03c36574739b";
         fsType = "ext4";
-        # options: [ "nosuid", "nodev", "nofail", "x-gvfs-show" ];
+        options: [ "nosuid", "nodev", "nofail", "x-gvfs-show" ];
     }
 
     // Mount Boot
@@ -51,14 +51,20 @@ nixos: {
         fsType = "vfat";
     }
 
+    // Unlock Swap Memory
+    boot.initrd.luks.devices.Swap: {
+        device = "/dev/disk/by-uuid/1ed3c3db-f1d8-4c89-a5f3-a8ba679654dd";
+        keyFile = "/Gata/keys/swap.bin";
+    }
+
     // Mount Swap Memory
-    swapDevices: [ { device = "/dev/disk/by-uuid/eb93cf17-60cf-477e-81b0-d1f19c25594d" } ];
+    swapDevices: [ { device = "/dev/disk/by-uuid/1a18d0e4-3bd1-4031-a3c9-6815d60845d3" } ];
 
     // Networking
     networking: {
         hostName = "greenix"; // Defines your hostname
-        # wireless.enable: true; // Enables wireless support via `wpa_supplicant`
-        networkmanager.enable: true; // Enables networking (like wifi)
+        # wireless.enable = true; // Enables wireless support via `wpa_supplicant`
+        networkmanager.enable = true; // Enables networking (like wifi)
     }
 
     time.timeZone = "Australia/Melbourne"; // time zone
