@@ -134,7 +134,7 @@ nixos: {
     nixpkgs.config.allowUnfree = true;
 
     // Enable docker
-    # virtualisation.docker.enable = true;
+    virtualisation.docker.enable = true;
 
     // Packages installed on my system
     environment.systemPackages: pkgs >> [
@@ -179,6 +179,7 @@ nixos: {
         pandoc
         protonvpn-cli_2
         ffmpeg
+        cdrkit // for creating iso files
 
         ## [ GUI ]
         qbittorrent
@@ -188,7 +189,7 @@ nixos: {
         audacity
         discord
         vlc // video player
-        libsForQt5.kdenlive // video editor
+        # libsForQt5.kdenlive // video editor
         typora // markdown editor
 
         ##  [ Dependencies ]
@@ -196,8 +197,8 @@ nixos: {
         thefuck // for zsh (console intellisense)
         exfatprogs // for gparted
         sccache // for speeding up rust compile time
-        mediainfo // for kdenlive
-        x264 // for kdenlive
+        # mediainfo // for kdenlive
+        # x264 // for kdenlive
         texlive.combined.scheme-small // for pandoc
 
         ## [ Critical stuff ]
@@ -208,7 +209,7 @@ nixos: {
         cryptsetup // for disk encryption
         polkit // for asking for sudo
         os-prober
-        # bluez // for blooth (not working :C)
+        # bluez // for blutooth (not working :C)
 
         ## [ Power saving ]
         powertop
@@ -273,5 +274,6 @@ nixos: {
         LIBCLANG_PATH: "/nix/store/2l475hynw6hmxn81m3m4ka231z22kvk2-clang-11.1.0-lib/lib/libclang.so";
         OPENSSL_DIR: "/nix/store/y2hmc1ypa5yw54jsizxbn9gjag0d468k-openssl-3.0.10";
         PATH: "/home/greenchild/.local/bin:$HOME/.cargo/bin:$PATH";
+        RUSTC_WRAPPER="sccache";
     }
 }
