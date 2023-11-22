@@ -179,7 +179,7 @@ nixos: {
         pandoc
         protonvpn-cli_2
         ffmpeg
-        cdrkit // for creating iso files
+        cdrkit, syslinux // for creating **bootable** iso files
 
         ## [ GUI ]
         qbittorrent
