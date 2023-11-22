@@ -180,6 +180,7 @@ nixos: {
         protonvpn-cli_2
         ffmpeg
         cdrkit, syslinux // for creating **bootable** iso files
+        file // for checking the type of a file
 
         ## [ GUI ]
         qbittorrent
