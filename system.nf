@@ -136,6 +136,9 @@ nixos: {
     // Enable docker
     virtualisation.docker.enable = true;
 
+    // Allow running of precompiled dll binaries
+    programs.nix-ld.enable = true;
+
     // Packages installed on my system
     environment.systemPackages: pkgs >> [
         ## [ Programming Langs and Libs ]
@@ -210,6 +213,7 @@ nixos: {
         cryptsetup // for disk encryption
         polkit // for asking for sudo
         os-prober
+        nix-ld // for running precompiled binaries
         # bluez // for blutooth (not working :C)
 
         ## [ Power saving ]
