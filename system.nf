@@ -260,6 +260,7 @@ nixos: {
             diary-cli: "/Gata/Ethan/Home/Github/diary-cli/target/release/diary-cli";
             gres: "/Gata/Programs/gres";
             fix-ntfs: "sudo ntfsfix -d";
+            ubuntu: "sudo docker run -itv .:/mnt --rm ubuntu";
         };
     };
 
