@@ -142,8 +142,8 @@ nixos: {
         pipx
         libclang
         rustup
-        python311
-        python311Packages.pip
+        python310
+        python310Packages.pip
         dotnet-sdk
         gcc
 
