@@ -12,6 +12,7 @@ nixos: {
     imports: [ // Include the results of the hardware scan.
         </
             ./hardware-configuration.nix
+            <nix-ld/modules/nix-ld.nix>
         \>
     ]
 
@@ -137,7 +138,7 @@ nixos: {
     virtualisation.docker.enable = true;
 
     // Allow running of precompiled dll binaries
-    programs.nix-ld.enable = true;
+    programs.nix-ld.dev.enable = true;
 
     // Packages installed on my system
     environment.systemPackages: pkgs >> [
