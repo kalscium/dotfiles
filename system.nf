@@ -260,7 +260,7 @@ nixos: {
             diary-cli: "/Gata/Ethan/Home/Github/diary-cli/target/release/diary-cli";
             gres: "/Gata/Programs/gres";
             fix-ntfs: "sudo ntfsfix -d";
-            mini: "sudo docker run -itv .:/mnt -v /dev:/dev mini && sudo docker commit $(sudo docker ps -aq) mini && sudo docker rm $(sudo docker ps -aq)";
+            mini: "sudo docker run -itv .:/mnt -v /dev:/dev mini; sudo docker commit $(sudo docker ps -aq) mini; sudo docker rm $(sudo docker ps -aq)";
         };
     };
 
