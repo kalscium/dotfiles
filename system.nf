@@ -142,8 +142,8 @@ nixos: {
         pipx
         libclang
         rustup
-        python310
-        python310Packages.pip
+        python311
+        python311Packages.pip
         dotnet-sdk
         gcc
 
@@ -260,7 +260,7 @@ nixos: {
             diary-cli: "/Gata/Ethan/Home/Github/diary-cli/target/release/diary-cli";
             gres: "/Gata/Programs/gres";
             fix-ntfs: "sudo ntfsfix -d";
-            ubuntu: "sudo docker run -itv .:/mnt --rm ubuntu";
+            mini: "sudo docker run -itv .:/mnt -v /dev:/dev mini && sudo docker commit $(docker ps -aq) mini && sudo docker rm $(docker ps -aq)";
         };
     };
 
