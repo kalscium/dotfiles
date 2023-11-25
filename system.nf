@@ -64,7 +64,7 @@ nixos: {
     // Enable bluetooth
     hardware.bluetooth: {
         enable = true;
-        powerOnBoot = true;
+        powerOnBoot = false; // so that I have to manually turn it on when I need it
     }
 
     time.timeZone = "Australia/Melbourne"; // time zone
