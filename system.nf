@@ -61,6 +61,12 @@ nixos: {
         networkmanager.enable = true; // Enables networking (like wifi)
     }
 
+    // Enable bluetooth
+    hardware.bluetooth: {
+        enable = true;
+        powerOnBoot = true;
+    }
+
     time.timeZone = "Australia/Melbourne"; // time zone
 
     // Select internationalisation properties
