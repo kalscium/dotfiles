@@ -201,6 +201,7 @@ nixos: {
         # mediainfo // for kdenlive
         # x264 // for kdenlive
         texlive.combined.scheme-small // for pandoc
+        glibc.static // for compiling binaries statically
 
         ## [ Critical stuff ]
         gnumake // for building packages
@@ -210,7 +211,6 @@ nixos: {
         cryptsetup // for disk encryption
         polkit // for asking for sudo
         os-prober
-        # bluez // for blutooth (not working :C)
 
         ## [ Power saving ]
         powertop
@@ -261,6 +261,7 @@ nixos: {
             gres: "/Gata/Programs/gres";
             fix-ntfs: "sudo ntfsfix -d";
             mini: "sudo docker run -itv .:/mnt -v /dev:/dev mini; sudo docker commit $(sudo docker ps -aq) mini; sudo docker rm $(sudo docker ps -aq)";
+            staticc: "RUSTFLAGS='-C target-feature=+crt-static' cargo build --release --target x86_64-unknown-linux-gnu"; // statically build a cargo binary
         };
     };
 
