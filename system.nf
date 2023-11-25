@@ -63,7 +63,7 @@ nixos: {
 
     // Enable bluetooth
     hardware.bluetooth: {
-        enable = false;
+        enable = true;
         powerOnBoot = true;
     }
 
