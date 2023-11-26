@@ -1,3 +1,3 @@
 import "plasma-full.nf";
 import "helix.nf";
-import "zsh.nf";
+include "include/zsh/gnjaro.zsh" as "/home/greenchild/.zshrc";
