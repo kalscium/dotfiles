@@ -187,7 +187,6 @@ nixos: {
         ffmpeg
         cdrkit, syslinux // for creating **bootable** iso files
         file // for checking the type of a file
-        radare2 // for analysing binary files and reverse engineering
 
         ## [ GUI ]
         qbittorrent
