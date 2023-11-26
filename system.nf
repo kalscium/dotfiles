@@ -198,6 +198,7 @@ nixos: {
         vlc // video player
         # libsForQt5.kdenlive // video editor
         typora // markdown editor
+        keepassxc
 
         ##  [ Dependencies ]
         gcc-arm-embedded-7 // for robotics
