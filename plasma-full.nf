@@ -8,3 +8,8 @@ include "/home/greenchild/.config/plasmawindowed-appletsrc" as "/home/greenchild
 include "/home/greenchild/.config/plasmawindowedrc" as "/home/greenchild/.config/plasmawindowedrc";
 include "/home/greenchild/.local/share/plasma" as "/home/greenchild/.local/share/plasma";
 include "/home/greenchild/.local/share/icons" as "/home/greenchild/.local/share/icons";
+include "/home/greenchild/.local/share/konsole" as "/home/greenchild/.local/share/konsole";
+include "/home/greenchild/.local/share/color-schemes" as "/home/greenchild/.local/share/color-schemes";
+include "/home/greenchild/.local/share/dolphin" as "/home/greenchild/.local/share/dolphin";
+include "/home/greenchild/.local/share/plasma_icons" as "/home/greenchild/.local/share/plasma_icons";
+include "/home/greenchild/.local/share/kate" as "/home/greenchild/.local/share/kate";

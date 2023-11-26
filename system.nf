@@ -246,7 +246,7 @@ nixos: {
     // Or disable the firewall altogether.
     # networking.firewall.enable = false;
 
-    system.stateVersion = "23.05";
+    system.stateVersion = "24.05";
 
     // Enable flakes and nix command
     nix.settings.experimental-features: [ "nix-command", "flakes" ];
