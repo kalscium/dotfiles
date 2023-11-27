@@ -142,6 +142,21 @@ nixos: {
     // Enable docker
     virtualisation.docker.enable = true;
 
+    // Enable nix ld (running of foreign binaries)
+    programs.nix-ld.enable = true;
+    // Libraries for nix-ld
+    programs.nix-ld.libraries: pkgs >> [
+        stdenv.cc.cc
+        zlib
+        fuse3
+        icu
+        zlib
+        nss
+        openssl
+        curl
+        expat
+    ]
+
     // Packages installed on my system
     environment.systemPackages: pkgs >> [
         ## [ Programming Langs and Libs ]
