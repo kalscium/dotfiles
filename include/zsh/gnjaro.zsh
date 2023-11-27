@@ -1,7 +1,7 @@
 PATH="$PATH:/home/greenchild/.cargo/bin:/home/greenchild/.local/bin"
 
 precmd() {
-  PS1="%B%F{blue}$(echo '\n┌─(') %f%b%F{green}$(print_branch)%B%F{blue} ) %f%b%F{green}%n%f%B%F{blue} :: %f%b%~%B%F{blue}$(echo '\n└>>') %f%b"
+  PS1="%B%F{blue}$(echo '\n┌─(') %f%b%F{cyan}$(print_branch)%B%F{blue} ) %f%b%F{ctab}%n%f%B%F{blue} :: %f%b%~%B%F{blue}$(echo '\n└>>') %f%b"
 }
 
 print_branch() {
@@ -13,5 +13,5 @@ print_branch() {
   fi
 }
 
-PS1="%B%F{blue}$(echo '\n┌─(') %f%b%F{green}$(print_branch)%B%F{blue} ) %f%b%F{green}%n%f%B%F{blue} :: %f%b%~%B%F{blue}$(echo '\n└>>') %f%b"
+PS1="%B%F{blue}$(echo '\n┌─(') %f%b%F{cyan}$(print_branch)%B%F{blue} ) %f%b%F{cyan}%n%f%B%F{blue} :: %f%b%~%B%F{blue}$(echo '\n└>>') %f%b"
 
