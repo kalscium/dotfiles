@@ -299,5 +299,6 @@ nixos: {
         OPENSSL_DIR: "/nix/store/y2hmc1ypa5yw54jsizxbn9gjag0d468k-openssl-3.0.10";
         PATH: "/home/greenchild/.local/bin:$HOME/.cargo/bin:$PATH";
         RUSTC_WRAPPER="sccache";
+        NIX_LD = "/run/current-system/sw/share/nix-ld/lib/ld.so";
     }
 }
