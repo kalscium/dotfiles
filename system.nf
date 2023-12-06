@@ -202,6 +202,7 @@ nixos: {
         ffmpeg
         cdrkit, syslinux // for creating **bootable** iso files
         file // for checking the type of a file
+        cargo-cross // for rust cross compiling
 
         ## [ GUI ]
         qbittorrent
