@@ -139,6 +139,11 @@ nixos: {
     // Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    // Allow unsecure electron (remove later when they fix)
+    nixpkgs.config.permittedInsecurePackages: [
+        "electron-25.9.0"
+    ]
+
     // Enable docker
     virtualisation.docker.enable = true;
 
@@ -203,6 +208,7 @@ nixos: {
         # cdrkit, syslinux // for creating **bootable** iso files
         file // for checking the type of a file
         bat // cat but better
+        darling // for running macOS apps
 
         ## [ GUI ]
         qbittorrent
