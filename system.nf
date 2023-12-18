@@ -221,6 +221,7 @@ nixos: {
         # libsForQt5.kdenlive // video editor
         typora // markdown editor
         keepassxc
+        lmms // music production software
 
         ##  [ Dependencies ]
         gcc-arm-embedded-7 // for robotics
