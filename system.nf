@@ -252,7 +252,8 @@ nixos: {
         libreoffice-fresh
 
         ## [ AI ]
-        ollama
+        ollama // for running llms
+        python311Packages.huggingface-hub // for downloading llms from hugging face `huggingface-cli`
     ]
 
     // Some programs need SUID wrappers, can be configured further or are
