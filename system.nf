@@ -179,6 +179,7 @@ nixos: {
         github-desktop
         vscodium
         jetbrains.clion
+        git-lfs
 
         ## [ Browsers ]
         microsoft-edge
@@ -248,6 +249,9 @@ nixos: {
 
         ## [ School ]
         libreoffice-fresh
+
+        ## [ AI ]
+        ollama
     ]
 
     // Some programs need SUID wrappers, can be configured further or are
