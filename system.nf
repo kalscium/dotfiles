@@ -223,6 +223,7 @@ nixos: {
         typora // markdown editor
         keepassxc
         lmms // music production software
+        libsForQt5.filelight // disk usage statistics
 
         ##  [ Dependencies ]
         gcc-arm-embedded-7 // for robotics
