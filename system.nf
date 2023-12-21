@@ -210,6 +210,7 @@ nixos: {
         file // for checking the type of a file
         bat // cat but better
         darling // for running macOS apps
+        testdisk // for recovering ntfs files
 
         ## [ GUI ]
         qbittorrent
