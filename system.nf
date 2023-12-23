@@ -62,7 +62,7 @@ nixos: {
     }
 
     // Enable bluetooth
-    hardware.bluetooth: {
+    @ hardware.bluetooth: {
         enable = true;
         powerOnBoot = true;
     }
@@ -145,7 +145,7 @@ nixos: {
     ]
 
     // Enable docker
-    virtualisation.docker.enable = true;
+    virtualisation.docker.enable = false;
 
     // Enable nix ld (running of foreign binaries)
     programs.nix-ld.enable = true;
@@ -308,8 +308,8 @@ nixos: {
     programs.git.enable = true;
 
     ## [ Power Saving ]
-    services.tlp.enable = true;
-    services.power-profiles-daemon.enable = false;
+    services.tlp.enable = false;
+    services.power-profiles-daemon.enable = true;
 
     ## [ Env Varibles ]
     environment.variables: {
