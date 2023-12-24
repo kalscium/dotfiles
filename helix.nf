@@ -7,6 +7,9 @@ conff toml helix-languages: "/root/.config/helix/languages.toml";
 helix: {
     theme = "onedark";
     editor: {
+        line-number = "relative"; // it's popular :P
+        scrolloff = 999; // to keep the cursor centred
+        mouse = false; // mice are for nerds
         soft-wrap.enable = true; // soft wrap looks better
         cursor-shape: { // shape of the cursor during different modes
             insert: "bar";
