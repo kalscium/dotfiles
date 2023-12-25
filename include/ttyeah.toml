@@ -15,20 +15,24 @@
 "ui.cursor.primary" = { fg = "black", bg = "light-gray" }
 # "ui.virtual.whitespace" = "yellow"
 "variable" = "light-gray"
+"varible.parameter" = { fg = "red", modifiers = ["bold"] }
+"variable.other.member" = { fg = "red", modifiers = ["bold"] }
 "constant.numeric" = "yellow"
 "constant" = "yellow"
 "attribute" = "yellow"
 "type" = { fg = "light-yellow", modifiers = ["bold"] }
 "ui.cursor.match" = { fg = "light-yellow", modifiers = ["underlined"] }
 "string"  = { fg = "light-green", modifiers = ["bold"] }
-"variable.other.member" = { fg = "red", modifiers = ["bold"] }
 "constant.character.escape" = "cyan"
 "function" = { fg = "light-cyan", modifiers = ["bold"] }
+"function.macro" = "yellow"
 "constructor" = "light-blue"
-"special" = "light-blue"
 "keyword" = { fg = "light-red", modifiers = ["bold"] }
+"special" = { fg = "light-magenta", modifiers = ["bold"] }
 "label" = "light-magenta"
-"namespace" = "magenta"
+"namespace" = { fg = "light-magenta", modifiers = ["bold"] }
+"operator" = { fg = "light-magenta", modifiers = ["bold"] }
+"keyword.operator" = { fg = "light-magenta", modifiers = ["bold"] }
 
 "markup.heading" = { fg = "light-red", modifiers = ["bold"] }
 "markup.list" = { fg = "light-red", modifiers = ["bold"] }
