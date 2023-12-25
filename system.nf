@@ -181,6 +181,7 @@ nixos: {
         vscodium
         jetbrains.clion
         git-lfs
+        wezterm // terminal emulator
 
         ## [ Browsers ]
         microsoft-edge
