@@ -1,0 +1,53 @@
+# Author: <greenchild04@protonmail.com>
+
+"ui.menu" = { fg = "light-gray", bg = "gray" }
+"ui.menu.selected" = { modifiers = ["reversed"] }
+"ui.linenr" = { fg = "light-gray", bg = "black", modifiers = ["dim"] }
+"ui.popup" = { bg = "black" }
+"ui.window" = { bg = "black" }
+"ui.linenr.selected" = { fg = "white", bg = "black", modifiers = ["bold"] }
+"ui.selection" = { fg = "white", bg = "yellow" }
+"comment" = { fg = "light-gray", modifiers = ["dim"] }
+"ui.statusline" = { fg = "black", bg = "cyan" }
+"ui.statusline.inactive" = { fg = "black", bg = "white" }
+"ui.help" = { fg = "black", bg = "light-gray" }
+"ui.cursor" = { fg = "white", bg = "light-gray" }
+"ui.cursor.primary" = { fg = "black", bg = "light-gray" }
+# "ui.virtual.whitespace" = "yellow"
+"variable" = "light-gray"
+"constant.numeric" = "yellow"
+"constant" = "yellow"
+"attribute" = "yellow"
+"type" = { fg = "light-yellow", modifiers = ["bold"] }
+"ui.cursor.match" = { fg = "light-yellow", modifiers = ["underlined"] }
+"string"  = { fg = "light-green", modifiers = ["bold"] }
+"variable.other.member" = { fg = "red", modifiers = ["bold"] }
+"constant.character.escape" = "cyan"
+"function" = { fg = "light-cyan", modifiers = ["bold"] }
+"constructor" = "light-blue"
+"special" = "light-blue"
+"keyword" = { fg = "light-red", modifiers = ["bold"] }
+"label" = "light-magenta"
+"namespace" = "magenta"
+
+"markup.heading" = { fg = "light-red", modifiers = ["bold"] }
+"markup.list" = { fg = "light-red", modifiers = ["bold"] }
+"markup.bold" = { fg = "light-yellow", modifiers = ["bold"] }
+"markup.italic" = { fg = "light-magenta", modifiers = ["bold"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "yellow", modifiers = ["underlined"] }
+"markup.link.text" = "light-red"
+"markup.quote" = "light-cyan"
+"markup.raw" = "light-green"
+
+"diff.plus" = "light-green"
+"diff.delta" = "yellow"
+"diff.minus" = "light-red"
+
+"diagnostic" = { modifiers = ["underlined"] }
+"ui.gutter" = { bg = "black" }
+"info" = "light-blue"
+"hint" = "gray"
+"debug" = "gray"
+"warning" = "yellow"
+"error" = "light-red"

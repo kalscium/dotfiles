@@ -4,6 +4,8 @@ conff toml helix: "/root/.config/helix/config.toml";
 conff toml helix-languages: "/home/greenchild/.config/helix/languages.toml";
 conff toml helix-languages: "/root/.config/helix/languages.toml";
 
+include "include/ttyeah.toml" as "/home/greenchild/.config/helix/themes/ttyeah.toml";
+
 helix: {
     theme = "onedark";
     editor: {
