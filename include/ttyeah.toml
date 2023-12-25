@@ -15,7 +15,7 @@
 "ui.cursor.primary" = { fg = "black", bg = "light-gray" }
 # "ui.virtual.whitespace" = "yellow"
 "variable" = "light-gray"
-"varible.parameter" = { fg = "red", modifiers = ["bold"] }
+"variable.parameter" = { fg = "red", modifiers = ["bold"] }
 "variable.other.member" = { fg = "red", modifiers = ["bold"] }
 "constant.numeric" = "yellow"
 "constant" = "yellow"
