@@ -1,4 +1,5 @@
 # Author: <greenchild04@protonmail.com>
+# Write file to `~/.config/helix/themes/ttyeah.toml`
 
 "ui.menu" = { fg = "light-gray", bg = "gray" }
 "ui.menu.selected" = { modifiers = ["reversed"] }
@@ -16,7 +17,7 @@
 # "ui.virtual.whitespace" = "yellow"
 "variable" = "light-gray"
 "variable.parameter" = { fg = "red", modifiers = ["bold"] }
-"variable.other.member" = { fg = "red", modifiers = ["bold"] }
+"variable.other.member" = { fg = "green", modifiers = ["bold"] }
 "constant.numeric" = "yellow"
 "constant" = "yellow"
 "attribute" = "yellow"
