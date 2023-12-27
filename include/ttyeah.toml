@@ -4,17 +4,16 @@
 "ui.menu" = { fg = "light-gray", bg = "gray" }
 "ui.menu.selected" = { modifiers = ["reversed"] }
 "ui.linenr" = { fg = "light-gray", bg = "black", modifiers = ["dim"] }
-"ui.popup" = { bg = "yellow" }
+"ui.popup" = { bg = "black" }
 "ui.window" = { bg = "black" }
 "ui.linenr.selected" = { fg = "white", bg = "black", modifiers = ["bold"] }
-"ui.selection" = { fg = "white", bg = "yellow" }
+"ui.selection" = { bg = "white", modifiers = ["bold", "reversed"] }
 "comment" = { fg = "light-gray", modifiers = ["dim"] }
 "ui.statusline" = { fg = "black", bg = "cyan" }
 "ui.statusline.inactive" = { fg = "black", bg = "white" }
 "ui.help" = { fg = "black", bg = "light-gray" }
-"ui.cursor" = { fg = "black", bg = "white" }
-"ui.cursor.primary" = { fg = "black", bg = "white" }
-# "ui.virtual.whitespace" = "yellow"
+"ui.cursor" = { bg = "black", modifiers = ["reversed"] }
+"ui.cursor.primary" = { bg = "white", modifiers = ["bold"] }
 "variable" = "light-gray"
 "variable.parameter" = { fg = "red", modifiers = ["bold"] }
 "variable.other.member" = { fg = "green", modifiers = ["bold"] }
@@ -50,7 +49,7 @@
 "diff.minus" = "light-red"
 
 "diagnostic.info" = { bg = "light-blue", fg = "white" }
-"diagnostic.hint" = { bg = "light-green", fg = "white" }
+"diagnostic.hint" = { bg = "light-green", fg = "black" }
 "diagnostic.warning" = { bg = "light-yellow", fg = "white" }
 "diagnostic.error" = { bg = "light-red", fg = "white" }
 
