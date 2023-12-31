@@ -133,7 +133,7 @@ nixos: {
     users.users.greenchild: {
         isNormalUser = true;
         description = "GreenChild";
-        extraGroups: [ "networkmanager", "wheel" ];
+        extraGroups: [ "networkmanager", "wheel", "docker" ];
     }
 
     // Allow unfree packages
@@ -213,6 +213,7 @@ nixos: {
         bat // cat but better
         darling // for running macOS apps
         testdisk // for recovering ntfs files
+        cargo-cross // for cross compiling
 
         ## [ GUI ]
         qbittorrent
@@ -236,6 +237,7 @@ nixos: {
         # mediainfo // for kdenlive
         # x264 // for kdenlive
         texlive.combined.scheme-small // for pandoc
+        zlib // compression lib for fooocus
 
         ## [ Critical stuff ]
         gnumake // for building packages
@@ -302,6 +304,7 @@ nixos: {
             mini: "sudo docker run -itv .:/mnt -v /dev:/dev --cpus=\"3.2\" mini; sudo docker commit $(sudo docker ps -aq) mini; sudo docker rm $(sudo docker ps -aq)";
             prosv5: "/Gata/Programs/pros-cli/pros";
             ollama: "/Gata/Programs/ollama-linux-amd64";
+            xpand: "/Gata/Programs/xpand";
         };
     };
 
@@ -319,5 +322,6 @@ nixos: {
         PATH: "$PATH:/home/greenchild/.local/bin:$HOME/.cargo/bin";
         RUSTC_WRAPPER="sccache";
         NIX_LD = "/run/current-system/sw/share/nix-ld/lib/ld.so";
+        NIX_STORE = "/nix/store";
     }
 }
