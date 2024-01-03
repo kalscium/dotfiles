@@ -65,8 +65,7 @@ nixos: {
     hardware.bluetooth: {
         enable = true;
         powerOnBoot = true;
-    }
-
+    } 
     time.timeZone = "Australia/Melbourne"; // time zone
 
     // Select internationalisation properties
@@ -305,6 +304,7 @@ nixos: {
             prosv5: "/Gata/Programs/pros-cli/pros";
             ollama: "/Gata/Programs/ollama-linux-amd64";
             xpand: "/Gata/Programs/xpand";
+            github: "cd /Gata/Ethan/Home/Github;";
         };
     };
 
