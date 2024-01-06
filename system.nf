@@ -154,7 +154,6 @@ nixos: {
         zlib
         fuse3
         icu
-        zlib
         nss
         openssl
         curl
@@ -222,7 +221,7 @@ nixos: {
         audacity
         discord
         vlc // video player
-        # libsForQt5.kdenlive // video editor
+        libsForQt5.kdenlive // video editor
         typora // markdown editor
         keepassxc
         lmms // music production software
@@ -233,8 +232,8 @@ nixos: {
         thefuck // for zsh (console intellisense)
         exfatprogs // for gparted
         sccache // for speeding up rust compile time
-        # mediainfo // for kdenlive
-        # x264 // for kdenlive
+        mediainfo // for kdenlive
+        x264 // for kdenlive
         texlive.combined.scheme-small // for pandoc
         zlib // compression lib for fooocus
 
@@ -304,7 +303,7 @@ nixos: {
             prosv5: "/Gata/Programs/pros-cli/pros";
             ollama: "/Gata/Programs/ollama-linux-amd64";
             xpand: "/Gata/Programs/xpand";
-            github: "cd /Gata/Ethan/Home/Github;";
+            github: "cd /Gata/Ethan/Home/Github/";
         };
     };
 
