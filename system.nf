@@ -322,6 +322,5 @@ nixos: {
         RUSTC_WRAPPER="sccache";
         NIX_LD = "/run/current-system/sw/share/nix-ld/lib/ld.so";
         NIX_STORE = "/nix/store";
-        LD_LIBRARY_PATH = "/nix/store/dghjv6hfz0s0z4kffa5ahyw2mhp79215-gcc-12.3.0-lib/lib"; // for compatibility reasons (with rustc and python) (`$"{lib.makeLibraryPath []}"`)
     }
 }
