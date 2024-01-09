@@ -212,6 +212,7 @@ nixos: {
         darling // for running macOS apps
         testdisk // for recovering ntfs files
         cargo-cross // for cross compiling
+        zlib // for data-compression (rustc)
 
         ## [ GUI ]
         qbittorrent
