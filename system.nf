@@ -177,7 +177,7 @@ nixos: {
         bacon
         github-desktop
         vscodium
-        jetbrains.clion
+        # jetbrains.clion
         git-lfs
         wezterm // terminal emulator
 
@@ -197,8 +197,8 @@ nixos: {
 
         ## [ CLI ]
         docker
-        mdcat // terminal markdown displayer
-        taplo // toml reader
+        # mdcat // terminal markdown displayer
+        # taplo // toml reader
         wget
         curl
         neofetch
@@ -213,6 +213,7 @@ nixos: {
         testdisk // for recovering ntfs files
         cargo-cross // for cross compiling
         zlib // for data-compression (rustc)
+        busybox // gnu c utils replacement
 
         ## [ GUI ]
         qbittorrent
@@ -245,7 +246,6 @@ nixos: {
         cryptsetup // for disk encryption
         polkit // for asking for sudo
         os-prober
-        # bluez // for blutooth (not working :C)
 
         ## [ Power saving ]
         powertop
@@ -299,11 +299,11 @@ nixos: {
             diary-cli: "/Gata/Ethan/Home/Github/diary-cli/target/release/diary-cli";
             gres: "/Gata/Programs/gres";
             fix-ntfs: "sudo ntfsfix -d";
-            mini: "sudo docker run -itv .:/mnt -v /dev:/dev --cpus=\"3.2\" mini; sudo docker commit $(sudo docker ps -aq) mini; sudo docker rm $(sudo docker ps -aq)";
             prosv5: "/Gata/Programs/pros-cli/pros";
             ollama: "/Gata/Programs/ollama-linux-amd64";
             xpand: "/Gata/Programs/xpand";
             github: "cd /Gata/Ethan/Home/Github/";
+            dev: "docker run -it --rm -v .:/home/greenchild/project gc-dev;"
         }
     }
 
