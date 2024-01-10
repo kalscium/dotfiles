@@ -12,3 +12,4 @@ print_branch() {
 }
 
 PS1="%B%F{blue}$(echo '\n┌─(') %f%b%F{green}$(print_branch)%B%F{blue} ) %f%b%F{green}%n%f%B%F{blue} :: %f%b%~%B%F{blue}$(echo '\n└>>') %f%b"
+eval $(thefuck --alias)

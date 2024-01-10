@@ -2,7 +2,6 @@
 import "helix.nf";
 import "vscodium.nf";
 import "zsh.nf";
-import "plasma-conf.nf";
 # import "plasma-full.nf"; // wayyy to large
 
 conff nix nixos: "/etc/nixos/configuration.nix";
