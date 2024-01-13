@@ -302,7 +302,7 @@ nixos: {
             ollama: "/Gata/Programs/ollama-linux-amd64";
             xpand: "/Gata/Programs/xpand";
             github: "cd /Gata/Ethan/Home/Github; cd";
-            dev: "docker run -it --rm -v .:/home/dev/project gc-dev;"
+            dev: "docker run -it --rm -v .:/home/dev/project -v /home/greenchild/.cargo/registry:/home/dev/.cargo/registry gc-dev;"
         }
     }
 
