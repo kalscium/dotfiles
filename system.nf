@@ -301,7 +301,7 @@ nixos: {
             prosv5: "/Gata/Programs/pros-cli/pros";
             ollama: "/Gata/Programs/ollama-linux-amd64";
             xpand: "/Gata/Programs/xpand";
-            github: "cd /Gata/Ethan/Home/Github/";
+            github: "cd /Gata/Ethan/Home/Github; cd";
             dev: "docker run -it --rm -v .:/home/dev/project gc-dev;"
         }
     }
