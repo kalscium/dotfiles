@@ -169,7 +169,7 @@ nixos: {
         python311Packages.pip
         dotnet-sdk
         gcc
-        lua
+        # lua
 
         ## [ Programming Apps ]
         git
@@ -182,7 +182,7 @@ nixos: {
 
         ## [ Browsers ]
         microsoft-edge
-        brave
+        # brave
         firefox // for publci wifi getway reasons
 
         ## [ Text Editors ]
@@ -208,9 +208,8 @@ nixos: {
         # cdrkit, syslinux // for creating **bootable** iso files
         file // for checking the type of a file
         bat // cat but better
-        darling // for running macOS apps
+        # darling // for running macOS apps
         testdisk // for recovering ntfs files
-        cargo-cross // for cross compiling
         zlib // for data-compression (rustc)
         busybox // gnu c utils replacement
 
