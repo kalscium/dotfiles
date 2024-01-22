@@ -142,8 +142,9 @@ nixos: {
         "electron-25.9.0"
     ]
 
-    // Enable docker
+    // Enable docker & podman
     virtualisation.docker.enable = true;
+    virtualisation.podman.enable = true;
 
     // Enable nix ld (running of foreign binaries)
     programs.nix-ld.enable = true;
@@ -196,6 +197,7 @@ nixos: {
 
         ## [ CLI ]
         docker
+        podman
         # mdcat // terminal markdown displayer
         # taplo // toml reader
         wget
