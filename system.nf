@@ -301,7 +301,7 @@ nixos: {
             ollama: "/Gata/Programs/ollama-linux-amd64";
             xpand: "/Gata/Programs/xpand";
             github: "cd /Gata/Ethan/Home/Github; cd";
-            dev: "podman run -it --rm --userns=keep-id -v .:/home/dev/project -v /home/greenchild/.cargo/registry:/home/dev/.cargo/registry gc-dev;"
+            dev: "podman run -it --rm -v .:/home/dev/project -v /home/greenchild/.cargo/registry:/home/dev/.cargo/registry gc-dev;"
         }
     }
 
