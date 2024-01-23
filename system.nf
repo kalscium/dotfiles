@@ -131,7 +131,7 @@ nixos: {
     users.users.greenchild: {
         isNormalUser = true;
         description = "GreenChild";
-        extraGroups: [ "networkmanager", "wheel" ];
+        extraGroups: [ "networkmanager", "wheel", "docker" ];
     }
 
     // Allow unfree packages
@@ -142,8 +142,8 @@ nixos: {
         "electron-25.9.0"
     ]
 
-    // Enable podman
-    virtualisation.podman.enable = true;
+    // Enable docker
+    virtualisation.docker.enable = true;
 
     // Enable nix ld (running of foreign binaries)
     programs.nix-ld.enable = true;
@@ -195,7 +195,7 @@ nixos: {
         tmux
 
         ## [ CLI ]
-        podman
+        docker
         # mdcat // terminal markdown displayer
         # taplo // toml reader
         wget
@@ -301,7 +301,7 @@ nixos: {
             ollama: "/Gata/Programs/ollama-linux-amd64";
             xpand: "/Gata/Programs/xpand";
             github: "cd /Gata/Ethan/Home/Github; cd";
-            dev: "podman run -it --rm -v .:/home/dev/project -v /home/greenchild/.cargo/registry:/home/dev/.cargo/registry gc-dev;"
+            dev: "docker run -it --rm -v .:/home/dev/project -v /home/greenchild/.cargo/registry:/home/dev/.cargo/registry gc-dev;"
         }
     }
 
