@@ -169,6 +169,7 @@ nixos: {
         python311Packages.pip
         dotnet-sdk
         gcc
+        taplo // toml reader & analyzer
         # lua
 
         ## [ Programming Apps ]
@@ -197,7 +198,6 @@ nixos: {
         ## [ CLI ]
         docker
         # mdcat // terminal markdown displayer
-        # taplo // toml reader
         wget
         curl
         neofetch
