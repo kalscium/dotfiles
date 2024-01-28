@@ -201,7 +201,7 @@ nixos: {
         wget
         curl
         neofetch
-        wineWowPackages.minimal
+        wineWowPackages.waylandFull
         pandoc
         protonvpn-cli_2
         ffmpeg
