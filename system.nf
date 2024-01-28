@@ -287,7 +287,7 @@ nixos: {
         shellAliases: {
             ll: "ls -l";
             clean: "nix-store --gc";
-            full-clean: "sudo nix-collect-garbage -d";
+            full-clean: "sudo nix-collect-garbage -d; sudo nix-store --optimise";
             axolotl: "dotnet /Gata/Programs/Axolotl/Axolotl.dll /Gata/Ethan/Axolotl";
             configure: "cd /Gata/Ethan/Home/Github/personal-configs; hx system.nf; onefig compile system.nf system.cnf && sudo onefig r system.cnf && git add --all && git commit -m 'onefig: modified system configs' && git push origin;";
             configs: "cd /Gata/Ethan/Home/Github/personal-configs";
