@@ -159,6 +159,11 @@ nixos: {
         expat
     ]
 
+    // Installed Fonts
+    fonts.packages: pkgs >> [
+        jetbrains-mono
+    ]
+
     // Packages installed on my system
     environment.systemPackages: pkgs >> [
         ## [ Programming Langs and Libs ]
