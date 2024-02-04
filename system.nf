@@ -41,7 +41,7 @@ nixos: {
     fileSystems."/Gata": {
         device = "/dev/disk/by-uuid/69ed7221-2318-4f35-84d8-03c36574739b";
         fsType = "ext4";
-        options: [ "nosuid", "nodev", "nofail", "x-gvfs-show" ];
+        options: [ "nosuid", "nodev", "nofail" ];
     }
 
     // Mount Boot
@@ -208,7 +208,6 @@ nixos: {
         neofetch
         wineWowPackages.wayland
         pandoc
-        protonvpn-cli_2
         ffmpeg
         # cdrkit, syslinux // for creating **bootable** iso files
         file // for checking the type of a file
