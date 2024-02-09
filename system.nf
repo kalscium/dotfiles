@@ -230,6 +230,7 @@ nixos: {
         keepassxc
         lmms // music production software
         libsForQt5.filelight // disk usage statistics
+        blender
 
         ##  [ Dependencies ]
         gcc-arm-embedded-7 // for robotics
@@ -255,6 +256,8 @@ nixos: {
 
         ## [ School ]
         libreoffice-fresh
+        cura // cura slicer (3D Printing)
+        slic3r // slic3r slicer
 
         ## [ AI ]
         # ollama // for running llms
