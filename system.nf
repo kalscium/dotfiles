@@ -257,7 +257,7 @@ nixos: {
         ## [ School ]
         libreoffice-fresh
         cura // cura slicer (3D Printing)
-        slic3r // slic3r slicer
+        super-slicer-latest // prusa slicer fork
 
         ## [ AI ]
         # ollama // for running llms
