@@ -1,1 +1,1 @@
-sudo nixos-rebuild switch --flake ./#greenix
+sudo nixos-rebuild switch --flake ./#greenix $@
