@@ -29,4 +29,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Configure git
+  programs.git = {
+    enable = true;
+    userName = "GreenChild04";
+    userEmail = "greenchild04@protonmail.com";
+  };
 }
