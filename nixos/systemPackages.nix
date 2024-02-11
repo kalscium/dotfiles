@@ -1,15 +1,15 @@
 # Packages installed on my system
 pkgs: with pkgs; [
   ## [ Programming Langs and Libs ]
-  # pipx
-  # libclang
-  # rustup
+  pipx
+  libclang
+  rustup
   python311
-  # python311Packages.pip
+  python311Packages.pip
   dotnet-sdk
-  # gcc
+  gcc
   taplo # toml reader & analyzer
-  # lua
+  lua
 
   ## [ Programming Apps ]
   git
@@ -36,7 +36,7 @@ pkgs: with pkgs; [
 
   ## [ CLI ]
   docker
-  # mdcat # terminal markdown displayer
+  mdcat # terminal markdown displayer
   wget
   curl
   neofetch
@@ -46,7 +46,7 @@ pkgs: with pkgs; [
   # cdrkit syslinux # for creating **bootable** iso files
   file # for checking the type of a file
   bat # cat but better
-  # darling # for running macOS apps
+  darling # for running macOS apps
   testdisk # for recovering ntfs files
   zlib # for data-compression (rustc)
 
