@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: {
+{ inputs, config, pkgs, ... }: {
     imports = [ # Include the results of the hardware scan.
         ./hardware-configuration.nix
+        inputs.home-manager.nixosModules.home-manager
     ];
 
     # Bootloader
@@ -70,6 +71,7 @@
         LC_TIME = "en_AU.UTF-8";
     };
 
+    # Enable the gui
     services.xserver = {
         # Enable the X11 windowing system
         enable = true;
@@ -121,6 +123,15 @@
         isNormalUser = true;
         description = "GreenChild";
         extraGroups = [ "networkmanager" "wheel" "docker" ];
+    };
+
+    # Configures home manager
+    home-manager = {
+        extraSpecialArgs = { inherit inputs; };
+        users = {
+            greenchild = import ./../home-manager/home.nix;
+            root = import ./../home-manager/root-home.nix;
+        };
     };
 
     # Allow unfree packages

@@ -1,13 +1,13 @@
 # Packages installed on my system
 pkgs: with pkgs; [
   ## [ Programming Langs and Libs ]
-  pipx
-  libclang
-  rustup
+  # pipx
+  # libclang
+  # rustup
   python311
-  python311Packages.pip
+  # python311Packages.pip
   dotnet-sdk
-  gcc
+  # gcc
   taplo # toml reader & analyzer
   # lua
 
@@ -17,7 +17,7 @@ pkgs: with pkgs; [
   github-desktop
   vscodium
   # jetbrains.clion
-  git-lfs
+  # git-lfs
   wezterm # terminal emulator
 
   ## [ Browsers ]
@@ -49,7 +49,6 @@ pkgs: with pkgs; [
   # darling # for running macOS apps
   testdisk # for recovering ntfs files
   zlib # for data-compression (rustc)
-  busybox # gnu c utils replacement
 
   ## [ GUI ]
   qbittorrent
@@ -76,12 +75,14 @@ pkgs: with pkgs; [
   texlive.combined.scheme-small # for pandoc
 
   ## [ Critical stuff ]
+  home-manager
   gnumake # for building packages
   gnupg
   zsh
   ntfs3g # support for ntfs mounting
   cryptsetup # for disk encryption
   polkit # for asking for sudo
+  busybox # gnu c utils replacement
   os-prober
 
   ## [ Power saving ]
