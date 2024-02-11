@@ -35,7 +35,7 @@ pkgs: with pkgs; [
   tmux
 
   ## [ CLI ]
-  # docker
+  docker
   # mdcat # terminal markdown displayer
   wget
   curl

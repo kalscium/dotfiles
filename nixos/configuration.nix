@@ -143,7 +143,7 @@
     ];
 
     # Enable docker
-    virtualisation.docker.enable = false;
+    virtualisation.docker.enable = true;
 
     # Enable nix ld (for running of foreign binaries)
     programs.nix-ld = {
