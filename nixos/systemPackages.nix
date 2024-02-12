@@ -9,7 +9,7 @@ pkgs: with pkgs; [
   dotnet-sdk
   gcc
   taplo # toml reader & analyzer
-  lua
+  # lua
 
   ## [ Programming Apps ]
   git
@@ -49,8 +49,10 @@ pkgs: with pkgs; [
   darling # for running macOS apps
   testdisk # for recovering ntfs files
   zlib # for data-compression (rustc)
+  cmatrix # cool matrix text thing
 
   ## [ GUI ]
+  libsForQt5.dolphin
   qbittorrent
   gparted
   obsidian
@@ -79,7 +81,8 @@ pkgs: with pkgs; [
   gnumake # for building packages
   gnupg
   zsh
-  ntfs3g # support for ntfs mounting
+  ntfs3g # support for ntfs
+  btrfs-progs # support for btrfs
   cryptsetup # for disk encryption
   polkit # for asking for sudo
   busybox # gnu c utils replacement

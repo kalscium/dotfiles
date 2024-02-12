@@ -55,6 +55,7 @@
         enable = true;
         powerOnBoot = true;
     }; 
+
     time.timeZone = "Australia/Melbourne"; # time zone
 
     # Select internationalisation properties
