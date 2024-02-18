@@ -204,8 +204,8 @@
     programs.git.enable = true;
 
     ## [ Power Saving ]
-    services.tlp.enable = true;
-    services.power-profiles-daemon.enable = false;
+    services.tlp.enable = false;
+    services.power-profiles-daemon.enable = true;
 
     ## [ Env Varibles ]
     environment.variables = import ./env-vars.nix;

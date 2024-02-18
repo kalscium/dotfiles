@@ -9,6 +9,8 @@ pkgs: with pkgs; [
   dotnet-sdk
   gcc
   taplo # toml reader & analyzer
+  zulu # jdk
+  zulu8 # jdk 8
   # lua
 
   ## [ Programming Apps ]
@@ -51,21 +53,26 @@ pkgs: with pkgs; [
   zlib # for data-compression (rustc)
   cmatrix # cool matrix text thing
 
-  ## [ GUI ]
+  ## [ GUI Utils ]
   libsForQt5.dolphin
   qbittorrent
   gparted
-  obsidian
-  krita
-  audacity
   discord
   vlc # video player
-  libsForQt5.kdenlive # video editor
-  typora # markdown editor
   keepassxc
-  lmms # music production software
   libsForQt5.filelight # disk usage statistics
+
+  ## [ GUI Editors ]
   blender
+  typora # markdown editor
+  lmms # music production software
+  libsForQt5.kdenlive # video editor
+  audacity
+  obsidian
+  # krita # for drawing
+
+  ## [ Games ]
+  lunar-client
 
   ##  [ Dependencies ]
   gcc-arm-embedded-7 # for robotics
