@@ -9,7 +9,7 @@ pkgs: with pkgs; [
   dotnet-sdk
   gcc
   taplo # toml reader & analyzer
-  zulu # jdk
+  # zulu # jdk
   zulu8 # jdk 8
   # lua
 
@@ -42,7 +42,7 @@ pkgs: with pkgs; [
   wget
   curl
   neofetch
-  wineWowPackages.wayland
+  wineWowPackages.waylandFull
   pandoc
   ffmpeg
   # cdrkit syslinux # for creating **bootable** iso files
@@ -50,7 +50,6 @@ pkgs: with pkgs; [
   bat # cat but better
   darling # for running macOS apps
   testdisk # for recovering ntfs files
-  zlib # for data-compression (rustc)
   cmatrix # cool matrix text thing
 
   ## [ GUI Utils ]
@@ -82,6 +81,7 @@ pkgs: with pkgs; [
   mediainfo # for kdenlive
   x264 # for kdenlive
   texlive.combined.scheme-small # for pandoc
+  zlib # for data-compression (rustc)
 
   ## [ Critical stuff ]
   home-manager
