@@ -196,7 +196,7 @@
 
     # Enable power saving
     powerManagement.enable = true;
-    services.thermald.enable = true;
+    services.thermald.enable = false; # prevents cpu overheating
     services.power-profiles-daemon.enable = false;
     services.tlp = {
         enable = true;
@@ -210,7 +210,7 @@
             CPU_MIN_PERF_ON_AC = 0;
             CPU_MAX_PERF_ON_AC = 100;
             CPU_MIN_PERF_ON_BAT = 0;
-            CPU_MAX_PERF_ON_BAT = 20;
+            CPU_MAX_PERF_ON_BAT = 60;
 
             # Saves long-term battery health but is optional
             # START_CHARGE_THRESH_BAT0 = 40; # 40% and bellow will cause it to charge

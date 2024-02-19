@@ -26,6 +26,7 @@
       Pictures.source = absSymlink /Gata/GreenChild/Pictures;
       ".cargo".source = absSymlink /Gata/Programs/rust/cargo;
       ".minecraft".source = absSymlink /Gata/Programs/.minecraft;
+      ".lunarclient".source = absSymlink /Gata/Programs/.lunarclient;
     };
 
   # Let Home Manager install and manage itself.
