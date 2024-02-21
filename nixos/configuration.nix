@@ -159,6 +159,16 @@
             openssl
             curl
             expat
+
+            # for running bevy games
+            udev
+            alsaLib
+            pkg-config
+            vulkan-loader
+            xorg.libX11
+            xorg.libXrandr
+            xorg.libXcursor
+            xorg.libXi
         ];
     };
 
