@@ -1,17 +1,15 @@
 # Packages installed on my system
 pkgs: with pkgs; [
   ## [ Programming Langs and Libs ]
-  pipx
-  libclang
-  rustup
+  # libclang
+  # rustup
   python311
-  python311Packages.pip
-  dotnet-sdk
-  gcc
+  # dotnet-sdk
+  # gcc
   taplo # toml reader & analyzer
   # zulu # jdk
-  zulu8 # jdk 8
-  zig
+  # zulu8 # jdk 8
+  # zig
   # lua
 
   ## [ Programming Apps ]

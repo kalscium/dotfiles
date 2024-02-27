@@ -30,13 +30,20 @@
         rustc = rust-bin;
       };
 
-      dev-deps = with pkgs; [
+      dev-tools = with pkgs; [
         openssl
         eza
         fd
         helix
         bacon
         tmux
+      ];
+      dev-deps = with pkgs; [
+        zig
+        gcc
+        dotnet-sdk
+        taplo
+        python311
       ];
       rust-dev-deps = with pkgs; [
         rust-analyzer
@@ -65,7 +72,7 @@
         vulkan-loader
         vulkan-headers
       ];
-      all-deps = dev-deps ++ rust-dev-deps ++ build-deps ++ runtime-deps ++ [ rust-bin ];
+      all-deps = dev-tools ++ dev-deps ++ rust-dev-deps ++ build-deps ++ runtime-deps ++ [ rust-bin ];
     in {
       devShells.default = pkgs.mkShell {
         buildInputs = all-deps;
