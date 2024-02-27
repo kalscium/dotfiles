@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -23,7 +23,7 @@
     in {
       nixosConfigurations = {
         greenix = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs system; };
+          specialArgs = { inherit home-manager inputs system; };
           modules = [
             ./configuration.nix
           ];
