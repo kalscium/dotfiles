@@ -11,6 +11,7 @@ pkgs: with pkgs; [
   taplo # toml reader & analyzer
   # zulu # jdk
   zulu8 # jdk 8
+  zig
   # lua
 
   ## [ Programming Apps ]
@@ -51,6 +52,7 @@ pkgs: with pkgs; [
   darling # for running macOS apps
   testdisk # for recovering ntfs files
   cmatrix # cool matrix text thing
+  lldb # for debugging llvm compiled languages
 
   ## [ GUI Utils ]
   libsForQt5.dolphin
