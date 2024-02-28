@@ -59,6 +59,7 @@
         clang
         makeWrapper
         lld
+        gcc-arm-embedded-7 # for robotics
       ];
       runtime-deps = with pkgs; [
         alsa-lib

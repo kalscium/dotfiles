@@ -74,7 +74,7 @@ pkgs: with pkgs; [
   lunar-client
 
   ##  [ Dependencies ]
-  gcc-arm-embedded-7 # for robotics
+  # gcc-arm-embedded-7 # for robotics
   thefuck # for zsh (console intellisense)
   exfatprogs # for gparted
   sccache # for speeding up rust compile time
