@@ -7,6 +7,7 @@ pkgs: with pkgs; [
   # dotnet-sdk
   # gcc
   taplo # toml reader & analyzer
+  asciidoc-full # better markdown
   # zulu # jdk
   # zulu8 # jdk 8
   # zig

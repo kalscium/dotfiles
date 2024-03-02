@@ -44,6 +44,7 @@
         dotnet-sdk
         taplo
         python311
+        asciidoc-full
       ];
       rust-dev-deps = with pkgs; [
         rust-analyzer
