@@ -15,6 +15,9 @@
       ".config/helix/languages.toml".source = ./include/helix-languages.toml;
       ".config/helix/themes/ttyeah".source = ./include/ttyeah.toml;
 
+      # Wezterm configs
+      ".wezterm.lua".source = ./include/wezterm.lua;
+
       # Zsh configs
       ".zshrc".source = ./include/zsh/user.zshrc;
 
