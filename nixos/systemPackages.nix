@@ -8,6 +8,7 @@ pkgs: with pkgs; [
   # gcc
   taplo # toml reader & analyzer
   asciidoc-full # better markdown
+  wasmi # wasm interpreter
   # zulu # jdk
   # zulu8 # jdk 8
   # zig
@@ -21,11 +22,13 @@ pkgs: with pkgs; [
   # jetbrains.clion
   # git-lfs
   wezterm # terminal emulator
+  ghidra-bin
 
   ## [ Browsers ]
   microsoft-edge
   # brave
-  firefox # for publci wifi getway reasons
+  firefox
+  # google-chrome
 
   ## [ Text Editors ]
   helix

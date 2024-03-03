@@ -45,6 +45,7 @@
         taplo
         python311
         asciidoc-full
+        wasmi
       ];
       rust-dev-deps = with pkgs; [
         rust-analyzer
@@ -76,7 +77,9 @@
       ];
       all-deps = dev-tools ++ dev-deps ++ rust-dev-deps ++ build-deps ++ runtime-deps ++ [ rust-bin ];
     in {
-      devShells.default = pkgs.mkShell {
+      devShells.default = pkgs.mkShell.override {
+        stdenv = pkgs.stdenvAdapters.useMoldLinker pkgs.clangStdenv;
+      } {
         buildInputs = all-deps;
         shellHook = ''
           alias ls=eza
@@ -85,6 +88,7 @@
 
         # env variables
         LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath all-deps;
+        CC = "clang";
       };
     });
 }

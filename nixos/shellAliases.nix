@@ -16,6 +16,7 @@
     ollama = "/Gata/Programs/ollama-linux-amd64";
     xpand = "/Gata/Programs/xpand";
     github = "cd /Gata/GreenChild/Github; cd";
+    school = "cd /Gata/GreenChild/School; cd";
     dev = "docker run -it --rm -v .:/home/dev/project -v /home/greenchild/.cargo/registry:/home/dev/.cargo/registry -v /home/greenchild/.cache/sccache:/home/dev/.cache/sccache gc-dev;";
     nev = "nix develop /Gata/GreenChild/Github/personal-configs/dev-shell --command tmux";
 }

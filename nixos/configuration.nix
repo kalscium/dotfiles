@@ -56,6 +56,9 @@
         powerOnBoot = true;
     }; 
 
+    # Enable OpenGL
+    hardware.opengl.enable = true;
+
     time.timeZone = "Australia/Melbourne"; # time zone
 
     # Select internationalisation properties
