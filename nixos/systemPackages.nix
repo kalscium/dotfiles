@@ -16,7 +16,7 @@ pkgs: with pkgs; [
 
   ## [ Programming Apps ]
   git
-  bacon
+  # bacon
   github-desktop
   vscodium
   # jetbrains.clion

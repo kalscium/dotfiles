@@ -40,6 +40,7 @@
       ];
       dev-deps = with pkgs; [
         zig
+        zls # zig language server
         gcc
         dotnet-sdk
         taplo
