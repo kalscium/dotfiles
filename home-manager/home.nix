@@ -41,12 +41,4 @@
     userName = "GreenChild04";
     userEmail = "greenchild04@protonmail.com";
   };
-
-  # Configure dconf for QEMU VMs
-  dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
-    };
-  };
 }

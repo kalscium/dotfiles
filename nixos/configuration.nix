@@ -126,7 +126,7 @@
     users.users.greenchild = {
         isNormalUser = true;
         description = "GreenChild";
-        extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
     };
 
     # Configures home manager
@@ -148,10 +148,6 @@
 
     # Enable docker
     virtualisation.docker.enable = true;
-
-    # Enable QEMU VMs
-    virtualisation.libvirtd.enable = true;
-    programs.virt-manager.enable = true;
 
     # Enable nix ld (for running of foreign binaries)
     programs.nix-ld = {
