@@ -43,6 +43,7 @@
         zls # zig language server
         gcc
         dotnet-sdk
+        zulu
         taplo
         python311
         asciidoc-full

@@ -54,7 +54,8 @@ pkgs: with pkgs; [
   darling # for running macOS apps
   testdisk # for recovering ntfs files
   cmatrix # cool matrix text thing
-  lldb # for debugging llvm compiled languages
+  # lldb # for debugging llvm compiled languages
+  protonvpn-cli_2
 
   ## [ GUI Utils ]
   libsForQt5.dolphin
