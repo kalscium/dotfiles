@@ -73,6 +73,8 @@ pkgs: with pkgs; [
   libsForQt5.kdenlive # video editor
   audacity
   obsidian
+  freecad
+  pencil
   # krita # for drawing
 
   ## [ Games ]
