@@ -42,7 +42,7 @@
         zig
         zls # zig language server
         gcc
-        dotnet-sdk
+        dotnet-sdk_8
         zulu
         taplo
         python311

@@ -4,7 +4,8 @@ pkgs: with pkgs; [
   # libclang
   # rustup
   python311
-  # dotnet-sdk
+  # dotnet-sdk_8
+  dotnet-runtime_8
   # gcc
   taplo # toml reader & analyzer
   asciidoc-full # better markdown
@@ -74,7 +75,6 @@ pkgs: with pkgs; [
   audacity
   obsidian
   freecad
-  pencil
   # krita # for drawing
 
   ## [ Games ]
