@@ -38,6 +38,7 @@
         bacon
         tmux
         mdbook
+        gh
       ];
       dev-deps = with pkgs; [
         zig

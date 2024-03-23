@@ -24,6 +24,9 @@ pkgs: with pkgs; [
   # git-lfs
   wezterm # terminal emulator
   ghidra-bin
+  gh
+  github-backup
+  mdbook
 
   ## [ Browsers ]
   microsoft-edge
@@ -49,7 +52,6 @@ pkgs: with pkgs; [
   wineWowPackages.waylandFull
   pandoc
   ffmpeg
-  # cdrkit syslinux # for creating **bootable** iso files
   file # for checking the type of a file
   bat # cat but better
   darling # for running macOS apps
@@ -57,7 +59,6 @@ pkgs: with pkgs; [
   cmatrix # cool matrix text thing
   # lldb # for debugging llvm compiled languages
   protonvpn-cli_2
-  mdbook
 
   ## [ GUI Utils ]
   libsForQt5.dolphin
