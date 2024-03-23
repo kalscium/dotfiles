@@ -8,7 +8,7 @@
     naersk.url = "github:nix-community/naersk";
   };
 
-  outputs = { self, ... }@inputs: with inputs; flake-utils.lib.eachDefaultSystem (system:
+  outputs = inputs: with inputs; flake-utils.lib.eachDefaultSystem (system:
     let
       overlays = [ (import rust-overlay) ];
       pkgs = import nixpkgs {
@@ -37,6 +37,7 @@
         helix
         bacon
         tmux
+        mdbook
       ];
       dev-deps = with pkgs; [
         zig

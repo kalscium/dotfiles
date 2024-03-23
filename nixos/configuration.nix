@@ -100,6 +100,11 @@
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
+    services.avahi = { # to enable wifi printing
+        enable = true;
+        nssmdns = true;
+        openFirewall = true;
+    };
 
     # Enable sound with pipewire.
     sound.enable = true;

@@ -57,6 +57,7 @@ pkgs: with pkgs; [
   cmatrix # cool matrix text thing
   # lldb # for debugging llvm compiled languages
   protonvpn-cli_2
+  mdbook
 
   ## [ GUI Utils ]
   libsForQt5.dolphin
