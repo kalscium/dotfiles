@@ -54,7 +54,7 @@ pkgs: with pkgs; [
   ffmpeg
   file # for checking the type of a file
   bat # cat but better
-  darling # for running macOS apps
+  # darling # for running macOS apps
   testdisk # for recovering ntfs files
   cmatrix # cool matrix text thing
   # lldb # for debugging llvm compiled languages
@@ -111,7 +111,7 @@ pkgs: with pkgs; [
   ## [ School ]
   libreoffice-fresh
   cura # cura slicer (3D Printing)
-  super-slicer-latest # prusa slicer fork
+  # super-slicer-latest # prusa slicer fork
 
   ## [ AI ]
   # ollama # for running llms

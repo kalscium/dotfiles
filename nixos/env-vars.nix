@@ -5,4 +5,6 @@
   RUSTC_WRAPPER="sccache";
   NIX_LD = "/run/current-system/sw/share/nix-ld/lib/ld.so";
   NIX_STORE = "/nix/store";
+  CC = "clang";
+  CXX = "clang++";
 }

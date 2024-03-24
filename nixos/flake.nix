@@ -5,6 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
+    # dev inputs
+    rust-overlay.url = "github:oxalica/rust-overlay";                    
+    flake-utils.url = "github:numtide/flake-utils";                      
+    nur.url = "github:polygon/nur.nix";                                  
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,18 +18,27 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
+      overlays = [ (import inputs.rust-overlay) ];
+
       pkgs = import nixpkgs {
-        inherit system;
+        inherit system overlays;
         config = {
           allowUnfree = true;
         };
       };
     in {
       nixosConfigurations = {
-        greenix = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit home-manager inputs system; };
+        greenix = nixpkgs.lib.nixosSystem { # for my default system
+          specialArgs = { inherit home-manager inputs system pkgs; };
           modules = [
             ./configuration.nix
+          ];
+        };
+
+        portable = nixpkgs.lib.nixosSystem { # for my portable iso image
+          specialArgs = { inherit home-manager inputs system pkgs; };
+          modules = [
+            ./portable/configuration.nix
           ];
         };
       };
