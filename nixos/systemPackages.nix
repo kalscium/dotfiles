@@ -1,119 +1,91 @@
 # Packages installed on my system
-pkgs: with pkgs; [
-  ## [ Programming Langs and Libs ]
-  # libclang
-  # rustup
-  python311
-  # dotnet-sdk_8
-  dotnet-runtime_8
-  # gcc
-  taplo # toml reader & analyzer
-  asciidoc-full # better markdown
-  wasmi # wasm interpreter
-  # zulu # jdk
-  # zulu8 # jdk 8
-  # zig
-  # lua
+pkgs: let
+  clis = with pkgs; [
+    docker
+    wget
+    curl
+    neofetch
+    wineWowPackages.waylandFull
+    pandoc
+    ffmpeg
+    file # file-type checker
+    bat # better cat
+    # darling # for running macOS apps
+    protonvpn-cli_2
+    mdbook
+  ];
 
-  ## [ Programming Apps ]
-  git
-  # bacon
-  github-desktop
-  vscodium
-  # jetbrains.clion
-  # git-lfs
-  wezterm # terminal emulator
-  ghidra-bin
-  gh
-  github-backup
-  mdbook
+  tuis = with pkgs; [
+    xplr
+    tmux
+    cmatrix # cool matrix text thing
+    helix
+    testdisk # for recovering ntfs files
+  ];
 
-  ## [ Browsers ]
-  microsoft-edge
-  # brave
-  firefox
-  # google-chrome
+  gui-utils = with pkgs; [
+    libsForQt5.dolphin
+    qbittorrent
+    gparted
+    discord
+    vlc # video player
+    keepassxc
+    libsForQt5.filelight # disk usage statistics
+  ];
 
-  ## [ Text Editors ]
-  helix
-  kate
-  # neovim # why neovim when helix?
+  gui-editors = with pkgs; [
+    blender
+    typora # markdown editor
+    lmms # music production software
+    libsForQt5.kdenlive # video editor
+    audacity
+    obsidian
+    freecad
+    wezterm
+    krita # for drawing
+    kate
+  ];
 
-  ## [ TUI ]
-  xplr # file explorer
-  tmux
+  browsers = with pkgs; [
+    microsoft-edge
+    # brave
+    firefox
+    # google-chrome
+  ];
 
-  ## [ CLI ]
-  docker
-  mdcat # terminal markdown displayer
-  wget
-  curl
-  neofetch
-  wineWowPackages.waylandFull
-  pandoc
-  ffmpeg
-  file # for checking the type of a file
-  bat # cat but better
-  # darling # for running macOS apps
-  testdisk # for recovering ntfs files
-  cmatrix # cool matrix text thing
-  # lldb # for debugging llvm compiled languages
-  protonvpn-cli_2
+  games = with pkgs; [
+    lunar-client
+  ];
 
-  ## [ GUI Utils ]
-  libsForQt5.dolphin
-  qbittorrent
-  gparted
-  discord
-  vlc # video player
-  keepassxc
-  libsForQt5.filelight # disk usage statistics
+  dependencies = with pkgs; [
+    thefuck # for zsh (console intellisense)
+    exfatprogs # for gparted
+    mediainfo # for kdenlive
+    x264 # for kdenlive
+    texlive.combined.scheme-small # for pandoc
+  ];
 
-  ## [ GUI Editors ]
-  blender
-  typora # markdown editor
-  lmms # music production software
-  libsForQt5.kdenlive # video editor
-  audacity
-  obsidian
-  freecad
-  # krita # for drawing
+  critical = with pkgs; [
+    home-manager
+    gnumake # for building packages
+    gnupg
+    zsh
+    ntfs3g # support for ntfs
+    btrfs-progs # support for btrfs
+    cryptsetup # for disk encryption
+    polkit # for asking for sudo
+    busybox # gnu c utils replacement
+    os-prober
+  ];
 
-  ## [ Games ]
-  lunar-client
+  power-saving = with pkgs; [
+    powertop
+    tlp
+  ];
 
-  ##  [ Dependencies ]
-  # gcc-arm-embedded-7 # for robotics
-  thefuck # for zsh (console intellisense)
-  exfatprogs # for gparted
-  sccache # for speeding up rust compile time
-  mediainfo # for kdenlive
-  x264 # for kdenlive
-  texlive.combined.scheme-small # for pandoc
-  zlib # for data-compression (rustc)
-
-  ## [ Critical stuff ]
-  home-manager
-  gnumake # for building packages
-  gnupg
-  zsh
-  ntfs3g # support for ntfs
-  btrfs-progs # support for btrfs
-  cryptsetup # for disk encryption
-  polkit # for asking for sudo
-  busybox # gnu c utils replacement
-  os-prober
-
-  ## [ Power saving ]
-  powertop
-  tlp
-
-  ## [ School ]
-  libreoffice-fresh
-  cura # cura slicer (3D Printing)
-  # super-slicer-latest # prusa slicer fork
-
-  ## [ AI ]
-  # ollama # for running llms
-  # python311Packages.huggingface-hub # for downloading llms from hugging face `huggingface-cli`
-]
+  school = with pkgs; [
+    libreoffice-fresh
+    cura # cura slicer (3D Printing)
+    # super-slicer-latest # prusa slicer fork
+  ];
+in clis ++ tuis ++ gui-utils ++ gui-editors ++ games ++ dependencies ++ critical

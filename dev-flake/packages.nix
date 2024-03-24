@@ -1,46 +1,75 @@
 # required packages for my dev-flake and system
 
 { pkgs, nur }: let
-  dev-tools = with pkgs; [
-    openssl
+  dev-clis = with pkgs; [
     eza # better `ls`
     fd # better `find`
-    helix
-    bacon
-    cargo-nextest
-    cargo-hakari
-    tmux
     mdbook
-    gh
+    gh # github cli
+    git
+    github-backup
+    docker
+    mdcat # cat markdown
+    wget
+    curl
+    neofetch
+    wineWowPackages.waylandFull
+    file # file-type checking
+    bat # better cat
+    gnupg
+    busybox
   ];
 
-  dev-deps = with pkgs; [
+  dev-tuis = with pkgs; [
+    tmux
+    xplr # file explorer
+    bacon
+    helix
+    lldb # llvm debugger
+  ];
+
+  dev-guis = with pkgs; [
+    github-desktop
+    vscodium
+    # jetbrains.clion
+    # git-lfs
+    ghidra-bin
+  ];
+
+  lang-deps = with pkgs; [
     zig
     zls # zig language server
     gcc
     dotnet-sdk_8
-    zulu
-    taplo
+    zulu # jdk
+    jre8
+    taplo # toml reader & analyzer
+    asciidoc-full # better markdown
     python311
     asciidoc-full
-    wasmi
+    wasmi # wasm interpreter
+    clang
   ];
 
   rust-dev-deps = with pkgs; [
     rust-analyzer
     rustfmt
-    lldb
     cargo-geiger
     nur.packages.${system}.wasm-server-runner
     renderdoc
+    cargo-nextest
+    cargo-hakari
   ];
 
   build-deps = with pkgs; [
     pkg-config
     mold
-    clang
     makeWrapper
     lld_17
     gcc-arm-embedded-7 # for robotics
+    libclang
+    openssl
+    sccache
+    gnumake
   ];
-in dev-tools ++ dev-deps ++ rust-dev-deps ++ build-deps
+in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps

@@ -4,7 +4,8 @@
     clean = "nix-store --gc";
     full-clean = "sudo nix-collect-garbage -d; sudo nix-store --optimise";
     axolotl = "dotnet /Gata/Programs/Axolotl/Axolotl.dll /Gata/Ethan/Axolotl";
-    configure = "cd /Gata/GreenChild/Github/personal-configs/nixos && hx . && git add --all && ./rebuild.sh --upgrade && git commit -m 'onefig = modified system configs' && git push origin;";
+    configure = "cd /Gata/GreenChild/Github/personal-configs/nixos && hx . && git add --all && ./rebuild.sh && git commit -m 'onefig = modified system configs' && git push origin;";
+    update-system = "cd /Gata/GreenChild/Github/personal-configs/nixos && nix flake update --commit-lock-file && ./rebuild.sh --upgrade";
     configs = "cd /Gata/GreenChild/Github/personal-configs";
     claer = "clear";
     thoughts = "/Gata/Programs/thoughts";
