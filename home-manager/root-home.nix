@@ -22,9 +22,7 @@
       ".tmux.conf".text = "set -s escape-time 0";
 
       ## [ Custom home symlinks ]
-      Downloads.source = absSymlink /Gata/GreenChild/Downloads;
-      Pictures.source = absSymlink /Gata/GreenChild/Pictures;
-      ".cargo".source = absSymlink /Gata/Programs/rust/cargo;
+      # ".".source = absSymlink /Gata/GreenChild;
     };
 
   # Let Home Manager install and manage itself.

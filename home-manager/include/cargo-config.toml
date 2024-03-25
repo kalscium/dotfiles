@@ -1,0 +1,26 @@
+[alias]
+static = "build --target x86_64-unknown-linux-musl"
+
+[build]
+rustc-wrapper = "sccache"
+
+[env]
+CC = "clang"
+CXX = "clang++"
+
+[target.x86-unknown-linux-gnu]
+linker = "clang"
+rustflags = [ "-C", "link-arg=--ld-path=mold" ]
+
+[target."*"]
+linker = "clang"
+rustflags = [ "-C", "link-arg=-fuse-ld=lld" ]
+
+[unstable]
+codegen-backend = true
+
+[profile.dev]
+codegen-backend = "cranelift"
+
+[term]
+color = "always"

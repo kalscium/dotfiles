@@ -47,6 +47,7 @@
     asciidoc-full # better markdown
     python311
     asciidoc-full
+    wasmtime # JIT wasm & cranelift backend
     wasmi # wasm interpreter
     clang
   ];
@@ -71,5 +72,7 @@
     openssl
     sccache
     gnumake
+    glibc # c standard library
+    # libcxx # c++ standard library
   ];
 in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps

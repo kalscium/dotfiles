@@ -24,6 +24,9 @@
       # tmux configs
       ".tmux.conf".text = "set -s escape-time 0";
 
+      # Cargo configs
+      ".cargo/config.toml".source = ./include/cargo-config.toml;
+
       ## [ Custom home symlinks ]
       # ".".source = absSymlink /Gata/GreenChild;
     };

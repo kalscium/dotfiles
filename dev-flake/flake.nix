@@ -23,11 +23,6 @@
           alias ls=eza
           alias find=fd
         '';
-
-        # env variables
-        LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath all-deps;
-        CC = "clang";
-        CXX = "clang++";
-      };
+      } // import ./env-vars.nix pkgs all-deps;
     });
 }

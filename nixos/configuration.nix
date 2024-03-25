@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, system, ... }: {
+{ inputs, pkgs, config, system, ... }: rec {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
@@ -154,6 +154,10 @@
   # Enable docker
   virtualisation.docker.enable = true;
 
+  # Enable virtual machine
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Enable nix ld (for running of foreign binaries)
   programs.nix-ld = {
     enable = true;
@@ -238,6 +242,6 @@
   ## [ Git ]
   programs.git.enable = true;
 
-  ## [ Env Varibles ]
-  environment.variables = import ./env-vars.nix;
+  ## [ Env Variables ]
+  environment.variables = import ./env-vars.nix // import ./../dev-flake/env-vars.nix pkgs environment.systemPackages;
 }

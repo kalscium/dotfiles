@@ -13,6 +13,7 @@ pkgs: let
     # darling # for running macOS apps
     protonvpn-cli_2
     mdbook
+    parted
   ];
 
   tuis = with pkgs; [
@@ -31,6 +32,8 @@ pkgs: let
     vlc # video player
     keepassxc
     libsForQt5.filelight # disk usage statistics
+    libsForQt5.okular
+    calibre # ebook reader and organiser
   ];
 
   gui-editors = with pkgs; [
@@ -42,6 +45,7 @@ pkgs: let
     obsidian
     freecad
     wezterm
+    libsForQt5.konsole
     krita # for drawing
     kate
   ];
@@ -88,4 +92,4 @@ pkgs: let
     cura # cura slicer (3D Printing)
     # super-slicer-latest # prusa slicer fork
   ];
-in clis ++ tuis ++ gui-utils ++ gui-editors ++ games ++ dependencies ++ critical
+in clis ++ tuis ++ gui-utils ++ gui-editors ++ browsers ++ games ++ dependencies ++ critical ++ power-saving ++ school
