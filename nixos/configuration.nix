@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, system, ... }: rec {
+{ pkgs, config, system, inputs, ... }: {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
@@ -56,8 +56,9 @@
     powerOnBoot = true;
   }; 
 
-  # Enable OpenGL
+  # Enable OpenGL & Enable Nvidia support
   hardware.opengl.enable = true;
+  hardware.nvidia.modesetting.enable = true;
 
   time.timeZone = "Australia/Melbourne"; # time zone
 
@@ -116,7 +117,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications uncomment this
-    # jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default
     # no need to redefine it in your config for now)
@@ -134,7 +135,7 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
-  # Configures home manager
+  # # Configures home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
@@ -181,9 +182,9 @@
 
   # Packages installed on my system
   environment.systemPackages =
-    (import ./systemPackages.nix pkgs) ++
-    (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; }) ++
-    [ (import ./../dev-flake/rust.nix { inherit pkgs system; }) ];
+    (import ./systemPackages.nix pkgs)
+    ++ (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; })
+    ++ [ (import ./../dev-flake/rust.nix { inherit pkgs system; }) ];
 
   # Some programs need SUID wrappers can be configured further or are
   # started in user sessions.
@@ -243,5 +244,5 @@
   programs.git.enable = true;
 
   ## [ Env Variables ]
-  environment.variables = import ./env-vars.nix // import ./../dev-flake/env-vars.nix pkgs environment.systemPackages;
+  environment.variables = import ./env-vars.nix // import ./../dev-flake/env-vars.nix;
 }

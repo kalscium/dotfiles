@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       overlays = [ (import inputs.rust-overlay) ];
@@ -29,16 +29,16 @@
     in {
       nixosConfigurations = {
         greenix = nixpkgs.lib.nixosSystem { # for my default system
-          specialArgs = { inherit home-manager inputs system pkgs; };
+          specialArgs = { inherit inputs system pkgs; };
           modules = [
             ./configuration.nix
           ];
         };
 
         portable = nixpkgs.lib.nixosSystem { # for my portable iso image
-          specialArgs = { inherit home-manager inputs system pkgs; };
+          specialArgs = { inherit inputs system pkgs; };
           modules = [
-            ./portable/configuration.nix
+            ./portable-iso/configuration.nix
           ];
         };
       };

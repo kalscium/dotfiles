@@ -10,10 +10,13 @@
     let
       absSymlink = config.lib.file.mkOutOfStoreSymlink;
     in {
+      # Hyprland configs
+      ".config/hypr/hyprland.conf".source = ./include/hyprland.conf;
+      
       # Helix configs
       ".config/helix/config.toml".source = ./include/helix.toml;
       ".config/helix/languages.toml".source = ./include/helix-languages.toml;
-      ".config/helix/themes/ttyeah".source = ./include/ttyeah.toml;
+      ".config/helix/themes/ttyeah.toml".source = ./include/ttyeah.toml;
 
       # Wezterm configs
       ".wezterm.lua".source = ./include/wezterm.lua;

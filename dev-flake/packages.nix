@@ -4,7 +4,6 @@
   dev-clis = with pkgs; [
     eza # better `ls`
     fd # better `find`
-    mdbook
     gh # github cli
     git
     github-backup
@@ -18,6 +17,10 @@
     bat # better cat
     gnupg
     busybox
+
+    # mdbook
+    mdbook
+    mdbook-linkcheck
   ];
 
   dev-tuis = with pkgs; [

@@ -23,6 +23,9 @@
           alias ls=eza
           alias find=fd
         '';
-      } // import ./env-vars.nix pkgs all-deps;
+
+        # env variables
+        LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath all-deps;
+      } // import ./env-vars.nix;
     });
 }
