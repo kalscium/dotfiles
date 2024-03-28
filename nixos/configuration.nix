@@ -1,4 +1,7 @@
-{ pkgs, config, system, inputs, ... }: {
+{ pkgs, config, system, inputs, ... }: let
+  dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; })
+    ++ [ (import ./../dev-flake/rust.nix { inherit pkgs system; }) ];
+in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
@@ -181,10 +184,7 @@
   ];
 
   # Packages installed on my system
-  environment.systemPackages =
-    (import ./systemPackages.nix pkgs)
-    ++ (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; })
-    ++ [ (import ./../dev-flake/rust.nix { inherit pkgs system; }) ];
+  environment.systemPackages = (import ./systemPackages.nix pkgs) ++ dev-deps;
 
   # Some programs need SUID wrappers can be configured further or are
   # started in user sessions.
@@ -244,5 +244,5 @@
   programs.git.enable = true;
 
   ## [ Env Variables ]
-  environment.variables = import ./env-vars.nix // import ./../dev-flake/env-vars.nix;
+  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath dev-deps; });
 }

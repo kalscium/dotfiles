@@ -1,4 +1,6 @@
-{ pkgs, modulesPath, system, inputs, ... }: {
+{ pkgs, modulesPath, system, inputs, ... }@etc: let
+  greenix = import ./../configuration.nix ({ inherit pkgs system inputs; } // etc);
+in {
   imports = [
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
     inputs.home-manager.nixosModules.home-manager
@@ -15,30 +17,17 @@
   };
 
   # Enable bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
+  hardware.bluetooth = greenix.hardware.bluetooth;
 
   # Enable OpenGL
-  hardware.opengl.enable = true;
+  hardware.opengl = greenix.hardware.opengl;
 
   # Set timezone
-  time.timeZone = "Australia/Melbourne";
+  time.timeZone = greenix.time.timeZone;
 
   # Set internationalisation properties
-  i18n.defaultLocale = "en_GB.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_AU.UTF-8";
-    LC_IDENTIFICATION = "en_AU.UTF-8";
-    LC_MEASUREMENT = "en_AU.UTF-8";
-    LC_MONETARY = "en_AU.UTF-8";
-    LC_NAME = "en_AU.UTF-8";
-    LC_NUMERIC = "en_AU.UTF-8";
-    LC_PAPER = "en_AU.UTF-8";
-    LC_TELEPHONE = "en_AU.UTF-8";
-    LC_TIME = "en_AU.UTF-8";
-  };
+  i18n.defaultLocale = greenix.i18n.defaultLocale;
+  i18n.extraLocaleSettings = greenix.i18n.extraLocaleSettings;
 
   # Set up Hyprland
   programs.hyprland = {
@@ -51,70 +40,35 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Enable CUPS to print documents
-  services.printing.enable = true;
-  services.avahi = { # to enable wifi printing
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
+  services.printing = greenix.services.printing;
+  services.avahi = greenix.services.avahi; # to enable wifi printing
 
   # Enable sound with pipewire
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
+  sound = greenix.sound;
+  hardware.pulseaudio = greenix.hardware.pulseaudio;
+  security.rtkit = greenix.security.rtkit;
+  services.pipewire = greenix.services.pipewire;
 
   # Use the best default shell
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = greenix.users.defaultUserShell;
 
   # Defines my user account
-  users.users.greenchild = {
-    isNormalUser = true;
-    description = "GreenChild";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-  };
+  users.users.greenchild = greenix.users.users.greenchild;
 
   # Configures home manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      greenchild = import ./../../home-manager/home.nix;
-      root = import ./../../home-manager/root-home.nix;
-    };
-  };
+  home-manager = greenix.home-manager;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = greenix.nixpkgs.config.allowUnfree;
 
   # Enable docker
-  virtualisation.docker.enable = true;
+  virtualisation.docker = greenix.virtualisation.docker;
 
   # Enable nix ld (for running of foreign binaries)
-  programs.nix-ld = {
-    enable = true;
-    # Libraries for nix-ld
-    libraries = with pkgs; [
-      stdenv.cc.cc
-      zlib
-      fuse3
-      icu
-      nss
-      openssl
-      curl
-      expat
-    ];
-  };
+  programs.nix-ld = greenix.programs.nix-ld;
 
   # Installed Fonts
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-  ];
+  fonts.packages = greenix.fonts.packages;
 
   # Packages installed on my system
   environment.systemPackages = 
@@ -186,28 +140,22 @@
     ++ [ (import ./../../dev-flake/rust.nix { inherit pkgs system; }) ];
 
   # Enable GPG
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
+  programs.gnupg.agent = greenix.programs.gnupg.agent;
 
   # Enable the OpenSSH daemon
-  services.openssh.enable = true;
+  services.openssh = greenix.services.openssh;
 
   system.stateVersion = "24.05";
 
   # Enable flakes and nix command
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = greenix.nix.settings.experimental-features;
 
   # Configure zsh
-  programs.zsh = {
-    enable = true;
-    shellAliases = import ./../shellAliases.nix;
-  };
+  programs.zsh = greenix.programs.zsh;
 
   # Configure git
-  programs.git.enable = true;
+  programs.git = greenix.programs.git;
 
   # Environmental variables
-  environment.variables = import ./../env-vars.nix // import ./../../dev-flake/env-vars.nix;
+  environment.variables = greenix.environment.variables;
 }
