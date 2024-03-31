@@ -17,6 +17,7 @@
     bat # better cat
     gnupg
     busybox
+    just # for saving and running project-specific commands
 
     # mdbook
     mdbook

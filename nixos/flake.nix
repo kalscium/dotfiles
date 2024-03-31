@@ -13,9 +13,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
     let
       system = "x86_64-linux";
       overlays = [ (import inputs.rust-overlay) ];
@@ -31,6 +35,8 @@
         greenix = nixpkgs.lib.nixosSystem { # for my default system
           specialArgs = { inherit inputs system pkgs; };
           modules = [
+            hyprland.nixosModules.default
+            home-manager.nixosModules.home-manager
             ./configuration.nix
           ];
         };

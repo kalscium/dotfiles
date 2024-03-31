@@ -129,7 +129,7 @@ in {
       hyprland
       waybar
       libnotify
-      mako # for notifications
+      dunst # for notifications
       swww # for wallpapers
       rofi-wayland # application launcher
       (waybar.overrideAttrs (oldAttrs: {

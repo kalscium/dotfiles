@@ -10,9 +10,6 @@
     let
       absSymlink = config.lib.file.mkOutOfStoreSymlink;
     in {
-      # Hyprland configs
-      ".config/hypr/hyprland.conf".source = ./include/hyprland.conf;
-      
       # Helix configs
       ".config/helix/config.toml".source = ./include/helix.toml;
       ".config/helix/languages.toml".source = ./include/helix-languages.toml;
@@ -42,5 +39,11 @@
     enable = true;
     userName = "GreenChild04";
     userEmail = "greenchild04@protonmail.com";
+  };
+
+  # Configure Hyprland
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = (import ./../nixos/hyprland.nix).settings;
   };
 }

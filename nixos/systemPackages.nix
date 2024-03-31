@@ -14,6 +14,7 @@ pkgs: let
     protonvpn-cli_2
     mdbook
     parted
+    monero-cli
   ];
 
   tuis = with pkgs; [
@@ -25,7 +26,7 @@ pkgs: let
   ];
 
   gui-utils = with pkgs; [
-    libsForQt5.dolphin
+    cinnamon.nemo
     qbittorrent
     gparted
     discord

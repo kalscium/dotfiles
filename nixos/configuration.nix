@@ -1,10 +1,11 @@
 { pkgs, config, system, inputs, ... }: let
+  hyprland = import ./hyprland.nix;
   dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; })
     ++ [ (import ./../dev-flake/rust.nix { inherit pkgs system; }) ];
 in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.home-manager
+    hyprland.system-config
   ];
 
   # Bootloader
@@ -184,7 +185,9 @@ in {
   ];
 
   # Packages installed on my system
-  environment.systemPackages = (import ./systemPackages.nix pkgs) ++ dev-deps;
+  environment.systemPackages = (import ./systemPackages.nix pkgs)
+    ++ dev-deps
+    ++ hyprland.packages pkgs;
 
   # Some programs need SUID wrappers can be configured further or are
   # started in user sessions.

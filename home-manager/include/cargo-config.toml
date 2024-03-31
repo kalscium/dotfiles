@@ -16,11 +16,11 @@ rustflags = [ "-C", "link-arg=--ld-path=mold" ]
 linker = "clang"
 rustflags = [ "-C", "link-arg=-fuse-ld=lld" ]
 
-[unstable]
-codegen-backend = true
+# [unstable]
+# codegen-backend = true
 
-[profile.dev]
-codegen-backend = "cranelift"
+# [profile.dev]
+# codegen-backend = "cranelift"
 
 [term]
 color = "always"
