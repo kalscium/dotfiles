@@ -19,7 +19,8 @@
     libnotify
     dunst # or mako for notifications
     swww # for wallpapers
-    rofi-wayland # application launcher
+    # rofi-wayland # application launcher
+    wofi # application launcher
     kdePackages.qt6ct # idk but it's a dependency
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
@@ -47,8 +48,8 @@
   in {
     # Set default programs
     "$terminal" = "konsole";
-    "$fileManager" = "dolphin";
-    "$menu" = "rofi -show drun";
+    "$fileManager" = "nemo";
+    "$menu" = "wofi --show drun";
 
     # Monitor Setup
     monitor = ",1536x1024,auto,1";

@@ -1,5 +1,5 @@
 [alias]
-static = "build --target x86_64-unknown-linux-musl"
+build-static = "build --target x86_64-unknown-linux-musl"
 
 [build]
 rustc-wrapper = "sccache"
