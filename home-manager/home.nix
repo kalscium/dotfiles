@@ -10,9 +10,7 @@
     let
       absSymlink = config.lib.file.mkOutOfStoreSymlink;
     in {
-      # Helix configs
-      ".config/helix/config.toml".source = ./include/helix.toml;
-      ".config/helix/languages.toml".source = ./include/helix-languages.toml;
+      # Helix themes
       ".config/helix/themes/ttyeah.toml".source = ./include/ttyeah.toml;
 
       # Wezterm configs
@@ -46,4 +44,7 @@
     enable = true;
     settings = (import ./../nixos/hyprland.nix).settings;
   };
+
+  # Configure Helix
+  programs.helix = import ./helix.nix;
 }
