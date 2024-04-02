@@ -47,4 +47,7 @@
 
   # Configure Helix
   programs.helix = import ./helix.nix;
+
+  # Configure Wezterm
+  programs.wezterm = import ./wezterm.nix;
 }
