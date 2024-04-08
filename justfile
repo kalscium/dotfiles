@@ -1,6 +1,13 @@
+# variables
+user := env_var("USER")
+
 # rebuilds and switches to the new system configurations
-rebuild flags:
-	sudo nixos-rebuild switch --flake nixos/#greenix {{flags}}
+rebuild:
+	sudo nixos-rebuild switch --flake nixos/#greenix
+
+# rebuilds and switches to the new home configuration
+rebuild-home:
+	home-manager switch --flake home-manager/#{{user}}
 
 # builds the portable iso version of my system
 build-iso:

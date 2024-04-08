@@ -1,5 +1,5 @@
 { pkgs, config, system, inputs, ... }: let
-  hyprland = import ./hyprland.nix;
+  hyprland = import ../hyprland/hyprland.nix;
   dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; })
     ++ [ (import ./../dev-flake/rust.nix { inherit pkgs system; }) ];
 in {

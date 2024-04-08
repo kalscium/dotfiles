@@ -13,9 +13,6 @@
       # Helix themes
       ".config/helix/themes/ttyeah.toml".source = ./include/ttyeah.toml;
 
-      # Wezterm configs
-      ".wezterm.lua".source = ./include/wezterm.lua;
-
       # Zsh configs
       ".zshrc".source = ./include/zsh/user.zshrc;
 
@@ -42,7 +39,7 @@
   # Configure Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
-    settings = (import ./../nixos/hyprland.nix).settings;
+    settings = (import ./../hyprland/hyprland.nix).settings;
   };
 
   # Configure Helix
@@ -50,4 +47,7 @@
 
   # Configure Wezterm
   programs.wezterm = import ./wezterm.nix;
+
+  # Configure Waybar
+  programs.waybar = import ./../hyprland/waybar/waybar.nix;
 }

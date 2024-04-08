@@ -30,21 +30,21 @@
   # hyprland configs
   settings = let
     workspace-bindings = (
-        # workspaces
-        # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-        builtins.concatLists (builtins.genList (
-            x: let
-              ws = let
-                c = (x + 1) / 10;
-              in
-                builtins.toString (x + 1 - (c * 10));
-            in [
-              "$mod, ${ws}, workspace, ${toString (x + 1)}"
-              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-            ]
-          )
-          10)
-      );
+      # workspaces
+      # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+      builtins.concatLists (builtins.genList (
+          x: let
+            ws = let
+              c = (x + 1) / 10;
+            in
+              builtins.toString (x + 1 - (c * 10));
+          in [
+            "$mod, ${ws}, workspace, ${toString (x + 1)}"
+            "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+          ]
+        )
+        10)
+    );
   in {
     # Set default programs
     "$terminal" = "konsole";
@@ -53,7 +53,7 @@
 
     # Monitor Setup
     monitor = ",1536x1024,auto,1";
-    
+  
     # Autostart
     exec-once = [
       "waybar"
@@ -79,17 +79,22 @@
       sensitivity = 0; # -1.0 - 1.0, 0 means no modification
     };
 
+    # General window layout and colours
     general = {
-      gaps_in = 5;
+      gaps_in = 10;
       gaps_out = 20;
-      border_size = 2;
-      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-      "col.inactive_border" = "rgba(595959aa)";
+      border_size = 3;
+
+      "col.active_border" = "rgba(ffffffee)"; # white
+      "col.inactive_border" = "$color11"; # match background colour
+      # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg"; # rainbow
+      # "col.inactive_border" = "rgba(595959aa)"; # grey
 
       layout = "dwindle";
       allow_tearing = false;
     };
 
+    # General window decoration
     decoration = {
       rounding = 10;
 
@@ -98,11 +103,18 @@
         size = 3;
         passes = 1;
 
+        new_optimizations = "on";
+        blurls = "waybar";
         vibrancy = 0.1696;
       };
 
+      # opacity
+      active_opacity = 1.0;
+      inactive_opacity = 0.9;
+      fullscreen_opacity = 1.0;
+
       drop_shadow = true;
-      shadow_range = 4;
+      shadow_range = 30;
       shadow_render_power = 3;
       "col.shadow" = "rgba(1a1a1aee)";
     };
@@ -128,7 +140,12 @@
 
     master.new_is_master = true;
     gestures.workspace_swipe = false;
-    misc.force_default_wallpaper = 0; # set to -1 for default anime wallpaper
+
+    misc = {
+      disable_hyprland_logo = true;
+      disable_splash_rendering = true;
+      force_default_wallpaper = 0; # set to -1 for default anime wallpaper
+    };
 
     # Custom per-device configurations
     # device = {};
