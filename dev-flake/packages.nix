@@ -64,6 +64,7 @@
     renderdoc
     cargo-nextest
     cargo-hakari
+    cargo-rdme
   ];
 
   build-deps = with pkgs; [

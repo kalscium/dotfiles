@@ -27,6 +27,7 @@ pkgs: let
 
   gui-utils = with pkgs; [
     cinnamon.nemo
+    mate.mate-system-monitor
     qbittorrent
     gparted
     discord
