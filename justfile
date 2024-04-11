@@ -16,3 +16,9 @@ build-iso:
 # checks the `dev-flake`
 build-dev-flake:
 	nix flake check ./dev-flake
+
+# updates the flakes
+update:
+	nix flake update ./nixos
+	nix flake update ./home-manager
+	nix flake update ./dev-flake
