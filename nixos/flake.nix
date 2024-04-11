@@ -29,6 +29,7 @@
         inherit system overlays;
         config = {
           allowUnfree = true;
+          packageOverrides = import ./packageOverrides.nix;
         };
       };
     in {
