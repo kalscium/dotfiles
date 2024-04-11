@@ -78,6 +78,8 @@
     sccache
     gnumake
     glibc # c standard library
-    # libcxx # c++ standard library
+    libcxx # c++ standard library
+    cmake
+    alsa-lib
   ];
 in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps
