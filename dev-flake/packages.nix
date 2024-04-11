@@ -81,5 +81,6 @@
     libcxx # c++ standard library
     cmake
     alsa-lib
+    fontconfig
   ];
 in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps
