@@ -53,10 +53,16 @@ in {
   users.defaultUserShell = greenix.users.defaultUserShell;
 
   # Defines my user account
-  users.users.greenchild = greenix.users.users.greenchild;
+  users.users.nixos = greenix.users.users.greenchild;
 
   # Configures home manager
-  home-manager = greenix.home-manager;
+  home-manager = home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      nixos = import ./../home-manager/home.nix;
+      root = import ./../home-manager/root-home.nix;
+    };
+  }; 
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = greenix.nixpkgs.config.allowUnfree;
