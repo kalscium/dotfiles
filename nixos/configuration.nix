@@ -139,7 +139,7 @@ in {
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
-  # # Configures home manager
+  # Configures home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
@@ -240,6 +240,9 @@ in {
 
   ## [ Git ]
   programs.git.enable = true;
+
+  # for mounting my iphone
+  services.usbmuxd.enable = true;
 
   ## [ Env Variables ]
   environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath dev-deps; });

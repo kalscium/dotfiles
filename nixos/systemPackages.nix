@@ -82,6 +82,7 @@ pkgs: let
     polkit # for asking for sudo
     busybox # gnu c utils replacement
     os-prober
+    libimobiledevice ifuse # for mounting my iphone
   ];
 
   power-saving = with pkgs; [
