@@ -162,16 +162,7 @@ in {
   programs.nix-ld = {
     enable = true;
     # Libraries for nix-ld
-    libraries = with pkgs; [
-      stdenv.cc.cc
-      zlib
-      fuse3
-      icu
-      nss
-      openssl
-      curl
-      expat
-    ];
+    libraries = dev-deps;
   };
 
   # Installed Fonts

@@ -17,7 +17,11 @@
       ".zshrc".source = ./include/zsh/user.zshrc;
 
       # tmux configs
-      ".tmux.conf".text = "set -s escape-time 0";
+      ".tmux.conf".text = "
+        set -s escape-time 0
+        set -g default-terminal \"tmux-256color\"
+        set -ag terminal-overrides \",xterm-256color:RGB\"
+      ";
 
       # Cargo configs
       ".cargo/config.toml".source = ./include/cargo-config.toml;
