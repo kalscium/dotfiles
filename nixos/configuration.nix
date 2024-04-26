@@ -229,9 +229,6 @@ in {
   ## [ Git ]
   programs.git.enable = true;
 
-  # for mounting my iphone
-  services.usbmuxd.enable = true;
-
   ## [ Env Variables ]
   environment.variables = stable-pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = stable.lib.makeLibraryPath dev-deps; });
 }

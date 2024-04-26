@@ -82,7 +82,7 @@ stable: unstable: let
     polkit # for asking for sudo
     busybox # gnu c utils replacement
     os-prober
-    libimobiledevice ifuse # for mounting my iphone
+    jmtpfs # for mounting my android phone
   ];
 
   power-saving = with unstable; [
