@@ -1,7 +1,6 @@
-{ pkgs, config, system, inputs, ... }: let
+{ unstable-pkgs, stable-pkgs, config, system, inputs, ... }: let
   hyprland = import ../hyprland/hyprland.nix;
-  dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; })
-    ++ [ (import ./../dev-flake/rust.nix { inherit pkgs system; }) ];
+  dev-deps = (import ./../dev-flake/packages.nix { inherit unstable-pkgs; nur = inputs.nur; }) ++ [ (import ./../dev-flake/rust.nix { inherit unstable-pkgs system; }) ];
 in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -129,7 +128,7 @@ in {
   };
 
   # set zsh as default shell
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = unstable-pkgs.zsh;
 
   # Defines my user account
   # (Don't forget to set a password with `passwd`)
@@ -157,23 +156,21 @@ in {
   # Enable virtual machine
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-
-  # Enable nix ld (for running of foreign binaries)
-  programs.nix-ld = {
+ # Enable nix ld (for running of foreign binaries) programs.nix-ld = {
     enable = true;
     # Libraries for nix-ld
     libraries = dev-deps;
   };
 
   # Installed Fonts
-  fonts.packages = with pkgs; [
+  fonts.packages = with stable-pkgs; [
     jetbrains-mono
   ];
 
   # Packages installed on my system
-  environment.systemPackages = (import ./systemPackages.nix pkgs)
+  environment.systemPackages = (import ./systemPackages.nix stable-pkgs unstable-pkgs)
     ++ dev-deps
-    ++ hyprland.packages pkgs;
+    ++ hyprland.packages stable-pkgs;
 
   # Some programs need SUID wrappers can be configured further or are
   # started in user sessions.
@@ -236,5 +233,5 @@ in {
   services.usbmuxd.enable = true;
 
   ## [ Env Variables ]
-  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath dev-deps; });
+  environment.variables = stable-pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = stable.lib.makeLibraryPath dev-deps; });
 }

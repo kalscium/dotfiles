@@ -2,8 +2,8 @@
   description = "GreenChild04's NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    unstable-pkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable-pkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # dev inputs
     rust-overlay.url = "github:oxalica/rust-overlay";                    
@@ -11,7 +11,7 @@
     nur.url = "github:polygon/nur.nix";                                  
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "unstable-pkgs";
     };
 
     hyprland = {
@@ -20,12 +20,14 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, stable-pkgs, unstable-pkgs, home-manager, hyprland, ... }@inputs:
     let
       system = "x86_64-linux";
       overlays = [ (import inputs.rust-overlay) ];
 
-      pkgs = import nixpkgs {
+      unstable-pkgs = import unstable-pkgs pkgs-inputs;
+      stable-pkgs = import stable-pkgs pkgs-inputs;
+      pkgs-inputs = {
         inherit system overlays;
         config = {
           allowUnfree = true;
@@ -34,8 +36,8 @@
       };
     in {
       nixosConfigurations = {
-        greenix = nixpkgs.lib.nixosSystem { # for my default system
-          specialArgs = { inherit inputs system pkgs; };
+        greenix = stable-pkgs.lib.nixosSystem { # for my default system
+          specialArgs = { inherit inputs system stable-pkgs unstable-pkgs; };
           modules = [
             hyprland.nixosModules.default
             home-manager.nixosModules.home-manager
@@ -43,8 +45,8 @@
           ];
         };
 
-        portable = nixpkgs.lib.nixosSystem { # for my portable iso image
-          specialArgs = { inherit inputs system pkgs; };
+        portable = unstable-pkgs.lib.nixosSystem { # for my portable iso image
+          specialArgs = { inherit inputs system; pkgs = unstable-pkgs; };
           modules = [
             ./portable-iso/configuration.nix
           ];
