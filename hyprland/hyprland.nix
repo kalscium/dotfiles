@@ -21,7 +21,7 @@
     swww # for wallpapers
     # rofi-wayland # application launcher
     wofi # application launcher
-    kdePackages.qt6ct # idk but it's a dependency
+   qt6Packages.qt6ct # idk but it's a dependency
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))

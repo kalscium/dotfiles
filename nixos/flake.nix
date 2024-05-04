@@ -2,8 +2,8 @@
   description = "GreenChild04's NixOS flake";
 
   inputs = {
-    unstable-pkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    stable-pkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    unstable-nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable-nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # dev inputs
     rust-overlay.url = "github:oxalica/rust-overlay";                    
@@ -11,22 +11,22 @@
     nur.url = "github:polygon/nur.nix";                                  
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "unstable-pkgs";
+      inputs.nixpkgs.follows = "unstable-nixpkgs";
     };
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "unstable-nixpkgs";
     };
   };
 
-  outputs = { self, stable-pkgs, unstable-pkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, stable-nixpkgs, unstable-nixpkgs, home-manager, hyprland, ... }@inputs:
     let
       system = "x86_64-linux";
       overlays = [ (import inputs.rust-overlay) ];
 
-      unstable-pkgs = import unstable-pkgs pkgs-inputs;
-      stable-pkgs = import stable-pkgs pkgs-inputs;
+      unstable-pkgs = import unstable-nixpkgs pkgs-inputs;
+      stable-pkgs = import stable-nixpkgs pkgs-inputs;
       pkgs-inputs = {
         inherit system overlays;
         config = {
@@ -36,7 +36,7 @@
       };
     in {
       nixosConfigurations = {
-        greenix = stable-pkgs.lib.nixosSystem { # for my default system
+        greenix = unstable-nixpkgs.lib.nixosSystem { # for my default system
           specialArgs = { inherit inputs system stable-pkgs unstable-pkgs; };
           modules = [
             hyprland.nixosModules.default
@@ -45,7 +45,7 @@
           ];
         };
 
-        portable = unstable-pkgs.lib.nixosSystem { # for my portable iso image
+        portable = unstable-nixpkgs.lib.nixosSystem { # for my portable iso image
           specialArgs = { inherit inputs system; pkgs = unstable-pkgs; };
           modules = [
             ./portable-iso/configuration.nix
