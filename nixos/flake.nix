@@ -14,8 +14,8 @@
     };
 
     hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -34,7 +34,7 @@
     in {
       nixosConfigurations = {
         greenix = nixpkgs.lib.nixosSystem { # for my default system
-          specialArgs = { inherit inputs system pkgs; };
+          specialArgs = { inherit inputs system hyprland pkgs; };
           modules = [
             hyprland.nixosModules.default
             home-manager.nixosModules.home-manager

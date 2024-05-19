@@ -1,10 +1,10 @@
 { pkgs, config, system, inputs, ... }: let
-  hyprland = import ../hyprland/hyprland.nix;
+  hyprconfigs = import ../hyprland/hyprland.nix;
   dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; }) ++ [ (import ./../dev-flake/rust.nix { inherit system pkgs; }) ];
 in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    hyprland.system-config
+    hyprconfigs.system-config
   ];
 
   # Bootloader
@@ -38,8 +38,13 @@ in {
   }; 
 
   # Enable OpenGL & Enable Nvidia support
-  hardware.opengl.enable = true;
   hardware.nvidia.modesetting.enable = true;
+  hardware.opengl = {
+    enable = true;
+
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
   time.timeZone = "Australia/Melbourne"; # time zone
 
@@ -57,33 +62,8 @@ in {
     LC_TIME = "en_AU.UTF-8";
   };
 
-  # Display Manager
-  services.displayManager = {
-    # Enable device locking and login
-    sddm.enable = true;
-
-    # Enable automatic login
-    autoLogin = {
-      enable = true;
-      user = "greenchild";
-    };
-  };
-
-  # Enable touchpad support (enabled default in most desktopManagers)
+  # Enable touchpad support (enabled default in most desktop managers)
   services.libinput.enable = true;
-
-  # Enable the gui
-  services.xserver = {
-    # Enable the X11 windowing system
-    enable = true;
-
-    # Enable the KDE Plasma Desktop Environment
-    desktopManager.plasma5.enable = true;
-
-    # Configure keymap in X11
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -155,7 +135,7 @@ in {
   # Packages installed on my system
   environment.systemPackages = (import ./systemPackages.nix pkgs)
     ++ dev-deps
-    ++ hyprland.packages pkgs;
+    ++ hyprconfigs.packages pkgs;
 
   # Some programs need SUID wrappers can be configured further or are
   # started in user sessions.
