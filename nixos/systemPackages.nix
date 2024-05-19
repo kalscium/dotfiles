@@ -1,6 +1,6 @@
 # Packages installed on my system
-stable: unstable: let
-  clis = with unstable; [
+pkgs: let
+  clis = with pkgs; [
     docker
     wget
     curl
@@ -17,7 +17,7 @@ stable: unstable: let
     monero-cli
   ];
 
-  tuis = with unstable; [
+  tuis = with pkgs; [
     xplr
     tmux
     cmatrix # cool matrix text thing
@@ -25,7 +25,7 @@ stable: unstable: let
     testdisk # for recovering ntfs files
   ];
 
-  gui-utils = with stable; [
+  gui-utils = with pkgs; [
     cinnamon.nemo
     mate.mate-system-monitor
     qbittorrent
@@ -38,7 +38,7 @@ stable: unstable: let
     calibre # ebook reader and organiser
   ];
 
-  gui-editors = with unstable; [
+  gui-editors = with pkgs; [
     blender
     typora # markdown editor
     lmms # music production software
@@ -52,18 +52,18 @@ stable: unstable: let
     kate
   ];
 
-  browsers = with stable; [
+  browsers = with pkgs; [
     microsoft-edge
     # brave
     firefox
     # google-chrome
   ];
 
-  games = with stable; [
+  games = with pkgs; [
     lunar-client
   ];
 
-  dependencies = with stable; [
+  dependencies = with pkgs; [
     thefuck # for zsh (console intellisense)
     exfatprogs # for gparted
     mediainfo # for kdenlive
@@ -71,7 +71,7 @@ stable: unstable: let
     texlive.combined.scheme-small # for pandoc
   ];
 
-  critical = with stable; [
+  critical = with pkgs; [
     home-manager
     gnumake # for building packages
     gnupg
@@ -85,12 +85,12 @@ stable: unstable: let
     jmtpfs # for mounting my android phone
   ];
 
-  power-saving = with unstable; [
+  power-saving = with pkgs; [
     powertop
     tlp
   ];
 
-  school = with unstable; [
+  school = with pkgs; [
     libreoffice-fresh
     cura # cura slicer (3D Printing)
     # super-slicer-latest # prusa slicer fork

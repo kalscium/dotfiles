@@ -1,6 +1,6 @@
-{ unstable-pkgs, stable-pkgs, config, system, inputs, ... }: let
+{ pkgs, config, system, inputs, ... }: let
   hyprland = import ../hyprland/hyprland.nix;
-  dev-deps = (import ./../dev-flake/packages.nix { pkgs = unstable-pkgs; nur = inputs.nur; }) ++ [ (import ./../dev-flake/rust.nix { inherit system; pkgs = unstable-pkgs; }) ];
+  dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; }) ++ [ (import ./../dev-flake/rust.nix { inherit system pkgs; }) ];
 in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -133,7 +133,7 @@ in {
   };
 
   # set zsh as default shell
-  users.defaultUserShell = unstable-pkgs.zsh;
+  users.defaultUserShell = pkgs.zsh;
 
   # Defines my user account
   # (Don't forget to set a password with `passwd`)
@@ -170,14 +170,14 @@ in {
   };
 
   # Installed Fonts
-  fonts.packages = with stable-pkgs; [
+  fonts.packages = with pkgs; [
     jetbrains-mono
   ];
 
   # Packages installed on my system
-  environment.systemPackages = ((import ./systemPackages.nix) stable-pkgs unstable-pkgs)
+  environment.systemPackages = (import ./systemPackages.nix pkgs)
     ++ dev-deps
-    ++ hyprland.packages unstable-pkgs;
+    ++ hyprland.packages pkgs;
 
   # Some programs need SUID wrappers can be configured further or are
   # started in user sessions.
@@ -237,5 +237,5 @@ in {
   programs.git.enable = true;
 
   ## [ Env Variables ]
-  environment.variables = stable-pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = stable-pkgs.lib.makeLibraryPath dev-deps; });
+  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath dev-deps; });
 }

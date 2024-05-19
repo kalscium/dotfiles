@@ -2,8 +2,7 @@
   description = "GreenChild04's NixOS flake";
 
   inputs = {
-    unstable-nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    stable-nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # dev inputs
     rust-overlay.url = "github:oxalica/rust-overlay";                    
@@ -11,23 +10,21 @@
     nur.url = "github:polygon/nur.nix";                                  
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "unstable-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "unstable-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, stable-nixpkgs, unstable-nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
     let
       system = "x86_64-linux";
       overlays = [ (import inputs.rust-overlay) ];
 
-      unstable-pkgs = import unstable-nixpkgs pkgs-inputs;
-      stable-pkgs = import stable-nixpkgs pkgs-inputs;
-      pkgs-inputs = {
+      pkgs = import nixpkgs {
         inherit system overlays;
         config = {
           allowUnfree = true;
@@ -36,8 +33,8 @@
       };
     in {
       nixosConfigurations = {
-        greenix = unstable-nixpkgs.lib.nixosSystem { # for my default system
-          specialArgs = { inherit inputs system stable-pkgs unstable-pkgs; };
+        greenix = nixpkgs.lib.nixosSystem { # for my default system
+          specialArgs = { inherit inputs system pkgs; };
           modules = [
             hyprland.nixosModules.default
             home-manager.nixosModules.home-manager
@@ -45,8 +42,8 @@
           ];
         };
 
-        portable = unstable-nixpkgs.lib.nixosSystem { # for my portable iso image
-          specialArgs = { inherit inputs system; pkgs = unstable-pkgs; };
+        portable = nixpkgs.lib.nixosSystem { # for my portable iso image
+          specialArgs = { inherit inputs system pkgs; };
           modules = [
             ./portable-iso/configuration.nix
           ];
