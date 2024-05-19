@@ -24,28 +24,6 @@ in {
 
   boot.supportedFilesystems = [ "ext4" "ntfs" "btrfs" ];
 
-  # Unlock Gata
-  boot.initrd.luks.devices.Gata = {
-    device = "/dev/disk/by-uuid/8e7b30e8-3737-4f38-b0c2-bdd10f5e2699";
-    preLVM = false; # set to true if the device is a physical partition and not a logical volume
-  };
-
-  # Mount Gata
-  fileSystems."/Gata" = {
-    device = "/dev/disk/by-uuid/69ed7221-2318-4f35-84d8-03c36574739b";
-    fsType = "ext4";
-    options = [ "nosuid" "nodev" "nofail" ];
-  };
-
-  # Mount Boot
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/6582-848B";
-    fsType = "vfat";
-  };
-
-  # Mount Swap Memory
-  swapDevices = [ { device = "/dev/disk/by-uuid/2134c6f9-dce6-4c0b-bb7a-d47793652c58"; } ];
-
   # Networking
   networking = {
     hostName = "greenix"; # Defines your hostname
