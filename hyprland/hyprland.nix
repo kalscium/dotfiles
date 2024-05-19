@@ -17,11 +17,11 @@
     hyprland
     waybar # wayland side-bar
     libnotify
-    dunst # or mako for notifications
+    mako # or dunst for notifications
     swww # for wallpapers
-    # rofi-wayland # application launcher
-    wofi # application launcher
-   qt6Packages.qt6ct # idk but it's a dependency
+    wofi # or rofi-wayland as a application launcher
+    swaylock # for locking / sleep on wayland
+    qt6Packages.qt6ct # idk but it's a dependency
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
