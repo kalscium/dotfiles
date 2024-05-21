@@ -53,12 +53,13 @@ pkgs: let
     libsForQt5.konsole
     krita # for drawing
     kate
+    gimp
   ];
 
   browsers = with pkgs; [
     microsoft-edge
     # brave
-    firefox
+    firefox-bin
     # google-chrome
   ];
 
