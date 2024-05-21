@@ -26,6 +26,9 @@
       # Cargo configs
       ".cargo/config.toml".source = ./include/cargo-config.toml;
 
+      # Electron configs
+      ".config/electron-flags.conf".source = ./include/electron-flags.conf;
+
       ## [ Custom home symlinks ]
       # ".".source = absSymlink /Gata/GreenChild;
     };

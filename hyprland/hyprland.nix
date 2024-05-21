@@ -65,6 +65,9 @@
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
+
+    # themes
+    gruvbox-gtk-theme
   ];
 
   # hyprland configs
@@ -92,7 +95,8 @@
     "$menu" = "wofi --show drun";
 
     # Monitor Setup
-    monitor = "X11-1,1536x1024,auto,1";
+    # monitor = "X11-1,1536x1024,auto,1";
+    monitor = ",preferred,auto,auto";
   
     # Autostart
     exec-once = [

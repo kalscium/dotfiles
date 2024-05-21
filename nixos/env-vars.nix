@@ -7,4 +7,5 @@
     "$HOME/.local/bin"
     "$HOME/.cargo/bin"
   ];
+  GTK_THEME = "Gruvbox";
 }

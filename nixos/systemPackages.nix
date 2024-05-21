@@ -36,6 +36,7 @@ pkgs: let
     libsForQt5.filelight # disk usage statistics
     libsForQt5.okular
     calibre # ebook reader and organiser
+    nomacs # image viewer
   ];
 
   gui-editors = with pkgs; [
