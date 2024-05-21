@@ -25,7 +25,7 @@ in {
   # Enable the AMD graphics card driver
   boot.initrd.kernelModules = [ "amdgpu"];
 
-  boot.kernalPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.supportedFilesystems = [ "ext4" "ntfs" "btrfs" ];
 
