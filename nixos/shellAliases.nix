@@ -12,4 +12,6 @@
     dev = "docker run -it --rm -v .:/home/dev/project -v /home/greenchild/.cargo/registry:/home/dev/.cargo/registry -v /home/greenchild/.cache/sccache:/home/dev/.cache/sccache gc-dev;";
     ls = "eza";
     find = "fd";
+    brightness = "brightnessctl -d amdgpu_bl1 set";
+    sound = "amixer set Master";
 }

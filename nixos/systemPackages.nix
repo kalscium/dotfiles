@@ -15,6 +15,8 @@ pkgs: let
     mdbook
     parted
     monero-cli
+    brightnessctl # to change the brightness of my screenb
+    acpi # for checking the battery percentage
   ];
 
   tuis = with pkgs; [
