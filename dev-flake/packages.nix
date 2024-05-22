@@ -85,10 +85,6 @@
   ];
 
   runtime-deps = with pkgs; [
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libxcb
-    xorg.libXi
     libxkbcommon
     stdenv.cc.cc
     zlib

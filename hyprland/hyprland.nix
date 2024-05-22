@@ -52,6 +52,38 @@
     ];
   };
 
+  # Configure GTK
+  gtk = pkgs: {
+    enable = true;
+
+    cursorTheme = {
+      name = "Catppuccin-Macchiato-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.macchiatoDark;
+    };
+
+    gtk3 = {
+      extraConfig.gtk-application-prefer-dark-theme = true;
+    };
+  };
+
+  # Configure QT
+  qt = pkgs: {
+    enable = true;
+    platformTheme.name = "gtk";
+    style = {
+      name = "gtk2";
+      package = pkgs.gruvbox-gtk-theme;
+    };
+  };
+
+  # Configure the cursor
+  pointerCursor = pkgs: {
+    gtk.enable = true;
+    name = "Catppuccin-Macchiato-Dark-Cursors";
+    package = pkgs.catppuccin-cursors.macchiatoDark;
+    size = 16;
+  };
+
   # extra packages
   packages = pkgs: with pkgs; [
     hyprland
@@ -65,9 +97,6 @@
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
-
-    # themes
-    gruvbox-gtk-theme
   ];
 
   # hyprland configs
@@ -90,13 +119,13 @@
     );
   in {
     # Set default programs
-    "$terminal" = "konsole";
+    "$terminal" = "alacritty";
     "$fileManager" = "nemo";
     "$menu" = "wofi --show drun";
 
     # Monitor Setup
     # monitor = "X11-1,1536x1024,auto,1";
-    monitor = ",preferred,auto,auto";
+    monitor = ",preferred,auto,1";
   
     # Autostart
     exec-once = [
@@ -115,8 +144,7 @@
       repeat_rate = 25;
 
       follow_mouse = 1;
-
-      touchpad = {
+ touchpad = {
         natural_scroll = true;
       };
 

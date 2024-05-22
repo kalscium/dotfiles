@@ -50,7 +50,7 @@ pkgs: let
     obsidian
     freecad
     wezterm
-    libsForQt5.konsole
+    alacritty
     krita # for drawing
     kate
     gimp
