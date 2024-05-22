@@ -39,6 +39,7 @@ pkgs: let
     libsForQt5.okular
     calibre # ebook reader and organiser
     nomacs # image viewer
+    networkmanagerapplet # for connecting to wifi
   ];
 
   gui-editors = with pkgs; [
