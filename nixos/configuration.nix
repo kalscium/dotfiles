@@ -110,7 +110,12 @@ in {
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      greenchild = import ./../home-manager/home.nix;
+      greenchild = {
+        imports = [
+          ./../home-manager/home.nix
+          (import ./../hyprland/hyprland.nix).home-manager
+        ];
+      };
       root = import ./../home-manager/root-home.nix;
     };
   };

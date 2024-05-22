@@ -32,20 +32,11 @@
     # ".".source = absSymlink /Gata/GreenChild;
   };
 
-  # Configure the cursor
-  home.pointerCursor = (import ./../hyprland/hyprland.nix).pointerCursor pkgs;
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   # Configure git
   programs.git = (import ./git.nix);
-
-  # Configure Hyprland
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = (import ./../hyprland/hyprland.nix).settings;
-  };
 
   # Configure Helix
   programs.helix = import ./helix.nix;
@@ -55,10 +46,4 @@
 
   # Configure Waybar
   programs.waybar = import ./../hyprland/waybar/waybar.nix;
-
-  # Configure GTK
-  gtk = (import ./../hyprland/hyprland.nix).gtk pkgs;
-
-  # Configure QT
-  qt = (import ./../hyprland/hyprland.nix).qt pkgs;
 }

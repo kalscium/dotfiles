@@ -15,7 +15,10 @@
     in {
       homeConfigurations."greenchild" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [
+          ./home.nix
+          (import ./../hyprland/hyprland.nix).home-manager
+        ];
       };
       homeConfigurations."root" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
