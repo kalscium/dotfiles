@@ -40,6 +40,7 @@ pkgs: let
     calibre # ebook reader and organiser
     nomacs # image viewer
     networkmanagerapplet # for connecting to wifi
+    libsForQt5.ark
   ];
 
   gui-editors = with pkgs; [

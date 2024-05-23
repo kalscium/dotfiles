@@ -63,6 +63,16 @@
     gtk = {
       enable = true;
 
+      theme = {
+        name = "Gruvbox";
+        package = pkgs.gruvbox-dark-gtk;
+      };
+
+      iconTheme = {
+        name = "Gruvbox";
+        package = pkgs.gruvbox-dark-icons-gtk;
+      };
+
       cursorTheme = {
         name = "Catppuccin-Macchiato-Dark-Cursors";
         package = pkgs.catppuccin-cursors.macchiatoDark;
@@ -79,7 +89,7 @@
       platformTheme.name = "gtk";
       style = {
         name = "gtk2";
-        package = pkgs.gruvbox-gtk-theme;
+        package = pkgs.gruvbox-dark-gtk;
       };
     };
 
@@ -89,6 +99,27 @@
       name = "Catppuccin-Macchiato-Dark-Cursors";
       package = pkgs.catppuccin-cursors.macchiatoDark;
       size = 32;
+    };
+
+    # Configure XDG
+    xdg.configFile = {
+      # Configure the QTCTs
+      qt5ct = {
+        target = "qt5ct/qt5ct.conf";
+        text = pkgs.lib.generators.toINI { } {
+          Appearance = {
+            icon_theme = "Gruvbox";
+          };
+        };
+      };
+      qt6ct = {
+        target = "qt6ct/qt6ct.conf";
+        text = pkgs.lib.generators.toINI { } {
+          Appearance = {
+            icon_theme = "Gruvbox";
+          };
+        };
+      };
     };
   };
 
@@ -101,7 +132,8 @@
     swww # for wallpapers
     wofi # or rofi-wayland as a application launcher
     hyprlock # for locking / sleep on hyprland
-    qt6Packages.qt6ct # idk but it's a dependency
+    qt6Packages.qt6ct
+    libsForQt5.qt5ct
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
