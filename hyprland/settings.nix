@@ -17,7 +17,7 @@ let
   );
 in {
   # Set default programs
-  "$terminal" = "alacritty";
+  "$terminal" = "wezterm";
   "$fileManager" = "nemo";
   "$menu" = "wofi --show drun";
 
@@ -125,8 +125,26 @@ in {
   # Set the mod key
   "$mod" = "SUPER";
 
+  # Bindings (Locked: will also work while laptop is locked)
+  bindl = [
+    # Laptop lid closed
+    ", switch:on:Lid Switch, exec, hyprlock" # lock it
+    ", switch:on:Lid Switch, exec, hyprctl monitor \"eDP-1, disable\"" # turn screen off
+    ", switch:off:Lid Switch, exec, hyprctl monitor \"eDP-1,preferred,auto,1\"" # turn screen on
+
+    # to mute the laptop
+    ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  ];
+
+  # Bindings (Locked & Repeating: will repeat while held and when laptop is locked)
+  bindel = [
+    # Audio keys
+    ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+    ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  ];
+
   # Bindings
-  bind = [
+  bind = [  
     # Utils
     "$mod, M, exit,"
     "$mod, C, killactive,"
@@ -169,7 +187,10 @@ in {
 
   # Some env vars
   env = [
-    "XCURSOR_SIZE, 24"
-    "QT_QPA_PLATFORMTHEME, qt6ct" # change to qt6ct if you have that
+    # Hint to electron apps to use wayland
+    "NIXOS_OZONE_WL,1"
+    "GTK_THEME,Gruvbox"
+    "XCURSOR_SIZE,32"
+    "QT_QPA_PLATFORMTHEME,qt6ct" # change to qt6ct if you have that
   ];
 }

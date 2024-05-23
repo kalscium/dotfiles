@@ -51,7 +51,6 @@ pkgs: let
     obsidian
     freecad
     wezterm
-    alacritty
     krita # for drawing
     kate
     gimp
