@@ -50,6 +50,7 @@
     taplo # toml reader & analyzer
     asciidoc-full # better markdown
     python311
+    pipx
     asciidoc-full
     wasmtime # JIT wasm & cranelift backend
     wasmi # wasm interpreter

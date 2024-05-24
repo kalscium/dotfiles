@@ -195,15 +195,25 @@ in {
     };
   };
 
-  ## [ Zsh ]
+  # Thunar
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-volman
+      thunar-archive-plugin
+      thunar-media-tags-plugin
+    ];
+  };
+
+  # Configure zsh
   programs.zsh = {
     enable = true;
     shellAliases = import ./shellAliases.nix;
   };
 
-  ## [ Git ]
+  # Configure git
   programs.git.enable = true;
 
-  ## [ Env Variables ]
+  # Environmental variables
   environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath dev-deps; });
 }

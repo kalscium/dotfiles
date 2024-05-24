@@ -28,7 +28,7 @@ pkgs: let
   ];
 
   gui-utils = with pkgs; [
-    cinnamon.nemo
+    xfce.thunar
     mate.mate-system-monitor
     qbittorrent
     gparted

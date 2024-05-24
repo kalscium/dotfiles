@@ -18,7 +18,7 @@ let
 in {
   # Set default programs
   "$terminal" = "wezterm";
-  "$fileManager" = "nemo";
+  "$fileManager" = "thunar";
   "$menu" = "wofi --show drun";
 
   # Monitor Setup
@@ -60,7 +60,7 @@ in {
     # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg"; # rainbow
     # "col.inactive_border" = "rgba(595959aa)"; # grey
 
-    layout = "dwindle";
+    layout = "master";
     allow_tearing = false;
   };
 
