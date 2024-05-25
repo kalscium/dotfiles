@@ -134,6 +134,7 @@
     hyprlock # for locking / sleep on hyprland
     qt6Packages.qt6ct
     libsForQt5.qt5ct
+    wev # wayland event viewer
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))

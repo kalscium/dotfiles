@@ -88,6 +88,7 @@ pkgs: let
     busybox # gnu c utils replacement
     os-prober
     jmtpfs # for mounting my android phone
+    xwaylandvideobridge # for screen sharing
   ];
 
   power-saving = with pkgs; [

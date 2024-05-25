@@ -22,7 +22,6 @@ in {
   "$menu" = "wofi --show drun";
 
   # Monitor Setup
-  # monitor = "X11-1,1536x1024,auto,1";
   monitor = ",preferred,auto,1";
 
   # Autostart
@@ -128,8 +127,8 @@ in {
   # Bindings (Locked: will also work while laptop is locked)
   bindl = [
     # Laptop lid closed
-    ", switch:on:Lid Switch, exec, hyprlock" # lock it
     ", switch:on:Lid Switch, exec, hyprctl monitor \"eDP-1, disable\"" # turn screen off
+    ", switch:off:Lid Switch, exec, hyprlock" # lock it
     ", switch:off:Lid Switch, exec, hyprctl monitor \"eDP-1,preferred,auto,1\"" # turn screen on
 
     # to mute the laptop
@@ -141,6 +140,10 @@ in {
     # Audio keys
     ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
     ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+
+    # Brightness keys
+    ", XF86MonBrightnessUp, exec, brightnessctl -d amdgpu_bl1 set 1%+"
+    ", XF86MonBrightnessDown, exec, brightnessctl -d amdgpu_bl1 set 1%-"
   ];
 
   # Bindings
