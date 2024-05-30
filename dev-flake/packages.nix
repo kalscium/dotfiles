@@ -83,6 +83,8 @@
     cmake
     alsa-lib
     fontconfig
+    libxkbcommon
+    libGL
   ];
 
   runtime-deps = with pkgs; [

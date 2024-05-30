@@ -125,6 +125,7 @@
 
   # extra packages
   packages = pkgs: with pkgs; [
+    wayland
     hyprland
     waybar # wayland side-bar
     libnotify

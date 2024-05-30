@@ -1,6 +1,7 @@
 # Packages installed on my system
 pkgs: let
   clis = with pkgs; [
+    distrobox
     docker
     wget
     curl

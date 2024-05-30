@@ -1,7 +1,7 @@
 { pkgs, config, system, inputs, ... }: let
   hyprconfigs = import ../hyprland/hyprland.nix;
   dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; }) ++ [ (import ./../dev-flake/rust.nix { inherit system pkgs; }) ];
-in {
+in rec {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     hyprconfigs.system-config
@@ -120,8 +120,12 @@ in {
     };
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    # Allow unfree packages
+    allowUnfree = true;
+    # Allow unsupported packages (windows linker)
+    allowUnsupportedSystem = true;
+  };
 
   # Enable docker
   virtualisation.docker.enable = true;
@@ -196,6 +200,9 @@ in {
   };
 
   # Thunar
+  programs.xfconf.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
   programs.thunar = {
     enable = true;
     plugins = with pkgs.xfce; [
@@ -215,5 +222,5 @@ in {
   programs.git.enable = true;
 
   # Environmental variables
-  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath dev-deps; });
+  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath environment.systemPackages; });
 }
