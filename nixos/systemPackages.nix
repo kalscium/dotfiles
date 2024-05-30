@@ -30,9 +30,8 @@ pkgs: let
 
   gui-utils = with pkgs; [
     xfce.thunar
-    mate.mate-system-monitor
+    monitor
     qbittorrent
-    gparted
     discord
     vlc # video player
     keepassxc
@@ -85,11 +84,14 @@ pkgs: let
     ntfs3g # support for ntfs
     btrfs-progs # support for btrfs
     cryptsetup # for disk encryption
-    polkit # for asking for sudo
     busybox # gnu c utils replacement
     os-prober
     jmtpfs # for mounting my android phone
     xwaylandvideobridge # for screen sharing
+
+    # polkit (for asking for sudo)
+    polkit
+    libsForQt5.polkit-qt
   ];
 
   power-saving = with pkgs; [

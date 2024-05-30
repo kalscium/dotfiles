@@ -18,6 +18,10 @@
     gnupg
     busybox
     just # for saving and running project-specific commands
+    zip
+    gzip
+    p7zip
+    simple-http-server
 
     # mdbook
     mdbook
@@ -54,6 +58,7 @@
     asciidoc-full
     wasmtime # JIT wasm & cranelift backend
     wasmi # wasm interpreter
+    wasm-pack # for building rust wasm packages
     clang
   ];
 

@@ -175,6 +175,9 @@ in rec {
   # Enable flakes and nix command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable polkit
+  security.polkit.enable = true;
+
   # Enable power saving
   powerManagement.enable = true;
   services.thermald.enable = false; # prevents cpu overheating
@@ -220,6 +223,9 @@ in rec {
 
   # Configure git
   programs.git.enable = true;
+
+  # Configure Parition Manager
+  programs.partition-manager.enable = true;
 
   # Environmental variables
   environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath environment.systemPackages; });
