@@ -22,6 +22,7 @@
     gzip
     p7zip
     simple-http-server
+    scriptisto # run compiled scripts
 
     # mdbook
     mdbook

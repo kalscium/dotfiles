@@ -41,6 +41,7 @@ pkgs: let
     nomacs # image viewer
     networkmanagerapplet # for connecting to wifi
     libsForQt5.ark
+    thunderbird
   ];
 
   gui-editors = with pkgs; [
