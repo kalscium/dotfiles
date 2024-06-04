@@ -228,5 +228,5 @@ in rec {
   programs.partition-manager.enable = true;
 
   # Environmental variables
-  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath environment.systemPackages; });
+  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix pkgs // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath environment.systemPackages; });
 }

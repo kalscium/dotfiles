@@ -26,6 +26,6 @@
 
         # env variables
         LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath all-deps;
-      } // import ./env-vars.nix;
+      } // import ./env-vars.nix pkgs;
     });
 }
