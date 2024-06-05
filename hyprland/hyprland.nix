@@ -58,6 +58,14 @@
       enable = true;
       settings = import ./settings.nix;
     };
+
+    # Configure Gnome
+    dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        gtk-theme = "Gruvbox"; # for GTK3 apps
+        color-scheme = "prefer-dark"; # for GTK4 apps
+      };
+    };
     
     # Configure GTK
     gtk = {
@@ -79,6 +87,10 @@
       };
 
       gtk3 = {
+        extraConfig.gtk-application-prefer-dark-theme = true;
+      };
+
+      gtk4 = {
         extraConfig.gtk-application-prefer-dark-theme = true;
       };
     };
@@ -117,6 +129,14 @@
         text = pkgs.lib.generators.toINI { } {
           Appearance = {
             icon_theme = "Gruvbox";
+          };
+        };
+      };
+      hyprland-portals = {
+        target = "xdg-desktop-portal/hyprland-portals.conf";
+        text = pkgs.lib.generators.toINI { } {
+          preferred = {
+            default = "hyprland;gtk";
           };
         };
       };
