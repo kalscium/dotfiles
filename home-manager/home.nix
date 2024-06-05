@@ -46,4 +46,7 @@
 
   # Configure Waybar
   programs.waybar = import ./../hyprland/waybar/waybar.nix;
+
+  # Configure Thunderbird
+  programs.thunderbird = import ./thunderbird.nix;
 }
