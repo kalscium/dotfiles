@@ -2,13 +2,14 @@
   description = "Home Manager configration of GreenChild04";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    catppuccin.url = "github:catppuccin/nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, catppuccin, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -18,6 +19,8 @@
         modules = [
           ./home.nix
           (import ./../hyprland/hyprland.nix).home-manager
+          home-manager.nixosModules.home-manager
+          catppuccin.homeManagerModules.catppuccin
         ];
       };
       homeConfigurations."root" = home-manager.lib.homeManagerConfiguration {

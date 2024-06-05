@@ -39,7 +39,7 @@
   programs.git = (import ./git.nix);
 
   # Configure Helix
-  programs.helix = import ./helix.nix;
+  programs.helix = import ./helix.nix pkgs.lib;
 
   # Configure Wezterm
   programs.wezterm = import ./wezterm.nix;

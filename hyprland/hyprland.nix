@@ -52,7 +52,7 @@
     ];
   };
 
-  home-manager = { config, pkgs, ... }: {
+  home-manager = { config, pkgs, catppuccin, ... }: {
     # Configure Hyprland
     wayland.windowManager.hyprland = {
       enable = true;
@@ -62,29 +62,20 @@
     # Configure Gnome
     dconf.settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme = "Gruvbox"; # for GTK3 apps
         color-scheme = "prefer-dark"; # for GTK4 apps
       };
+    };
+
+    # Configure Catppuccin
+    catppuccin = {
+      enable = true;
+      flavor = "macchiato";
+      accent = "green";
     };
     
     # Configure GTK
     gtk = {
       enable = true;
-
-      theme = {
-        name = "Gruvbox";
-        package = pkgs.gruvbox-dark-gtk;
-      };
-
-      iconTheme = {
-        name = "Gruvbox";
-        package = pkgs.gruvbox-dark-icons-gtk;
-      };
-
-      cursorTheme = {
-        name = "Catppuccin-Macchiato-Dark-Cursors";
-        package = pkgs.catppuccin-cursors.macchiatoDark;
-      };
 
       gtk3 = {
         extraConfig.gtk-application-prefer-dark-theme = true;
@@ -105,12 +96,11 @@
       };
     };
 
-    # Configure the cursor
-    home.pointerCursor = {
-      gtk.enable = true;
-      name = "Catppuccin-Macchiato-Dark-Cursors";
-      package = pkgs.catppuccin-cursors.macchiatoDark;
-      size = 32;
+    # Configure Cursor
+    gtk.catppuccin.cursor = {
+      enable = true;
+      flavor = "mocha";
+      accent = "green";
     };
 
     # Configure XDG

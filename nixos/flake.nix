@@ -13,13 +13,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin.url = "github:catppuccin/nix";
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, catppuccin, ... }@inputs:
     let
       system = "x86_64-linux";
       overlays = [ (import inputs.rust-overlay) ];
@@ -34,11 +35,12 @@
     in {
       nixosConfigurations = {
         greenix = nixpkgs.lib.nixosSystem { # for my default system
-          specialArgs = { inherit inputs system hyprland pkgs; };
+          specialArgs = { inherit inputs system hyprland pkgs catppuccin; };
           modules = [
             hyprland.nixosModules.default
             home-manager.nixosModules.home-manager
             ./configuration.nix
+            catppuccin.nixosModules.catppuccin
           ];
         };
 

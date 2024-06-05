@@ -104,6 +104,7 @@ in {
 
   dwindle = {
     pseudotile = true;
+    force_split = 2;
     preserve_split = true;
   };
 
@@ -192,7 +193,6 @@ in {
   env = [
     # Hint to electron apps to use wayland
     "NIXOS_OZONE_WL,1"
-    "GTK_THEME,Gruvbox"
     "XCURSOR_SIZE,32"
     "QT_QPA_PLATFORMTHEME,qt6ct" # change to qt6ct if you have that
   ];

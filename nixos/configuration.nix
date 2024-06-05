@@ -1,4 +1,4 @@
-{ pkgs, config, system, inputs, ... }: let
+{ pkgs, config, system, catppuccin, inputs, ... }: let
   hyprconfigs = import ../hyprland/hyprland.nix;
   dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; }) ++ [ (import ./../dev-flake/rust.nix { inherit system pkgs; }) ];
 in rec {
@@ -114,6 +114,7 @@ in rec {
         imports = [
           ./../home-manager/home.nix
           (import ./../hyprland/hyprland.nix).home-manager
+          catppuccin.homeManagerModules.catppuccin
         ];
       };
       root = import ./../home-manager/root-home.nix;

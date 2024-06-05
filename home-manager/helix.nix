@@ -1,4 +1,4 @@
-{
+lib: {
   enable = true;
   defaultEditor = true;
 
@@ -11,7 +11,7 @@
   };
 
   settings = {
-    theme = "gruvbox";
+    theme = lib.mkForce "gruvbox";
     editor = {
       line-number = "relative"; # it's popular :P
       scrolloff = 999; # to keep the cursor centred
