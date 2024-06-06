@@ -72,6 +72,13 @@
       flavor = "macchiato";
       accent = "green";
     };
+
+    # Configure Mako
+    services.mako = {
+      enable = true;
+      catppuccin.enable = true;
+      catppuccin.accent = "green";
+    };
     
     # Configure GTK
     gtk = {
@@ -139,7 +146,7 @@
     hyprland
     waybar # wayland side-bar
     libnotify
-    dunst # or mako for notifications
+    mako # or dunst for notifications
     swww # for wallpapers
     wofi # or rofi-wayland as a application launcher
     hyprlock # for locking / sleep on hyprland
