@@ -129,7 +129,7 @@ in {
   bindl = [
     # Laptop lid closed
     ", switch:on:Lid Switch, exec, hyprctl monitor \"eDP-1, disable\"" # turn screen off
-    ", switch:off:Lid Switch, exec, hyprlock" # lock it
+    ", switch:on:Lid Switch, exec, hyprlock" # lock it
     ", switch:off:Lid Switch, exec, hyprctl monitor \"eDP-1,preferred,auto,1\"" # turn screen on
 
     # to mute the laptop
