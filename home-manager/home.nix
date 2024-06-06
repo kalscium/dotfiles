@@ -28,6 +28,10 @@
     # Electron configs
     ".config/electron-flags.conf".source = ./include/electron-flags.conf;
 
+    # Waybar configs
+    ".config/waybar/macchiato.css".source = ./../hyprland/waybar/macchiato.css;
+    ".config/waybar/scripts/check_battery.sh".source = ./../hyprland/waybar/scripts/check_battery.sh;
+
     ## [ Custom home symlinks ]
     # ".".source = absSymlink /Gata/GreenChild;
   };
@@ -45,7 +49,7 @@
   programs.wezterm = import ./wezterm.nix;
 
   # Configure Waybar
-  programs.waybar = import ./../hyprland/waybar/waybar.nix;
+  programs.waybar = import ./../hyprland/waybar/waybar.nix pkgs;
 
   # Configure Thunderbird
   programs.thunderbird = import ./thunderbird.nix;

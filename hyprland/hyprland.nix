@@ -139,12 +139,13 @@
     hyprland
     waybar # wayland side-bar
     libnotify
-    mako # or dunst for notifications
+    dunst # or mako for notifications
     swww # for wallpapers
     wofi # or rofi-wayland as a application launcher
     hyprlock # for locking / sleep on hyprland
     qt6Packages.qt6ct
     libsForQt5.qt5ct
+    pavucontrol # for a gui sound controller
     wev # wayland event viewer
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
