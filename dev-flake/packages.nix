@@ -82,6 +82,7 @@
     gcc-arm-embedded-7 # for robotics
     libclang
     openssl
+    sqlite
     sccache
     gnumake
     glibc # c standard library
