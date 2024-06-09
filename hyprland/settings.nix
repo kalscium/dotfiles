@@ -128,9 +128,10 @@ in {
   # Bindings (Locked: will also work while laptop is locked)
   bindl = [
     # Laptop lid closed
-    ", switch:on:Lid Switch, exec, hyprctl monitor \"eDP-1, disable\"" # turn screen off
-    ", switch:on:Lid Switch, exec, hyprlock" # lock it
-    ", switch:off:Lid Switch, exec, hyprctl monitor \"eDP-1,preferred,auto,1\"" # turn screen on
+    ", switch:on:Lid Switch, exec, hyprctl dispatch dpms off" # turn screen off
+    ", switch:on:Lid Switch, exec, systemctl suspend" # go to sleep
+    ", switch:off:Lid Switch, exec, hyprctl dispatch dpms on" # turn screen on
+    ", switch:off:Lid Switch, exec, hyprlock --immediate" # lock it
 
     # to mute the laptop
     ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -145,6 +146,10 @@ in {
     # Brightness keys
     ", XF86MonBrightnessUp, exec, brightnessctl -d amdgpu_bl1 set 1%+"
     ", XF86MonBrightnessDown, exec, brightnessctl -d amdgpu_bl1 set 1%-"
+    "Control_L, XF86MonBrightnessUp, exec, brightnessctl -d amdgpu_bl1 set 5%+"
+    "Control_L, XF86MonBrightnessDown, exec, brightnessctl -d amdgpu_bl1 set 5%-"
+    "SHIFT, XF86MonBrightnessUp, exec, brightnessctl -d amdgpu_bl1 set 1+"
+    "SHIFT, XF86MonBrightnessDown, exec, brightnessctl -d amdgpu_bl1 set 1-"
   ];
 
   # Bindings

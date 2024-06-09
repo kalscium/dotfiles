@@ -79,6 +79,18 @@
       catppuccin.enable = true;
     };
 
+    # Configure Swayidle
+    services.swayidle = {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 60;
+          command = "hyprctl dispatch dpms off";
+          resumeCommand = "hyprctl dispatch dpms on";
+        }
+      ];
+    };
+
     # Configure Hyprlock
     programs.hyprlock = {
       enable = true;
@@ -190,6 +202,8 @@
     libsForQt5.qt5ct
     pavucontrol # for a gui sound controller
     wev # wayland event viewer
+    swayidle # idle manager for wayland
+    sway-audio-idle-inhibit
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
