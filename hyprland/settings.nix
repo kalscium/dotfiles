@@ -161,6 +161,7 @@ in {
     "$mod, R, exec, $menu"
     "$mod, P, pseudo," # dwindle
     "$mod, J, togglesplit," # dwindle
+    "$mod SHIFT, Z, exec, grimblast copysave area ~/Pictures/RandomScreenshots/Screenshot_$(date +'%Y%m%d_%H%M%S').png" # screenshot
 
     # Open Apps
     "$mod, Q, exec, $terminal"

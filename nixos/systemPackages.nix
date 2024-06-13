@@ -42,6 +42,8 @@ pkgs: let
     networkmanagerapplet # for connecting to wifi
     libsForQt5.ark
     thunderbird
+    obs-studio
+    gnome.cheese
   ];
 
   gui-editors = with pkgs; [

@@ -204,6 +204,7 @@
     wev # wayland event viewer
     swayidle # idle manager for wayland
     sway-audio-idle-inhibit
+    grimblast # for screenshots
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
