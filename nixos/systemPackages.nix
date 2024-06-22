@@ -76,6 +76,7 @@ pkgs: let
     exfatprogs # for gparted
     mediainfo # for kdenlive
     x264 # for kdenlive
+    glaxnimate # for kdenlive
     texlive.combined.scheme-small # for pandoc
   ];
 

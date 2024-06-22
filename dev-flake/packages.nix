@@ -47,6 +47,9 @@
 
   lang-deps = with pkgs; [
     zig
+    go
+    nodejs_22
+    haskell.compiler.native-bignum.ghcHEAD
     zls # zig language server
     gcc
     dotnet-sdk_8
