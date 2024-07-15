@@ -1,0 +1,55 @@
+pkgs: with pkgs; [
+  alsa-lib
+  atk
+  at-spi2-atk
+  at-spi2-core
+  cairo
+  cups
+  curl
+  dbus
+  expat
+  fontconfig
+  freetype
+  fuse3
+  gdk-pixbuf
+  glib
+  glibc # c standard library
+  gtk3
+  icu
+  libappindicator-gtk3
+  libcxx # c++ standard library
+  libdrm
+  libGL
+  libglvnd
+  libnotify
+  libpulseaudio
+  libunwind
+  libusb1
+  libuuid
+  libxkbcommon
+  libxml2
+  mesa
+  nspr
+  nss
+  openssl
+  pango
+  pipewire
+  stdenv.cc.cc
+  systemd
+  vulkan-loader
+  xorg.libX11
+  xorg.libxcb
+  xorg.libXcomposite
+  xorg.libXcursor
+  xorg.libXdamage
+  xorg.libXext
+  xorg.libXfixes
+  xorg.libXi
+  xorg.libxkbfile
+  xorg.libXrandr
+  xorg.libXrender
+  xorg.libXScrnSaver
+  xorg.libxshmfence
+  xorg.libXtst
+  zlib
+]

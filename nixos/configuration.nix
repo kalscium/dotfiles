@@ -1,7 +1,7 @@
 { pkgs, config, system, catppuccin, inputs, ... }: let
   hyprconfigs = import ../hyprland/hyprland.nix;
   dev-deps = (import ./../dev-flake/packages.nix { inherit pkgs; nur = inputs.nur; }) ++ [ (import ./../dev-flake/rust.nix { inherit system pkgs; }) ];
-in rec {
+in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     hyprconfigs.system-config
@@ -135,11 +135,11 @@ in rec {
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
-  # Enable nix ld (for running of foreign binaries) programs.nix-ld = {
+  # Enable nix ld (for running of foreign binaries)
   programs.nix-ld = {
     enable = true;
     # Libraries for nix-ld
-    libraries = dev-deps;
+    libraries = import ./../dev-flake/libraries.nix pkgs;
   };
 
   # Installed Fonts
@@ -229,5 +229,5 @@ in rec {
   programs.partition-manager.enable = true;
 
   # Environmental variables
-  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix pkgs // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath environment.systemPackages; });
+  environment.variables = pkgs.lib.mkForce (import ./env-vars.nix // import ./../dev-flake/env-vars.nix pkgs // { LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath (import ./../dev-flake/libraries.nix pkgs); });
 }

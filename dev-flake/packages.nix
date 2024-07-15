@@ -23,6 +23,11 @@
     p7zip
     simple-http-server
     scriptisto # run compiled scripts
+    curl
+    cmake
+    gnumake
+    sqlite
+    sccache
 
     # mdbook
     mdbook
@@ -52,6 +57,7 @@
     haskell.compiler.native-bignum.ghcHEAD
     zls # zig language server
     gcc
+    libclang
     dotnet-sdk_8
     zulu # jdk
     jre8
@@ -64,6 +70,8 @@
     wasmi # wasm interpreter
     wasm-pack # for building rust wasm packages
     clang
+    gleam
+    glas # a lsp for gleam
   ];
 
   rust-dev-deps = with pkgs; [
@@ -83,29 +91,5 @@
     makeWrapper
     lld_17
     gcc-arm-embedded-7 # for robotics
-    libclang
-    openssl
-    sqlite
-    sccache
-    gnumake
-    glibc # c standard library
-    libcxx # c++ standard library
-    cmake
-    alsa-lib
-    fontconfig
-    libxkbcommon
-    libGL
   ];
-
-  runtime-deps = with pkgs; [
-    libxkbcommon
-    stdenv.cc.cc
-    zlib
-    fuse3
-    icu
-    nss
-    openssl
-    curl
-    expat
-  ];
-in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps ++ runtime-deps
+in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps ++ import ./libraries.nix pkgs
