@@ -7,6 +7,9 @@ lib: {
       { name = "rust"; auto-format = false; }
       { name = "toml"; }
       { name = "zig"; auto-format = false; }
+      { name = "gleam"; auto-format = false; }
+      { name = "c"; auto-format = false; }
+      { name = "cpp"; auto-format = false; }
     ];
   };
 

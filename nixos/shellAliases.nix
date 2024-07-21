@@ -9,7 +9,7 @@
     xpand = "~/Programs/xpand";
     github = "cd ~/Github; cd";
     school = "cd ~/School; cd";
-    dev = "docker run -it --rm -v .:/home/dev/project -v /home/greenchild/.cargo/registry:/home/dev/.cargo/registry -v /home/greenchild/.cache/sccache:/home/dev/.cache/sccache gc-dev;";
+    dev = "nix develop ~/Github/dotfiles/dev-flake";
     ls = "eza";
     find = "fd";
     brightness = "brightnessctl -d amdgpu_bl1 set";

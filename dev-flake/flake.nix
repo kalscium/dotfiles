@@ -15,17 +15,19 @@
       };
 
       rust-bin = import ./rust.nix { inherit pkgs system; };
-      all-deps = (import ./packages.nix { inherit pkgs nur; }) ++ [ rust-bin ];
+      dev-deps = (import ./packages.nix { inherit pkgs nur; }) ++ [ rust-bin ];
+      libraries = import ./libraries.nix pkgs;
     in {
       devShells.default = pkgs.mkShell {
-        buildInputs = all-deps;
+        nativeBuildInputs = dev-deps;
+        buildInputs = libraries;
         shellHook = ''
           alias ls=eza
           alias find=fd
         '';
 
         # env variables
-        LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath all-deps;
+        LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath libraries;
       } // import ./env-vars.nix pkgs;
     });
 }

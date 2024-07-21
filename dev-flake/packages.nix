@@ -57,7 +57,6 @@
     haskell.compiler.native-bignum.ghcHEAD
     zls # zig language server
     gcc
-    libclang
     dotnet-sdk_8
     zulu # jdk
     jre8
@@ -65,11 +64,11 @@
     asciidoc-full # better markdown
     python311
     pipx
-    asciidoc-full
     wasmtime # JIT wasm & cranelift backend
     wasmi # wasm interpreter
     wasm-pack # for building rust wasm packages
     clang
+    erlang_27
     gleam
     glas # a lsp for gleam
   ];
@@ -92,4 +91,4 @@
     lld_17
     gcc-arm-embedded-7 # for robotics
   ];
-in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps ++ import ./libraries.nix pkgs
+in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps

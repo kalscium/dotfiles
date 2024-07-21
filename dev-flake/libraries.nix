@@ -17,6 +17,7 @@ pkgs: with pkgs; [
   gtk3
   icu
   libappindicator-gtk3
+  libclang
   libcxx # c++ standard library
   libdrm
   libGL
