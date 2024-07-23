@@ -68,6 +68,7 @@
     wasmi # wasm interpreter
     wasm-pack # for building rust wasm packages
     clang
+    libclang
     erlang_27
     gleam
     glas # a lsp for gleam
@@ -90,5 +91,7 @@
     makeWrapper
     lld_17
     gcc-arm-embedded-7 # for robotics
+    pkgsCross.mingw32.buildPackages.gcc # for cross compiling to windows 32bit
+    pkgsCross.mingwW64.buildPackages.gcc # for cross compiling to windows 32bit
   ];
 in dev-clis ++ dev-tuis ++ dev-guis ++ lang-deps ++ rust-dev-deps ++ build-deps

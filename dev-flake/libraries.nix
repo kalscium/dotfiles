@@ -17,7 +17,6 @@ pkgs: with pkgs; [
   gtk3
   icu
   libappindicator-gtk3
-  libclang
   libcxx # c++ standard library
   libdrm
   libGL
@@ -36,7 +35,7 @@ pkgs: with pkgs; [
   pango
   pipewire
   stdenv.cc.cc
-  pkgsCross.mingwW64.stdenv.cc.cc
+  pkgsCross.mingwW64.windows.pthreads
   systemd
   vulkan-loader
   xorg.libX11
