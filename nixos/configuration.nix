@@ -103,7 +103,7 @@ in {
   users.users.greenchild = {
     isNormalUser = true;
     description = "GreenChild";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
   # Configures home manager
@@ -131,8 +131,27 @@ in {
   # Enable docker
   virtualisation.docker.enable = true;
 
-  # Enable virtual machine
-  virtualisation.libvirtd.enable = true;
+  # Enable libvirt
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [(pkgs.OVMF.override {
+          secureBoot = true;
+          tpmSupport = true;
+        }).fd];
+      };
+    };
+  };
+
+  # Enable libvirt USB redirection (optional)
+  virtualisation.spiceUSBRedirection.enable = true;
+
+  # Enable virt-manager
   programs.virt-manager.enable = true;
 
   # Enable nix ld (for running of foreign binaries)

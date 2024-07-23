@@ -36,6 +36,7 @@ pkgs: with pkgs; [
   pango
   pipewire
   stdenv.cc.cc
+  pkgsCross.mingwW64.stdenv.cc.cc
   systemd
   vulkan-loader
   xorg.libX11

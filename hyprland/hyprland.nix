@@ -132,6 +132,11 @@
     gtk = {
       enable = true;
 
+      cursorTheme = pkgs.lib.mkForce {
+        name = "Catppuccin-Macchiato-Dark-Cursors";
+        package = pkgs.catppuccin-cursors.macchiatoDark;
+      };
+
       gtk3 = {
         extraConfig.gtk-application-prefer-dark-theme = true;
       };
@@ -152,10 +157,12 @@
     };
 
     # Configure Cursor
-    gtk.catppuccin.cursor = {
-      enable = true;
-      flavor = "mocha";
-      accent = "green";
+    home.pointerCursor = {
+      name = "Catppuccin-Macchiato-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.macchiatoDark;
+      size = 32;
+      gtk.enable = true;
+      x11.enable = true;
     };
 
     # Configure XDG
