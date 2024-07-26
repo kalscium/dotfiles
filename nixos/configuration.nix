@@ -103,7 +103,7 @@ in {
   users.users.greenchild = {
     isNormalUser = true;
     description = "GreenChild";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "uinput" ];
   };
 
   # Configures home manager
@@ -233,6 +233,20 @@ in {
       thunar-archive-plugin
       thunar-media-tags-plugin
     ];
+  };
+
+  # Configure kanata
+  services.kanata = {
+    enable = true;
+    keyboards.main.config = ''
+      (defsrc
+        caps
+      )
+
+      (deflayer base
+        esc
+      )
+    '';
   };
 
   # Configure zsh
