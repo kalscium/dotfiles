@@ -44,6 +44,7 @@ pkgs: let
     thunderbird
     obs-studio
     gnome.cheese
+    feather
   ];
 
   gui-editors = with pkgs; [
