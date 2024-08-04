@@ -10,5 +10,8 @@
         "x86_64-pc-windows-gnu"                                      
         "armv7a-none-eabi"
       ];
-      extensions = [ "rust-src" ];
+      extensions = [
+        "rust-src"
+        "llvm-tools-preview"
+      ];
     })

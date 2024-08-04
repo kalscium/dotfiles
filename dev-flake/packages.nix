@@ -83,6 +83,7 @@
     cargo-nextest
     cargo-hakari
     cargo-rdme
+    cargo-bootimage # for writing my own operating system
   ];
 
   build-deps = with pkgs; [
