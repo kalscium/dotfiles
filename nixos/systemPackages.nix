@@ -65,11 +65,13 @@ pkgs: let
     microsoft-edge
     # brave
     firefox-bin
+    mullvad-browser
     # google-chrome
   ];
 
   games = with pkgs; [
     lunar-client
+    prismlauncher
   ];
 
   dependencies = with pkgs; [

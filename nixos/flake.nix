@@ -1,5 +1,5 @@
 {
-  description = "GreenChild04's NixOS flake";
+  description = "Kalscium's NixOS flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -34,7 +34,7 @@
       };
     in {
       nixosConfigurations = {
-        greenix = nixpkgs.lib.nixosSystem { # for my default system
+        kalnix = nixpkgs.lib.nixosSystem { # for my default system
           specialArgs = { inherit inputs system hyprland pkgs catppuccin; };
           modules = [
             hyprland.nixosModules.default

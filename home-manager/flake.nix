@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configration of GreenChild04";
+  description = "Home Manager configration of Kalscium";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     catppuccin.url = "github:catppuccin/nix";
@@ -14,7 +14,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."greenchild" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.kalscium = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./home.nix
@@ -23,7 +23,7 @@
           catppuccin.homeManagerModules.catppuccin
         ];
       };
-      homeConfigurations."root" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.root = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./root-home.nix ];
       };

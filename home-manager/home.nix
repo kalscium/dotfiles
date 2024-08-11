@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
-  home.username = "greenchild";
-  home.homeDirectory = "/home/greenchild";
+  home.username = "kalscium";
+  home.homeDirectory = "/home/kalscium";
 
   home.stateVersion = "24.05";
 

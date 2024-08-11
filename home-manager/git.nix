@@ -1,7 +1,7 @@
 {
   enable = true;
-  userName = "GreenChild04";
-  userEmail = "greenchild04@protonmail.com";
+  userName = "kalscium";
+  userEmail = "kalscium@protonmail.com";
 
   ignores = [
     "*~*" # pls no home
@@ -11,9 +11,6 @@
   ];
 
   extraConfig = {
-    safe.directory = [
-      "/Gata/GreenChild/Github"
-    ];
     core.editor = "hx";
     init.defaultBranch = "main";
   };

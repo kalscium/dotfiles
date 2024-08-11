@@ -1,5 +1,5 @@
 {
-  description = "GreenChild04's personal dev-shell";
+  description = "Kalscium's personal dev-shell";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     rust-overlay.url = "github:oxalica/rust-overlay";

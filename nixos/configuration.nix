@@ -31,7 +31,7 @@ in {
 
   # Networking
   networking = {
-    hostName = "greenix"; # Defines your hostname
+    hostName = "kalnix"; # Defines your hostname
     # wireless.enable = true; # Enables wireless support via `wpa_supplicant`
     networkmanager.enable = true; # Enables networking (like wifi)
   };
@@ -100,9 +100,9 @@ in {
 
   # Defines my user account
   # (Don't forget to set a password with `passwd`)
-  users.users.greenchild = {
+  users.users.kalscium = {
     isNormalUser = true;
-    description = "GreenChild";
+    description = "Kalscium";
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "uinput" ];
   };
 
@@ -110,7 +110,7 @@ in {
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      greenchild = {
+      kalscium = {
         imports = [
           ./../home-manager/home.nix
           (import ./../hyprland/hyprland.nix).home-manager

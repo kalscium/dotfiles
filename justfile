@@ -13,7 +13,7 @@ clean:
 
 # rebuilds and switches to the new system configurations
 rebuild:
-	sudo nixos-rebuild switch --flake nixos/#greenix
+	sudo nixos-rebuild switch --flake nixos/#kalnix
 
 # rebuilds and switches to the new home configuration
 rebuild-home:
