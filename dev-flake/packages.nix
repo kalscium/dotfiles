@@ -23,6 +23,7 @@
     p7zip
     simple-http-server
     scriptisto # run compiled scripts
+    cloc # for counting lines of source code
     curl
     cmake
     gnumake

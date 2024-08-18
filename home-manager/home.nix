@@ -51,6 +51,9 @@
   # Configure Waybar
   programs.waybar = import ./../hyprland/waybar/waybar.nix pkgs;
 
+  # Configure Wofi
+  programs.wofi = import ./../hyprland/wofi.nix;
+
   # Configure Thunderbird
   programs.thunderbird = import ./thunderbird.nix;
 }
