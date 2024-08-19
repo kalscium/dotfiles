@@ -8,20 +8,22 @@
 "ui.window" = { bg = "black" }
 "ui.linenr.selected" = { fg = "white", bg = "black", modifiers = ["bold"] }
 "ui.selection" = { bg = "white", modifiers = ["bold", "reversed"] }
-"comment" = { fg = "light-gray", modifiers = ["dim"] }
 "ui.statusline" = { fg = "black", bg = "cyan" }
 "ui.statusline.inactive" = { fg = "black", bg = "white" }
 "ui.help" = { fg = "black", bg = "light-gray" }
 "ui.cursor" = { bg = "black", modifiers = ["reversed"] }
 "ui.cursor.primary" = { bg = "white", modifiers = ["bold"] }
+"ui.cursor.match" = { fg = "light-yellow", modifiers = ["underlined"] }
+
 "variable" = "light-gray"
 "variable.parameter" = { fg = "red", modifiers = ["bold"] }
 "variable.other.member" = { fg = "green", modifiers = ["bold"] }
+"variable.builtin" = { fg = "light-red", modifiers = ["bold"] }
 "constant.numeric" = "yellow"
 "constant" = "yellow"
 "attribute" = "yellow"
 "type" = { fg = "light-yellow", modifiers = ["bold"] }
-"ui.cursor.match" = { fg = "light-yellow", modifiers = ["underlined"] }
+"type.enum.variant" = { fg = "light-blue", modifiers = ["bold"] }
 "string"  = { fg = "light-green", modifiers = ["bold"] }
 "constant.character.escape" = "cyan"
 "function" = { fg = "light-cyan", modifiers = ["bold"] }
@@ -33,6 +35,7 @@
 "namespace" = { fg = "light-magenta" }
 "operator" = { fg = "light-magenta", modifiers = ["bold"] }
 "keyword.operator" = { fg = "light-magenta", modifiers = ["bold"] }
+"comment" = { fg = "light-gray", modifiers = ["dim"] }
 
 "markup.heading" = { fg = "light-red", modifiers = ["bold"] }
 "markup.list" = { fg = "light-red", modifiers = ["bold"] }
