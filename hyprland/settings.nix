@@ -28,6 +28,8 @@ in {
   exec-once = [
     "waybar"
     "swww-daemon"
+    "wl-paste --type text --watch cliphist store" # stores only text data
+    "wl-paste --type image --watch cliphist store" # stores only image data
   ];
 
   input = {
@@ -162,6 +164,7 @@ in {
     "$mod, P, pseudo," # dwindle
     "$mod, J, togglesplit," # dwindle
     "$mod SHIFT, Z, exec, grimblast copysave area ~/Pictures/RandomScreenshots/Screenshot_$(date +'%Y%m%d_%H%M%S').png" # screenshot
+    "$mod, X, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy" # clipboard
 
     # Open Apps
     "$mod, Q, exec, $terminal"

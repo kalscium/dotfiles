@@ -91,6 +91,12 @@
       ];
     };
 
+    # Configure Cliphist
+    services.cliphist = {
+      enable = true;
+      allowImages = true;
+    };
+
     # Configure Hyprlock
     programs.hyprlock = {
       enable = true;
