@@ -29,6 +29,7 @@
     gnumake
     sqlite
     sccache
+    fzf
 
     # mdbook
     mdbook
@@ -36,7 +37,7 @@
   ];
 
   dev-tuis = with pkgs; [
-    tmux
+    zellij
     xplr # file explorer
     bacon
     helix

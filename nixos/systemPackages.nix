@@ -18,11 +18,13 @@ pkgs: let
     monero-cli
     brightnessctl # to change the brightness of my screenb
     acpi # for checking the battery percentage
+    libwebp
+    yt-dlp
   ];
 
   tuis = with pkgs; [
     xplr
-    tmux
+    zellij
     cmatrix # cool matrix text thing
     helix
     testdisk # for recovering ntfs files
