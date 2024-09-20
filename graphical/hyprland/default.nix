@@ -1,5 +1,6 @@
 {
   imports = [
     ./dependencies.nix
+    ./configs
   ];
 }

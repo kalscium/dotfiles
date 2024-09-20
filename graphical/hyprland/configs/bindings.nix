@@ -1,0 +1,92 @@
+{
+  wayland.windowManager.hyprland.settings =
+  let
+    workspace-bindings = (
+      # workspaces
+      # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+      builtins.concatLists (builtins.genList (
+          x: let
+            ws = let
+              c = (x + 1) / 10;
+            in
+              builtins.toString (x + 1 - (c * 10));
+          in [
+            "$mod, ${ws}, workspace, ${toString (x + 1)}"
+            "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+          ]
+        )
+        10)
+    );
+  in {
+    # Bindings (Locked: will also work while laptop is locked)
+    bindl = [
+      # Laptop lid closed
+      ", switch:on:Lid Switch, exec, hyprctl dispatch dpms off" # turn screen off
+      ", switch:on:Lid Switch, exec, systemctl suspend" # go to sleep
+      ", switch:off:Lid Switch, exec, hyprctl dispatch dpms on" # turn screen on
+      ", switch:off:Lid Switch, exec, hyprlock --immediate" # lock it
+
+      # to mute the laptop
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ];
+
+    # Bindings (Locked & Repeating: will repeat while held and when laptop is locked)
+    bindel = [
+      # Audio keys
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+
+      # Brightness keys
+      ", XF86MonBrightnessUp, exec, brightnessctl -d amdgpu_bl1 set 1%+"
+      ", XF86MonBrightnessDown, exec, brightnessctl -d amdgpu_bl1 set 1%-"
+      "Control_L, XF86MonBrightnessUp, exec, brightnessctl -d amdgpu_bl1 set 5%+"
+      "Control_L, XF86MonBrightnessDown, exec, brightnessctl -d amdgpu_bl1 set 5%-"
+      "SHIFT, XF86MonBrightnessUp, exec, brightnessctl -d amdgpu_bl1 set 1+"
+      "SHIFT, XF86MonBrightnessDown, exec, brightnessctl -d amdgpu_bl1 set 1-"
+    ];
+
+    # Bindings
+    bind = [  
+      # Utils
+      "$mod, M, exit,"
+      "$mod, C, killactive,"
+      "$mod, V, togglefloating,"
+      "$mod, R, exec, $menu"
+      "$mod, P, pseudo," # dwindle
+      "$mod, J, togglesplit," # dwindle
+      "$mod SHIFT, Z, exec, grimblast copysave area ~/Pictures/RandomScreenshots/Screenshot_$(date +'%Y%m%d_%H%M%S').png" # screenshot
+      "$mod, X, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy" # clipboard
+
+      # Open Apps
+      "$mod, Q, exec, $terminal"
+      ", MENU, exec, $terminal"
+      "$mod, E, exec, $fileManager"
+      "$mod, F, exec, firefox"
+
+      # Special workspace (scratchpad)
+      "$mod, S, togglespecialworkspace, magic"
+      "$mod SHIFT, S, movetoworkspace, special:magic"
+
+      # Move the focus with arrowkeys
+      "$mod, left, movefocus, l"
+      "$mod, right, movefocus, r"
+      "$mod, up, movefocus, u"
+      "$mod, down, movefocus, d"
+
+      # Scroll through existing workspaces with mod + scroll
+      "$mod, mouse_down, workspace, e+1"
+      "$mod, mouse_up, workspace, e-1"
+
+      # Scroll through existing workspaces with arrow keys
+      "$mod CTRL, right, workspace, e+1"
+      "$mod CTRL, left, workspace, e-1"
+    ] ++ workspace-bindings;
+
+    # more bindings
+    bindm = [
+      # Move/resize windows with mod + LMB/RMB and dragging
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+    ];
+  };
+}
