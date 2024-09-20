@@ -1,1 +1,7 @@
-{ configs, pkg, ... }: {}
+{
+  imports = [
+    ./hyprland
+    ./apps
+    ./launchers
+  ];
+}
