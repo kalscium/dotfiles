@@ -14,6 +14,7 @@
     terminal = ./terminal;
     helix = ./terminal/helix;
     zellij = ./terminal/zellij;
+    wezterm = ./terminal/wezterm;
     zsh = {
       user = ./terminal/zsh/user.nix;
       root = ./terminal/zsh/root.nix;
