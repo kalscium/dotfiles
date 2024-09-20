@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./shellAliases.nix
+  ];
+
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
