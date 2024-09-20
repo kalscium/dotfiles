@@ -1,1 +1,6 @@
-{ configs, pkg, ... }: {}
+{ configs, pkg, ... }:
+{
+  imports = [
+    ./helix
+  ];
+}
