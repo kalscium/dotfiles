@@ -11,6 +11,11 @@
     common = ./common.nix;
 
     # terminal
+    terminal = ./terminal;
     helix = ./terminal/helix;
+    zsh = {
+      user = ./terminal/zsh/user.nix;
+      root = ./terminal/zsh/root.nix;
+    };
   };
 }
