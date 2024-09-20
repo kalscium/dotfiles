@@ -16,6 +16,17 @@
       kanata = ./services/kanata;
     };
 
+    # graphics
+    graphical = {
+      default = ./graphical;
+    
+      # launchers
+      launchers = {
+        default = ./graphical/launchers;
+        wofi = ./graphical/launchers/wofi;
+      };
+    };
+
     # terminal
     terminal = {
       default = ./terminal;
