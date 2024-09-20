@@ -25,6 +25,9 @@
         default = ./graphical/launchers;
         wofi = ./graphical/launchers/wofi;
       };
+
+      # hyprland
+      hyprland = ./graphical/hyprland;
     };
 
     # terminal
