@@ -13,6 +13,7 @@
     # terminal
     terminal = ./terminal;
     helix = ./terminal/helix;
+    zellij = ./terminal/zellij;
     zsh = {
       user = ./terminal/zsh/user.nix;
       root = ./terminal/zsh/root.nix;
