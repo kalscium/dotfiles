@@ -1,1 +1,5 @@
-{ configs, pkg, ... }: {}
+{
+  imports = [
+    ./kanata
+  ];
+}

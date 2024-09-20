@@ -10,6 +10,12 @@
     # all common components
     common = ./common.nix;
 
+    # services
+    services = {
+      default = ./services;
+      kanata = ./services/kanata;
+    };
+
     # terminal
     terminal = {
       default = ./terminal;
