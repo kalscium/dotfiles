@@ -8,6 +8,7 @@
     ./fd
     ./bat
     ./git
+    ./alacritty
   ];
 
   # misc cli programs

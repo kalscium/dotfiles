@@ -54,6 +54,7 @@
       helix = ./terminal/helix;
       zellij = ./terminal/zellij;
       wezterm = ./terminal/wezterm;
+      alacritty = ./terminal/alacritty;
       eza = ./terminal/eza;
       rip = ./terminal/rip;
       fd = ./terminal/fd;
