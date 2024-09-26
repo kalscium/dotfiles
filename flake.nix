@@ -52,7 +52,8 @@
       helix = ./terminal/helix;
       zellij = ./terminal/zellij;
       wezterm = ./terminal/wezterm;
-      misc = ./terminal/misc.nix;
+      eza = ./terminal/eza;
+      rip = ./terminal/rip;
       zsh = {
         user = ./terminal/zsh/user.nix;
         root = ./terminal/zsh/root.nix;

@@ -4,10 +4,13 @@
     ./helix
     ./zellij
     ./wezterm
+    ./eza
+    ./rip
   ];
 
   # misc cli programs
   home.packages = with pkgs; [
+    git
     distrobox
     podman
     wget
@@ -31,7 +34,6 @@
     cryptsetup # or disk encryption
     busybox # gnu c utils replacement
     niv # nix dependency manager
-    rm-improved # rip: better rm
     jq # json parsing
   ];
 }
