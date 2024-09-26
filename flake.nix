@@ -14,6 +14,7 @@
     services = {
       default = ./services;
       kanata = ./services/kanata;
+      thunar = ./services/thunar;
     };
 
     # graphics
