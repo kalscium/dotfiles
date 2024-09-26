@@ -34,6 +34,15 @@
 
       # hyprland
       hyprland = ./graphical/hyprland;
+
+      # apps
+      apps = {
+        default = ./graphical/apps;
+        editors = ./graphical/apps/editors;
+        browsers = ./graphical/apps/browsers;
+        games = ./graphical/apps/games;
+        utils = ./graphical/apps/utils;
+      };
     };
 
     # terminal
