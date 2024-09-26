@@ -26,6 +26,12 @@
         wofi = ./graphical/launchers/wofi;
       };
 
+      # bars
+      bars = {
+        default = ./graphical/bars;
+        waybar = ./graphical/bars/waybar;
+      };
+
       # hyprland
       hyprland = ./graphical/hyprland;
     };
