@@ -15,6 +15,7 @@
       default = ./services;
       kanata = ./services/kanata;
       thunar = ./services/thunar;
+      vm = ./services/vm;
     };
 
     # graphics

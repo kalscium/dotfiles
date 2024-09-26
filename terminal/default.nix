@@ -50,7 +50,6 @@
     cloc # for counting lines of source code
     cmake
     gnumake
-    sqlite
     fzf
     mdbook
   ];

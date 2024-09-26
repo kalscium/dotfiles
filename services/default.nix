@@ -2,5 +2,6 @@
   imports = [
     ./kanata
     ./thunar
+    ./vm
   ];
 }
