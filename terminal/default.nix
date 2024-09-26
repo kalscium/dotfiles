@@ -5,7 +5,6 @@
     ./zellij
     ./wezterm
     ./eza
-    ./rip
     ./fd
     ./bat
   ];

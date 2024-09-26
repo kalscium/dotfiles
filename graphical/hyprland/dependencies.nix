@@ -23,5 +23,6 @@
     wdisplays # graphical display manager
     networkmanagerapplet
     brightnessctl # for setting the brightness of my monitor
+    acpi # for checking the battery percentage
   ];
 }
