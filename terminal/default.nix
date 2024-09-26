@@ -7,12 +7,12 @@
     ./eza
     ./fd
     ./bat
+    ./git
   ];
 
   # misc cli programs
   home.packages = with pkgs; [
     python313
-    git
     distrobox
     podman
     wget
