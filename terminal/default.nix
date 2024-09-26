@@ -9,6 +9,7 @@
     ./bat
     ./git
     ./alacritty
+    ./kitty
   ];
 
   # misc cli programs
