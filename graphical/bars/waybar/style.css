@@ -1,4 +1,4 @@
-@import "macchiato.css";
+@import "gruvbox.css";
 
 * {
     color: @text;
@@ -15,7 +15,7 @@
 }
 
 window#waybar {
-    background-color: alpha(@crust, 0.8);
+    background-color: alpha(@background, 0.8);
     transition: none;
 }
 
@@ -54,15 +54,15 @@ window#waybar {
     margin-right: 8px;
     padding-right: 16px;
     border-radius: 0px 10px 10px 0px;
-    background: @surface1;
+    background: @foreground;
 }
 
 #clock {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px 10px 10px 10px;
-    background: @surface1;
-    color: @teal;
+    background: @foreground;
+    color: @blue;
 }
 
 #pulseaudio {
@@ -70,7 +70,7 @@ window#waybar {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
-    background: @surface1;
+    background: @foreground;
 }
 
 #pulseaudio.muted {
@@ -83,7 +83,7 @@ window#waybar {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
-    background: @surface1;
+    background: @foreground;
 }
 
 #cpu {
@@ -91,14 +91,14 @@ window#waybar {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px 0px 0px 10px;
-    background: @surface1;
+    background: @foreground;
 }
 
 #temperature {
     padding-right: 16px;
     border-radius: 0px 10px 10px 0px;
     margin-right: 8px;
-    background: @surface1;
+    background: @foreground;
     color: @red;
 }
 
@@ -111,7 +111,7 @@ window#waybar {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
-    background: @surface1;
+    background: @foreground;
     color: @yellow;
 }
 
@@ -120,7 +120,7 @@ window#waybar {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
-    background: @surface1;
+    background: @foreground;
     color: @green;
 }
 
@@ -147,7 +147,7 @@ window#waybar {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
-    background: @surface1;
+    background: @foreground;
 }
 
 @keyframes blink {

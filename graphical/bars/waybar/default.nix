@@ -2,7 +2,7 @@
 {
   # Include configuration files for waybar
   home.file = {
-    ".config/waybar/macchiato.css".source = ./macchiato.css;
+    ".config/waybar/gruvbox.css".source = ./gruvbox.css;
     ".config/waybar/scripts/check_battery.sh".source = ./scripts/check_battery.sh;
   };
 
