@@ -54,6 +54,7 @@
       wezterm = ./terminal/wezterm;
       eza = ./terminal/eza;
       rip = ./terminal/rip;
+      fd = "./terminal/fd";
       zsh = {
         user = ./terminal/zsh/user.nix;
         root = ./terminal/zsh/root.nix;
