@@ -40,7 +40,6 @@
     jq # json parsing
     github-backup
     mdcat # cat markdown
-    wineWowPackages.waylandFull
     file # file-type checking
     gnupg
     just
