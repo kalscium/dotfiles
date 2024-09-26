@@ -22,5 +22,6 @@
     cliphist # clipboard manager
     wdisplays # graphical display manager
     networkmanagerapplet
+    brightnessctl # for setting the brightness of my monitor
   ];
 }

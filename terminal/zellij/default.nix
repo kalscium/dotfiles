@@ -1,7 +1,8 @@
+{ lib, ... }:
 {
   programs.zellij = {
     enable = true;
     enableZshIntegration = true;
-    settings.theme = "gruvbox-dark";
+    settings.theme = lib.mkForce "gruvbox-dark";
   };
 }
