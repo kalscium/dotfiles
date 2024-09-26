@@ -3,5 +3,6 @@
     ./kanata
     ./thunar
     ./vm
+    ./powersave
   ];
 }

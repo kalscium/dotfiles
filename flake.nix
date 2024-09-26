@@ -16,6 +16,7 @@
       kanata = ./services/kanata;
       thunar = ./services/thunar;
       vm = ./services/vm;
+      powersave = ./services/powersave;
     };
 
     # graphics
