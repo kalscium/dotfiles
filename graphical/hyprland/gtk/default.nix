@@ -4,9 +4,9 @@
   home.pointerCursor = {
     gtk.enable = true;
     # x11.enable = true;
-    name = "Catppuccin-Macchiato-Dark-Cursors";
-    package = pkgs.catppuccin-cursors.macchiatoDark;
-    size = 32;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
   };
 
   # Configure GTK
@@ -25,7 +25,6 @@
 
     font = {
       name = "JetBrains Mono";
-      package = pkgs.jetbrains-mono;
       size = 11;
     };
   };
