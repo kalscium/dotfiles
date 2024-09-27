@@ -2,7 +2,7 @@
   imports = [
     ./dependencies.nix
     ./configs
-    ./mako
+    ./dunst
     ./hypridle
     ./hyprlock
     ./gtk

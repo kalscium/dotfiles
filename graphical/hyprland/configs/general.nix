@@ -14,6 +14,7 @@
     exec-once = [
       "waybar"
       "hypridle"
+      "dunst"
       "swww-daemon"
       "wl-paste --type text --watch cliphist store" # stores only text data
       "wl-paste --type image --watch cliphist store" # stores only image data

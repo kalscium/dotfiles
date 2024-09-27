@@ -18,9 +18,14 @@
       name = "gruvbox-dark";
     };
 
+    # iconTheme = {
+    #   package = pkgs.gruvbox-dark-icons-gtk;
+    #   name = "oomox-gruvbox-dark";
+    # };
+
     iconTheme = {
-      package = pkgs.gruvbox-dark-icons-gtk;
-      name = "oomox-gruvbox-dark";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus";
     };
 
     font = {
