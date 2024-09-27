@@ -21,9 +21,7 @@
     # Bindings (Locked: will also work while laptop is locked)
     bindl = [
       # Laptop lid closed
-      ", switch:on:Lid Switch, exec, hyprctl dispatch dpms off" # turn screen off
       ", switch:on:Lid Switch, exec, systemctl suspend" # go to sleep
-      ", switch:off:Lid Switch, exec, hyprctl dispatch dpms on" # turn screen on
       ", switch:off:Lid Switch, exec, hyprlock --immediate" # lock it
 
       # to mute the laptop
@@ -72,6 +70,12 @@
       "$mod, right, movefocus, r"
       "$mod, up, movefocus, u"
       "$mod, down, movefocus, d"
+
+      # Move the focus with vim-bindings
+      "$mod, H, movefocus, l"
+      "$mod, L, movefocus, r"
+      "$mod, K, movefocus, u"
+      "$mod, J, movefocus, d"
 
       # Scroll through existing workspaces with mod + scroll
       "$mod, mouse_down, workspace, e+1"

@@ -13,6 +13,7 @@
     # Autostart
     exec-once = [
       "waybar"
+      "hypridle"
       "swww-daemon"
       "wl-paste --type text --watch cliphist store" # stores only text data
       "wl-paste --type image --watch cliphist store" # stores only image data
@@ -40,9 +41,9 @@
     general = {
       gaps_in = 10;
       gaps_out = 20;
-      border_size = 3;
+      border_size = 2;
 
-      "col.active_border" = "rgba(ffffffee)"; # white
+      "col.active_border" = "rgb(ebdbb2)"; # gruvbox white
       "col.inactive_border" = "$color11"; # match background colour
       # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg"; # rainbow
       # "col.inactive_border" = "rgba(595959aa)"; # grey
@@ -66,8 +67,8 @@
       };
 
       # opacity
-      active_opacity = 1.0;
-      inactive_opacity = 0.9;
+      active_opacity = 0.9;
+      inactive_opacity = 0.6;
       fullscreen_opacity = 1.0;
 
       drop_shadow = true;

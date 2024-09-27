@@ -1,1 +1,5 @@
-{ programs.zsh.shellAliases = { }; }
+{
+  programs.zsh.shellAliases = {
+    claer = "clear"; # common typo
+  };
+}

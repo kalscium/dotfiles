@@ -11,7 +11,7 @@
 
       background = [
         {
-          path = "~/Pictures/Wallpapers/lock_screen.jpg";
+          path = "~/Pictures/Wallpapers/sun.png";
           blur_passes = 3;
           blur_size = 8;
         }

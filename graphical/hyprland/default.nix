@@ -3,7 +3,7 @@
     ./dependencies.nix
     ./configs
     ./mako
-    ./swayidle
+    ./hypridle
     ./hyprlock
     ./gtk
   ];
