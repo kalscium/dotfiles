@@ -4,5 +4,7 @@
     ./apps
     ./bars
     ./launchers
+    ./gtk
+    ./qt
   ];
 }

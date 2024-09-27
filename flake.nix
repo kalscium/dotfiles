@@ -38,6 +38,10 @@
       # hyprland
       hyprland = ./graphical/hyprland;
 
+      # gtk & qt
+      gtk = ./graphical/gtk;
+      qt = ./graphical/qt;
+
       # apps
       apps = {
         default = ./graphical/apps;
