@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  # doesn't work i don't think :C
   qt = {
     enable = true;
     platformTheme.name = "gtk";
