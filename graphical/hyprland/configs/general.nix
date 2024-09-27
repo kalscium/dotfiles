@@ -13,7 +13,6 @@
     # Autostart
     exec-once = [
       "waybar"
-      "hypridle"
       "dunst"
       "swww-daemon"
       "wl-paste --type text --watch cliphist store" # stores only text data
@@ -110,8 +109,6 @@
     # Custom per-device configurations
     # device = {};
 
-    windowrulev2 = "suppressevent.maximise, class:.*";
-
     # Set the mod key
     "$mod" = "SUPER";
 
@@ -121,6 +118,14 @@
       "NIXOS_OZONE_WL,1"
       "XCURSOR_SIZE,32"
       "QT_QPA_PLATFORMTHEME,qt6ct" # change to qt6ct if you have that
+    ];
+
+    # Extra window rules
+    windowrulev2 = [
+      "suppressevent.maximise, class:.*" # to suppress full-screen event notifications
+
+      # The override opacity clause for each of the streaming services I might use
+      "opacity 1.0 override, title: (.*YouTube.*)$"
     ];
   };
 }
