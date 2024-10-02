@@ -65,9 +65,23 @@
           language-servers = [ "nil" ];
           auto-format = false;
         }
+        {
+          name = "c";
+          auto-format = false;
+          indent = {
+            tab-width = 8;
+            unit = " ";
+          };
+        }
+        {
+          name = "cpp";
+          auto-format = false;
+          indent = {
+            tab-width = 8;
+            unit = " ";
+          };
+        }
         { name = "zig"; auto-format = false; }
-        { name = "c"; auto-format = false; }
-        { name = "cpp"; auto-format = false; }
       ];
     };
   };

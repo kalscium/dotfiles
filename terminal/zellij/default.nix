@@ -2,7 +2,7 @@
 {
   programs.zellij = {
     enable = true;
-    enableZshIntegration = true;
+    enableZshIntegration = false;
     settings.theme = lib.mkForce "gruvbox-dark";
   };
 }

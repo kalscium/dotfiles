@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    github-desktop
     xfce.thunar
     monitor
     qbittorrent
