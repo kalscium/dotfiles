@@ -53,5 +53,7 @@
     gnumake
     fzf
     mdbook
+    ffmpeg
+    jmtpfs # for mounting android devices
   ];
 }
