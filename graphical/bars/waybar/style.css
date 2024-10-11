@@ -103,7 +103,8 @@ window#waybar {
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    background-color: @red;
+    color: @text;
 }
 
 #backlight {
