@@ -17,6 +17,7 @@
       thunar = ./services/thunar;
       vm = ./services/vm;
       powersave = ./services/powersave;
+      docker = ./services/docker;
     };
 
     # graphics

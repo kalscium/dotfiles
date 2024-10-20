@@ -16,7 +16,7 @@
   home.packages = with pkgs; [
     python313
     distrobox
-    podman
+    docker
     wget
     curl
     neofetch
