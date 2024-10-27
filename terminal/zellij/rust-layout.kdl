@@ -1,0 +1,23 @@
+layout {
+    pane split_direction="vertical" {
+        pane {
+            pane split_direction="vertical" {
+                pane edit="src"
+                pane
+            }
+            pane split_direction="vertical" size="32%" {
+                pane command="bacon"
+                pane
+            }
+        }
+        pane size="24%" {
+            pane command="eza" {
+                args "--color" "always" "--icons=always" "-Tl" "--no-user" "--no-permissions" "--no-time" "--total-size" "--git" "--git-ignore"
+            }
+            pane command="git" {
+                args "log"
+            }
+            pane edit="Cargo.toml"
+        }
+    }
+}
