@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     inputs.hypridle.packages.${pkgs.system}.default
-    inputs.hypridle.packages.${pkgs.system}.default
 
     wayland
     hyprland

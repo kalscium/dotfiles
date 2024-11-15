@@ -16,6 +16,7 @@
 
     font = {
       name = "JetBrains Mono";
+      package = pkgs.jetbrains-mono;
       size = 11;
     };
   };

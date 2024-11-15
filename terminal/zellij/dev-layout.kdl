@@ -2,7 +2,7 @@ layout {
     pane split_direction="vertical" {
         pane {
             pane split_direction="vertical" {
-                pane edit="."
+                pane
                 pane
             }
             pane split_direction="vertical" size="32%" {
