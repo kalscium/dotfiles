@@ -15,6 +15,8 @@
   # misc cli programs
   home.packages = with pkgs; [
     python313
+    haskell.compiler.native-bignum.ghcHEAD
+    wineWowPackages.waylandFull
     distrobox
     docker
     wget
