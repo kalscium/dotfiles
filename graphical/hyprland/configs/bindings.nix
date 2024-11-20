@@ -26,6 +26,9 @@
 
       # to mute the laptop
       ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
+      # panic button
+      ", Insert, exec, shutdown -h now"
     ];
 
     # Bindings (Locked & Repeating: will repeat while held and when laptop is locked)
