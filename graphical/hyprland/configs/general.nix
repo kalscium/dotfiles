@@ -127,7 +127,7 @@
       "suppressevent.maximise, class:.*" # to suppress full-screen event notifications
 
       # The override opacity clause for each of the streaming services I might use
-      "opacity 1.0 override, title: (.*YouTube.*)$"
+      "opacity 1.0 override, title: (.*(YouTube|VLC|nomacs).*)$"
     ];
   };
 }
