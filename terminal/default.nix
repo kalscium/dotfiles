@@ -10,6 +10,7 @@
     ./git
     ./alacritty
     ./kitty
+    ./gnupg
   ];
 
   # misc cli programs
@@ -34,7 +35,6 @@
     cmatrix
     testdisk # for recovering ntfs systems
     gnumake
-    gnupg
     ntfs3g # support for ntfs
     btrfs-progs # support for btrfs
     cryptsetup # or disk encryption
