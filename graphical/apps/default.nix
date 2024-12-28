@@ -4,5 +4,6 @@
     ./editors
     ./browsers
     ./games
+    ./obs
   ];
 }
