@@ -35,6 +35,7 @@
         scrolloff = 999; # to keep the cursor centred
         mouse = false; # mice are for nerds
         soft-wrap.enable = true; # it just looks nicer
+        rulers = [72 80 120]; # just like how the C gods intended
 
         # same as neovim
         cursor-shape = {
