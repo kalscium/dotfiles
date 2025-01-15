@@ -44,7 +44,7 @@
       border_size = 2;
 
       "col.active_border" = "rgb(ebdbb2)"; # gruvbox white
-      "col.inactive_border" = "$color11"; # match background colour
+      "col.inactive_border" = "rgba(00000000)"; # match background colour
       # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg"; # rainbow
       # "col.inactive_border" = "rgba(595959aa)"; # grey
 
