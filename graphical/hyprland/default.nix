@@ -1,7 +1,8 @@
 {
   imports = [
     ./dependencies.nix
-    ./configs
+    ./configs.nix
+    ./settings
     ./dunst
     ./hyprlock
     ./cursor

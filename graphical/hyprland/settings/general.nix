@@ -1,6 +1,5 @@
-# general configurations for hyprland
+# General settings for hyprland
 {
-  wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     # Set default programs
     "$terminal" = "kitty";
