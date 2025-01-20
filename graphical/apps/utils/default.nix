@@ -15,6 +15,7 @@
     networkmanagerapplet # for connecting to wifi
     libsForQt5.ark
     thunderbird
+    obs-studio
     cheese
     feather # monero wallet
   ];

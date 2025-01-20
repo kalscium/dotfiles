@@ -50,7 +50,6 @@
         browsers = ./graphical/apps/browsers;
         games = ./graphical/apps/games;
         utils = ./graphical/apps/utils;
-        obs = ./graphical/apps/obs;
       };
     };
 
