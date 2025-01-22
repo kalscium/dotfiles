@@ -3,9 +3,9 @@ layout {
         pane {
             pane split_direction="vertical" {
                 pane
-                pane
             }
             pane split_direction="vertical" size="32%" {
+                pane
                 pane
             }
         }

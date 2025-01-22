@@ -5,7 +5,7 @@ layout {
                 pane
             }
             pane split_direction="vertical" size="32%" {
-                pane command="bacon"
+                pane
                 pane
             }
         }
@@ -16,7 +16,7 @@ layout {
             pane command="git" {
                 args "log"
             }
-            pane edit="Cargo.toml"
+            pane edit="build.zig"
         }
     }
 }
