@@ -126,7 +126,7 @@
       "suppressevent.maximise, class:.*" # to suppress full-screen event notifications
 
       # The override opacity clause for each of the streaming services I might use
-      "opacity 1.0 override, title: (.*(Mozilla Firefox|VLC|nomacs|Lunar Client).*)$"
+      "opacity 1.0 override, title: (.*(Mozilla Firefox|VLC|nomacs|Lunar Client|Minecraft|kdenlive|GNU Image Manipulation Program|Krita|OBS|QEMU|KVM|Blender).*)$"
     ];
   };
 }
