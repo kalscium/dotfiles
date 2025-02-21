@@ -99,7 +99,7 @@ window#waybar {
     border-radius: 0px 10px 10px 0px;
     margin-right: 8px;
     background: @foreground;
-    color: @red;
+    color: @yellow;
 }
 
 #temperature.critical {
