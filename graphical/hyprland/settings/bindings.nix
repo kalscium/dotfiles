@@ -87,6 +87,8 @@
       # Scroll through existing workspaces with arrow keys
       "$mod CTRL, right, workspace, e+1"
       "$mod CTRL, left, workspace, e-1"
+      "Shift Mod4, right, workspace, e+1"
+      "Shift Mod4, left, workspace, e-1"
     ] ++ workspace-bindings;
 
     # more bindings
