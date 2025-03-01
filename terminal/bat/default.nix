@@ -1,9 +1,9 @@
 # bat: cat improved
 
-{ pkgs, ... }:
 {
   programs.zsh.shellAliases.cat = "bat";
-  home.packages = with pkgs; [
-    bat
-  ];
+  programs.bat.enable = true;
+  programs.bat.config = {
+    theme = "gruvbox-dark";
+  };
 }
