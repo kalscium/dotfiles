@@ -19,7 +19,7 @@
     haskell.compiler.native-bignum.ghcHEAD
     wineWowPackages.waylandFull
     distrobox
-    docker
+    podman
     wget
     curl
     neofetch
@@ -34,7 +34,6 @@
     xplr # terminal file explorer
     cmatrix
     testdisk # for recovering ntfs systems
-    gnumake
     ntfs3g # support for ntfs
     btrfs-progs # support for btrfs
     cryptsetup # or disk encryption
@@ -51,11 +50,10 @@
     p7zip
     scriptisto # run compiled scripts
     cloc # for counting lines of source code
-    cmake
-    gnumake
     fzf
     mdbook
     ffmpeg
     jmtpfs # for mounting android devices
+    sqlite
   ];
 }
