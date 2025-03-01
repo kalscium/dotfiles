@@ -62,7 +62,7 @@
       "$mod, Q, exec, $terminal"
       ", MENU, exec, $terminal"
       "$mod, E, exec, $fileManager"
-      "$mod, F, exec, firefox"
+      "$mod, F, exec, librewolf"
 
       # Special workspace (scratchpad)
       "$mod, S, togglespecialworkspace, magic"

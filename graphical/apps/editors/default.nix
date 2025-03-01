@@ -11,7 +11,6 @@
     freecad
     wezterm
     krita # for drawing
-    kate
     gimp
     libreoffice-fresh
   ];

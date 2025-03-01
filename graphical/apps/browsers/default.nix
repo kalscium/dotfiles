@@ -2,10 +2,8 @@
 {
   # misc gui browsers
   home.packages = with pkgs; [
-    microsoft-edge
-    # brave
-    firefox-bin
+    # microsoft-edge
+    librewolf
     mullvad-browser
-    # google-chrome
   ];
 }
