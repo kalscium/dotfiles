@@ -4,6 +4,6 @@
     ./thunar
     ./vm
     ./powersave
-    ./docker
+    ./podman
   ];
 }
