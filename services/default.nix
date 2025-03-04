@@ -5,5 +5,6 @@
     ./vm
     ./powersave
     ./podman
+    ./logind
   ];
 }
