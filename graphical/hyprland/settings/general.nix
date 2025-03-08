@@ -2,7 +2,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     # Set default programs
-    "$terminal" = "kitty";
+    "$terminal" = "wezterm";
     "$fileManager" = "thunar";
     "$menu" = "wofi --show drun";
 

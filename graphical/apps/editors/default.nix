@@ -5,7 +5,7 @@
     blender
     typora # markdown editor
     lmms # music production software
-    libsForQt5.kdenlive # video editor
+    kdePackages.kdenlive # video editor
     audacity
     obsidian
     freecad
