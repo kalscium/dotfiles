@@ -10,8 +10,10 @@
     };
 
     iconTheme = {
-      package = pkgs.gruvbox-plus-icons;
-      name = "Gruvbox-Plus-Dark";
+      # package = pkgs.gruvbox-dark-icons-gtk;
+      # name = "gruvbox-dark";
+      package = pkgs.reversal-icon-theme;
+      name = "Reversal-icon-theme";
     };
 
     font = {
