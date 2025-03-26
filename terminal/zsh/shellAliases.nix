@@ -1,5 +1,5 @@
 {
   programs.zsh.shellAliases = {
-    claer = "clear"; # common typo
+    proxywolf = "nohup librewolf -P proxied > /dev/null &";
   };
 }

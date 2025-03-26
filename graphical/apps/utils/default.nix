@@ -18,5 +18,6 @@
     obs-studio
     cheese
     feather # monero wallet
+    teams-for-linux # for school
   ];
 }
