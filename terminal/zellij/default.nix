@@ -6,6 +6,8 @@
     settings = {
       theme = lib.mkForce "gruvbox-dark";
       default_shell = "zsh";
+      show_startup_tips = false;
+      copy_command = "wl-copy";
     };
   };
 
