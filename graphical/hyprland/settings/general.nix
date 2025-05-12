@@ -22,7 +22,6 @@
       kb_layout = "us";
       kb_variant = "";
       kb_model = "";
-      kb_options = "";
       kb_rules = "";
 
       repeat_delay = 250;
@@ -34,6 +33,13 @@
       };
 
       sensitivity = 0; # -1.0 - 1.0, 0 means no modification
+
+      # remap CAPS to ESC
+      # (redundant due to kanata, but nice to have)
+      kb_options = [
+        "caps:swapescape"
+        "fkeys:basic13-24"
+      ];
     };
 
     # General window layout and colours

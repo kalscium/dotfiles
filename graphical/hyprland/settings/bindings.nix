@@ -46,6 +46,15 @@
       "SHIFT, XF86MonBrightnessDown, exec, brightnessctl -d amdgpu_bl1 set 1-"
     ];
 
+    # Bindings (Repeating)
+    binde = [
+      # Resize the window with vim-bindings
+      "$mod ALT, L, resizeactive, 10 0"
+      "$mod ALT, H, resizeactive, -10 0"
+      "$mod ALT, K, resizeactive, 0 -10"
+      "$mod ALT, J, resizeactive, 0 10"
+    ];
+
     # Bindings
     bind = [  
       # Utils
@@ -53,8 +62,8 @@
       "$mod, C, killactive,"
       "$mod, V, togglefloating,"
       "$mod, R, exec, $menu"
-      "$mod, P, pseudo," # dwindle
-      "$mod, J, togglesplit," # dwindle
+      # "$mod, P, pseudo," # dwindle
+      # "$mod, J, togglesplit," # dwindle
       "$mod SHIFT, Z, exec, grimblast copysave area ~/Pictures/RandomScreenshots/Screenshot_$(date +'%Y%m%d_%H%M%S').png" # screenshot
       "$mod, X, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy" # clipboard
 
@@ -79,6 +88,12 @@
       "$mod, L, movefocus, r"
       "$mod, K, movefocus, u"
       "$mod, J, movefocus, d"
+
+      # Move the window with vim-bindings
+      "$mod SHIFT, H, movewindow, l"
+      "$mod SHIFT, L, movewindow, r"
+      "$mod SHIFT, K, movewindow, u"
+      "$mod SHIFT, J, movewindow, d"
 
       # Scroll through existing workspaces with mod + scroll
       "$mod, mouse_down, workspace, e+1"
