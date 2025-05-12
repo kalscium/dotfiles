@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     # microsoft-edge
     librewolf
-    mullvad-browser
+    # mullvad-browser
     firefox # only for captive portals
   ];
 }

@@ -2,13 +2,13 @@
 {
   # misc gui editors
   home.packages = with pkgs; [
-    blender
+    # blender
     typora # markdown editor
-    lmms # music production software
+    # lmms # music production software
     kdePackages.kdenlive # video editor
     audacity
     obsidian
-    freecad
+    # freecad
     wezterm
     krita # for drawing
     gimp

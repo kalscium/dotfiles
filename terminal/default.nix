@@ -17,7 +17,7 @@
   home.packages = with pkgs; [
     python313
     haskell.compiler.native-bignum.ghcHEAD
-    wineWowPackages.waylandFull
+    # wineWowPackages.waylandFull
     distrobox
     podman
     wget
@@ -28,7 +28,7 @@
     bat # cat improved
     mdbook
     parted
-    monero-cli
+    # monero-cli
     libwebp
     yt-dlp
     xplr # terminal file explorer
