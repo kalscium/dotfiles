@@ -104,6 +104,8 @@
       "$mod CTRL, left, workspace, e-1"
       "Shift Mod4, right, workspace, e+1"
       "Shift Mod4, left, workspace, e-1"
+      "RCTRL, right, workspace, e+1"
+      "RCTRL, left, workspace, e-1"
     ] ++ workspace-bindings;
 
     # more bindings
