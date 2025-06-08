@@ -72,7 +72,7 @@
       };
 
       # opacity
-      active_opacity = 0.9;
+      active_opacity = 1.0;
       inactive_opacity = 0.6;
       fullscreen_opacity = 1.0;
 
@@ -117,8 +117,8 @@
     windowrulev2 = [
       "suppressevent.maximise, class:.*" # to suppress full-screen event notifications
 
-      # The override opacity clause for each of the streaming services I might use
-      "opacity 1.0 override, title: (.*(LibreWolf|VLC|nomacs|Lunar Client|Minecraft|kdenlive|GNU Image Manipulation Program|Krita|OBS|QEMU|KVM|Blender).*)$"
+      # The override opacity clause to make terminals transparent
+      "opacity 0.9 override, initialTitle: (.*(wezterm|kitty|Alacritty).*)$"
     ];
   };
 }
