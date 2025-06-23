@@ -23,5 +23,6 @@
     networkmanagerapplet
     brightnessctl # for setting the brightness of my monitor
     acpi # for checking the battery percentage
+    wl-kbptr # for clicking without a mouse
   ];
 }

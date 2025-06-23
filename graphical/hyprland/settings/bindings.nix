@@ -66,6 +66,7 @@
       # "$mod, J, togglesplit," # dwindle
       "$mod SHIFT, Z, exec, grimblast copysave area ~/Pictures/RandomScreenshots/Screenshot_$(date +'%Y%m%d_%H%M%S').png" # screenshot
       "$mod, X, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy" # clipboard
+      "$mod, D, exec, wl-kbptr -o modes=floating,click -o mode_floating.source=detect" # mouseless click
 
       # Open Apps
       "$mod, Q, exec, $terminal"
