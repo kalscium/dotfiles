@@ -73,7 +73,7 @@
 
       # opacity
       active_opacity = 1.0;
-      inactive_opacity = 0.8;
+      inactive_opacity = 1.0;
       fullscreen_opacity = 1.0;
 
       shadow = {
@@ -116,12 +116,6 @@
     # Extra window rules
     windowrulev2 = [
       "suppressevent.maximise, class:.*" # to suppress full-screen event notifications
-
-      # The override opacity clause to make terminals transparent
-      # 0.9 active opacity (0.9 * 1)
-      # 0.72 inactive opacity (0.9 * 0.8)
-      # 1.0 fullscreen opacity
-      "opacity 0.9 0.9 1.0 override, initialTitle: (.*(wezterm|kitty|Alacritty).*)$"
     ];
   };
 }
