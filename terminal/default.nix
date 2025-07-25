@@ -31,7 +31,7 @@
     # monero-cli
     libwebp
     yt-dlp
-    xplr # terminal file explorer
+    # xplr # terminal file explorer
     cmatrix
     testdisk # for recovering ntfs systems
     ntfs3g # support for ntfs
@@ -48,12 +48,12 @@
     zip
     gzip
     p7zip
-    scriptisto # run compiled scripts
+    # scriptisto # run compiled scripts
     cloc # for counting lines of source code
     fzf
     mdbook
     ffmpeg
     jmtpfs # for mounting android devices
-    sqlite
+    # sqlite
   ];
 }

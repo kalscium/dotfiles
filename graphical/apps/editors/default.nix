@@ -10,7 +10,9 @@
     obsidian
     # freecad
     wezterm
-    krita # for drawing
+    # krita # for drawing
+    pixelorama # for pixel art
+    godot # for game development
     gimp
     libreoffice-fresh
   ];
