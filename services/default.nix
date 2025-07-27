@@ -6,5 +6,6 @@
     ./powersave
     ./podman
     ./logind
+    ./tailscale
   ];
 }
