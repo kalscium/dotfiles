@@ -15,6 +15,7 @@
 
   # misc cli programs
   home.packages = with pkgs; [
+    llvmPackages_21.clang # libC for apps to link to & general compiling
     python313
     haskell.compiler.native-bignum.ghcHEAD
     # wineWowPackages.waylandFull
