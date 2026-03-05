@@ -23,7 +23,7 @@
     podman
     wget
     curl
-    neofetch
+    fastfetch # neofetch alternative
     pandoc
     file
     bat # cat improved

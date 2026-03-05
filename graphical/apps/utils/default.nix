@@ -2,18 +2,18 @@
 {
   home.packages = with pkgs; [
     github-desktop
-    xfce.thunar
+    thunar
     monitor
     qbittorrent
     discord
     vlc # video player
     keepassxc
-    libsForQt5.filelight # disk usage statistics
-    libsForQt5.okular
+    kdePackages.filelight # disk usage statistics
+    kdePackages.okular
     calibre # ebook reader and organiser
     nomacs # image viewer
     networkmanagerapplet # for connecting to wifi
-    libsForQt5.ark
+    kdePackages.ark
     thunderbird
     obs-studio
     cheese

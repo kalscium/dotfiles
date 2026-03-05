@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
 
-    extraConfig = {
+    settings = {
       core.editor = "hx";
       init.defaultBranch = "main";
     };

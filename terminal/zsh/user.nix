@@ -1,4 +1,4 @@
-{
+{ config, ... }: {
   imports = [
     ./shellAliases.nix
   ];
@@ -8,7 +8,8 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    dotDir = config.home.homeDirectory;
 
-    initExtra = builtins.readFile ./user.zshrc;
+    initContent = builtins.readFile ./user.zshrc;
   };
 }

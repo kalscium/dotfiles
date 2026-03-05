@@ -4,5 +4,5 @@
     ./user.nix
   ];
 
-  programs.zsh.initExtra = lib.mkForce (builtins.readFile ./root.zshrc);
+  programs.zsh.initContent = lib.mkForce (builtins.readFile ./root.zshrc);
 }
