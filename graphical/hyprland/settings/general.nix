@@ -67,7 +67,6 @@
         passes = 1;
 
         new_optimizations = "on";
-        blurls = "waybar";
         vibrancy = 0.1696;
       };
 
@@ -91,7 +90,7 @@
     };
 
     master.new_status = "master";
-    gestures.workspace_swipe = false;
+    gestures.workspace_swipe_touch = false;
 
     misc = {
       disable_hyprland_logo = true;
@@ -114,8 +113,13 @@
     ];
 
     # Extra window rules
-    windowrulev2 = [
-      "suppressevent.maximise, class:.*" # to suppress full-screen event notifications
+    windowrule = [
+      "suppress_event maximize, match:class ^(.*)$" # to suppress full-screen event notifications
+    ];
+
+    # Extra layer rules
+    layerrule = [
+      "blur on, ignore_alpha 0.5, match:namespace waybar"
     ];
   };
 }
