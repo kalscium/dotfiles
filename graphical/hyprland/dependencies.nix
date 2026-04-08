@@ -15,7 +15,7 @@
     pavucontrol # for a gui sound controller
     wev # wayland event viewer
     swayidle # idle manager for wayland
-    grimblast # for screenshots
+    grimblast sysvtools findutils # for screenshots
     wl-clip-persist # makes the clipboard persist after the program closes
     wl-clipboard # for clipboard
     cliphist # clipboard manager
